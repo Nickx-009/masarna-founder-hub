@@ -64,8 +64,7 @@
 
 /* Looping typewriter animation */
 .typewriter.animate-typewriter-loop {
-  animation: typewriter 3s steps(40) forwards, blink-cursor 0.8s step-end infinite;
-  animation-iteration-count: infinite;
+  animation: typewriter 6s cubic-bezier(0.4, 0.0, 0.2, 1) infinite, blink-cursor 0.8s step-end infinite;
   animation-direction: alternate;
   width: 0;
   overflow: hidden;
@@ -74,8 +73,8 @@
 
 @keyframes typewriter {
   0% { width: 0; }
-  50% { width: 100%; }
-  60% { width: 100%; }
+  30% { width: 100%; }
+  70% { width: 100%; }
   100% { width: 0; }
 }
 
