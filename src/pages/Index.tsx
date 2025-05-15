@@ -1,12 +1,38 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useEffect } from 'react';
+import Navigation from '@/components/Navigation';
+import HeroSection from '@/components/HeroSection';
+import HowItWorks from '@/components/HowItWorks';
+import ServicesSection from '@/components/ServicesSection';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import AboutSection from '@/components/AboutSection';
+import CTASection from '@/components/CTASection';
+import Footer from '@/components/Footer';
+import ScrollToTop from '@/components/ScrollToTop';
+import { initScrollAnimations } from '@/utils/scrollAnimations';
 
 const Index = () => {
+  useEffect(() => {
+    // Initialize scroll animations
+    initScrollAnimations();
+    
+    // Update document title
+    document.title = "Masarna - Operations-as-a-Service for Startups";
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      <Navigation />
+      <main>
+        <HeroSection />
+        <HowItWorks />
+        <ServicesSection />
+        <TestimonialsSection />
+        <AboutSection />
+        <CTASection />
+      </main>
+      <Footer />
+      <ScrollToTop />
     </div>
   );
 };
