@@ -114,7 +114,9 @@ export default {
 				},
 				typewriter: {
 					'0%': { width: '0%' },
-					'99%': { width: '100%' },
+					'50%': { width: '100%' },
+					'60%': { width: '100%' },
+					'100%': { width: '0%' },
 				},
 				'blink-cursor': {
 					'0%, 100%': { borderColor: 'transparent' },
@@ -126,7 +128,7 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out forwards',
 				'fade-out': 'fade-out 0.3s ease-out',
-				typewriter: 'typewriter 3s steps(40) forwards',
+				'typewriter-loop': 'typewriter 8s infinite alternate-reverse',
 				'blink-cursor': 'blink-cursor 0.8s step-end infinite'
 			},
 			fontFamily: {

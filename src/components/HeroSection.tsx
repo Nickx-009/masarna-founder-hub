@@ -6,10 +6,10 @@ const HeroSection = () => {
   const typewriterRef = useRef<HTMLHeadingElement>(null);
   
   useEffect(() => {
-    // Initialize the typewriter animation
+    // Initialize the typewriter animation with looping
     const textElement = typewriterRef.current;
     if (textElement) {
-      textElement.classList.add('animate-typewriter');
+      textElement.classList.add('animate-typewriter-loop');
     }
     
     // Optional: Add observer for fade-in animations for other elements
@@ -45,7 +45,7 @@ const HeroSection = () => {
             Operational Excellence for <br /> Ambitious Founders
           </h1>
           
-          <h2 ref={typewriterRef} className="typewriter text-xl md:text-2xl text-masarna-teal font-medium mb-8 animate-blink-cursor">
+          <h2 ref={typewriterRef} className="typewriter text-xl md:text-2xl text-masarna-teal font-medium mb-8">
             Focus on growth. We'll handle the operations.
           </h2>
           
