@@ -1,17 +1,12 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
+import TypewriterText from './TypewriterText';
 
 const HeroSection = () => {
-  const typewriterRef = useRef<HTMLHeadingElement>(null);
+  const revealRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
-    // Initialize the typewriter animation with looping
-    const textElement = typewriterRef.current;
-    if (textElement) {
-      textElement.classList.add('animate-typewriter-loop');
-    }
-    
     // Optional: Add observer for fade-in animations for other elements
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -29,6 +24,13 @@ const HeroSection = () => {
     };
   }, []);
 
+  // Multiple texts for the typewriter effect
+  const typewriterTexts = [
+    "Focus on growth. We'll handle the operations.",
+    "Built for startups. Designed for scale.",
+    "Your vision. Our expertise. Perfect synergy."
+  ];
+
   return (
     <section className="relative min-h-screen flex items-center pt-24 pb-16">
       {/* Background subtle pattern */}
@@ -45,8 +47,14 @@ const HeroSection = () => {
             Operational Excellence for <br /> Ambitious Founders
           </h1>
           
-          <h2 ref={typewriterRef} className="typewriter text-xl md:text-2xl text-masarna-teal font-medium mb-8">
-            Focus on growth. We'll handle the operations.
+          <h2 className="text-xl md:text-2xl text-masarna-teal font-medium mb-8">
+            <TypewriterText 
+              texts={typewriterTexts}
+              className="min-h-[1.5em] inline-block"
+              typingSpeed={70}
+              deletingSpeed={40}
+              delayBetweenTexts={1800}
+            />
           </h2>
           
           <p className="text-lg text-gray-700 mb-10 reveal">
@@ -54,7 +62,7 @@ const HeroSection = () => {
             and growth-stage startups, so you can focus on what matters most - building your business.
           </p>
           
-          <div className="flex flex-col sm:flex-row justify-center gap-4 reveal">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 reveal" ref={revealRef}>
             <Button 
               className="bg-masarna-teal hover:bg-masarna-teal/90 text-white px-8 py-6 rounded-lg text-lg"
               onClick={() => window.location.href = '#contact'}

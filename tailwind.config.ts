@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -112,24 +111,12 @@ export default {
 						transform: 'translateY(10px)'
 					}
 				},
-				typewriter: {
-					'0%': { width: '0%' },
-					'30%': { width: '100%' },
-					'70%': { width: '100%' },
-					'100%': { width: '0%' },
-				},
-				'blink-cursor': {
-					'0%, 100%': { borderColor: 'transparent' },
-					'50%': { borderColor: 'currentColor' },
-				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out forwards',
 				'fade-out': 'fade-out 0.3s ease-out',
-				'typewriter-loop': 'typewriter 12s cubic-bezier(0.4, 0.0, 0.2, 1) infinite alternate',
-				'blink-cursor': 'blink-cursor 0.8s step-end infinite'
 			},
 			fontFamily: {
 				'poppins': ['Poppins', 'sans-serif'],
