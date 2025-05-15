@@ -5,27 +5,21 @@ import { CheckCircle } from 'lucide-react';
 const steps = [
   {
     number: 1,
-    title: "Initial Assessment",
-    description: "We start with a comprehensive assessment of your operational needs and pain points.",
-    details: "Our team analyzes your current processes, identifies bottlenecks, and creates a customized action plan."
+    title: "Book a Free Ops Assessment",
+    description: "We'll review your current back-office setup and identify what's slowing you down.",
+    details: "Our team analyzes your operations, pinpoints bottlenecks, and creates a customized improvement plan."
   },
   {
     number: 2,
-    title: "Tailored Solutions",
-    description: "We design operational systems specifically for your startup's unique requirements.",
-    details: "From HR administration to financial operations, we build efficient and scalable processes."
+    title: "Meet Your Masarna Ops Manager",
+    description: "You get a dedicated expert to proactively run and manage your internal operations.",
+    details: "Your ops manager becomes an extension of your team, handling day-to-day operational tasks with expertise."
   },
   {
     number: 3,
-    title: "Implementation",
-    description: "Our experts seamlessly integrate new operational workflows into your business.",
-    details: "We handle the setup, training, and transition with minimal disruption to your core activities."
-  },
-  {
-    number: 4,
-    title: "Ongoing Support",
-    description: "We provide continuous management and optimization of your operational processes.",
-    details: "Regular check-ins, reporting, and improvements ensure your operations scale with your growth."
+    title: "Focus on Growth, We Handle the Rest",
+    description: "From HR admin to vendor payments to cap table updates, we run your back office like clockwork.",
+    details: "While you focus on strategic growth, we ensure your operations run efficiently and scale with your business."
   }
 ];
 
@@ -53,10 +47,9 @@ const HowItWorks = () => {
     <section id="how-it-works" className="py-20 bg-masarna-light-gray">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">How It Works</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Your Back-Office Ops, Fully Handled</h2>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            Our streamlined process ensures your operations run smoothly from day one,
-            allowing you to focus on strategic growth.
+            Our seamless process ensures your operations run efficiently while you focus on growing your business.
           </p>
         </div>
         
