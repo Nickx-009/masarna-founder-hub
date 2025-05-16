@@ -3,28 +3,20 @@ import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { ShieldCheck, FileText, ClipboardCheck, FileCheck, CheckCircle } from 'lucide-react';
+import { ShieldCheck, FileText, ClipboardCheck, FileCheck, Check, CheckCircle } from 'lucide-react';
 import CTASection from '@/components/CTASection';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Separator } from "@/components/ui/separator";
+import { initScrollAnimations } from '@/utils/scrollAnimations';
 
 const Compliance = () => {
-  // Set up scroll animations
+  // Set up scroll animations with staggered effect
   useEffect(() => {
-    const revealElements = document.querySelectorAll('.reveal');
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-      });
-    }, { threshold: 0.1 });
-    
-    revealElements.forEach(el => observer.observe(el));
-    
-    return () => {
-      revealElements.forEach(el => observer.unobserve(el));
-    };
+    initScrollAnimations({ 
+      threshold: 0.1,
+      staggerDelay: true,
+      staggerAmount: 120
+    });
   }, []);
 
   return (
@@ -52,13 +44,13 @@ const Compliance = () => {
             
             <div className="flex flex-col sm:flex-row justify-center gap-4 reveal">
               <Button 
-                className="bg-masarna-orange hover:bg-masarna-orange/90 text-white"
+                className="bg-masarna-orange hover:bg-masarna-orange/90 hover:scale-105 transition-all duration-300 text-white"
                 onClick={() => window.location.href = '#contact'}
               >
                 Book a Free Consultation
               </Button>
               <Link to="/services">
-                <Button variant="outline" className="border-masarna-orange text-masarna-orange hover:bg-masarna-orange/10">
+                <Button variant="outline" className="border-masarna-orange text-masarna-orange hover:bg-masarna-orange/10 hover:scale-105 transition-all duration-300">
                   Explore All Services
                 </Button>
               </Link>
@@ -87,130 +79,279 @@ const Compliance = () => {
       {/* Service Categories */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12 reveal">Our Compliance Services</h2>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* Comprehensive Compliance Management */}
-            <Card className="border border-gray-200 shadow-md hover:shadow-lg transition-shadow reveal">
+            <Card className="border border-gray-200 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 h-full reveal">
               <CardHeader className="text-center pb-2">
-                <div className="mx-auto mb-4 p-3 rounded-full bg-blue-50">
+                <div className="mx-auto mb-4 p-3 rounded-full bg-masarna-orange/10">
                   <ShieldCheck className="h-10 w-10 text-masarna-orange" />
                 </div>
                 <CardTitle className="text-xl font-semibold text-masarna-orange">
                   Comprehensive Compliance Management
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+              <Separator className="mx-8 bg-gray-100" />
+              <CardContent className="pt-4 px-8">
                 <p className="text-gray-700 mb-6 text-center">
                   We handle the full spectrum of compliance tasks to ensure your operations remain uninterrupted.
                 </p>
-                <ul className="space-y-3">
+                <ul className="space-y-2.5">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">State & Federal Filings: Managing franchise taxes, state registrations, annual reports, and ongoing compliance requirements.</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <Check className="w-3 h-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-800 text-sm leading-tight">
+                      <span className="font-medium">State & Federal Filings:</span> Managing franchise taxes, state registrations, annual reports, and ongoing compliance requirements.
+                    </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Agency Liaison: Handling communications with state and federal agencies, including audits and regulatory updates.</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <Check className="w-3 h-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-800 text-sm leading-tight">
+                      <span className="font-medium">Agency Liaison:</span> Handling communications with state and federal agencies, including audits and regulatory updates.
+                    </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Document Control: Maintaining an organized system for compliance tracking and instant document retrieval.</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <Check className="w-3 h-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-800 text-sm leading-tight">
+                      <span className="font-medium">Document Control:</span> Maintaining an organized system for compliance tracking and instant document retrieval.
+                    </span>
                   </li>
                 </ul>
               </CardContent>
             </Card>
 
             {/* Risk Mitigation & Regulatory Adherence */}
-            <Card className="border border-gray-200 shadow-md hover:shadow-lg transition-shadow reveal">
+            <Card className="border border-gray-200 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 h-full reveal">
               <CardHeader className="text-center pb-2">
-                <div className="mx-auto mb-4 p-3 rounded-full bg-blue-50">
+                <div className="mx-auto mb-4 p-3 rounded-full bg-masarna-orange/10">
                   <FileCheck className="h-10 w-10 text-masarna-orange" />
                 </div>
                 <CardTitle className="text-xl font-semibold text-masarna-orange">
                   Risk Mitigation & Regulatory Adherence
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+              <Separator className="mx-8 bg-gray-100" />
+              <CardContent className="pt-4 px-8">
                 <p className="text-gray-700 mb-6 text-center">
                   Stay ahead of potential pitfalls with our proactive approach.
                 </p>
-                <ul className="space-y-3">
+                <ul className="space-y-2.5">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Regulatory Monitoring: Keeping abreast of changes in laws and regulations to ensure continuous compliance.</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <Check className="w-3 h-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-800 text-sm leading-tight">
+                      <span className="font-medium">Regulatory Monitoring:</span> Keeping abreast of changes in laws and regulations to ensure continuous compliance.
+                    </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Policy Development: Crafting and updating internal policies to reflect current legal standards.</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <Check className="w-3 h-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-800 text-sm leading-tight">
+                      <span className="font-medium">Policy Development:</span> Crafting and updating internal policies to reflect current legal standards.
+                    </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Training & Awareness: Educating your team on compliance best practices to foster a culture of accountability.</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <Check className="w-3 h-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-800 text-sm leading-tight">
+                      <span className="font-medium">Training & Awareness:</span> Educating your team on compliance best practices to foster a culture of accountability.
+                    </span>
                   </li>
                 </ul>
               </CardContent>
             </Card>
 
             {/* Strategic Compliance Planning */}
-            <Card className="border border-gray-200 shadow-md hover:shadow-lg transition-shadow reveal">
+            <Card className="border border-gray-200 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 h-full reveal">
               <CardHeader className="text-center pb-2">
-                <div className="mx-auto mb-4 p-3 rounded-full bg-blue-50">
+                <div className="mx-auto mb-4 p-3 rounded-full bg-masarna-orange/10">
                   <ClipboardCheck className="h-10 w-10 text-masarna-orange" />
                 </div>
                 <CardTitle className="text-xl font-semibold text-masarna-orange">
                   Strategic Compliance Planning
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+              <Separator className="mx-8 bg-gray-100" />
+              <CardContent className="pt-4 px-8">
                 <p className="text-gray-700 mb-6 text-center">
                   Align your compliance strategy with your business objectives.
                 </p>
-                <ul className="space-y-3">
+                <ul className="space-y-2.5">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Compliance Audits: Conducting thorough reviews to identify and address potential compliance gaps.</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <Check className="w-3 h-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-800 text-sm leading-tight">
+                      <span className="font-medium">Compliance Audits:</span> Conducting thorough reviews to identify and address potential compliance gaps.
+                    </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Reporting & Documentation: Preparing necessary reports and maintaining records to demonstrate compliance.</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <Check className="w-3 h-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-800 text-sm leading-tight">
+                      <span className="font-medium">Reporting & Documentation:</span> Preparing necessary reports and maintaining records to demonstrate compliance.
+                    </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Continuous Improvement: Regularly assessing and enhancing compliance processes for optimal efficiency.</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <Check className="w-3 h-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-800 text-sm leading-tight">
+                      <span className="font-medium">Continuous Improvement:</span> Regularly assessing and enhancing compliance processes for optimal efficiency.
+                    </span>
                   </li>
                 </ul>
               </CardContent>
             </Card>
 
             {/* Documentation & Reporting */}
-            <Card className="border border-gray-200 shadow-md hover:shadow-lg transition-shadow reveal">
+            <Card className="border border-gray-200 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 h-full reveal">
               <CardHeader className="text-center pb-2">
-                <div className="mx-auto mb-4 p-3 rounded-full bg-blue-50">
+                <div className="mx-auto mb-4 p-3 rounded-full bg-masarna-orange/10">
                   <FileText className="h-10 w-10 text-masarna-orange" />
                 </div>
                 <CardTitle className="text-xl font-semibold text-masarna-orange">
                   Documentation & Reporting
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+              <Separator className="mx-8 bg-gray-100" />
+              <CardContent className="pt-4 px-8">
                 <p className="text-gray-700 mb-6 text-center">
                   Maintain accurate records and stay prepared for any regulatory scrutiny.
                 </p>
-                <ul className="space-y-3">
+                <ul className="space-y-2.5">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Record Management: Organizing and maintaining all necessary compliance documentation.</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <Check className="w-3 h-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-800 text-sm leading-tight">
+                      <span className="font-medium">Record Management:</span> Organizing and maintaining all necessary compliance documentation.
+                    </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Compliance Reporting: Creating comprehensive reports for management and stakeholders.</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <Check className="w-3 h-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-800 text-sm leading-tight">
+                      <span className="font-medium">Compliance Reporting:</span> Creating comprehensive reports for management and stakeholders.
+                    </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Audit Support: Providing assistance and documentation during regulatory audits.</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <Check className="w-3 h-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-800 text-sm leading-tight">
+                      <span className="font-medium">Audit Support:</span> Providing assistance and documentation during regulatory audits.
+                    </span>
                   </li>
                 </ul>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+      
+      {/* Compliance Process Timeline */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold mb-10 text-center reveal">Our Compliance Process</h2>
+            
+            <div className="relative">
+              {/* Timeline line */}
+              <div className="absolute left-0 md:left-1/2 transform md:translate-x-[-50%] h-full w-0.5 bg-masarna-orange/20"></div>
+              
+              {/* Timeline steps */}
+              <div className="space-y-12 relative">
+                {/* Step 1 */}
+                <div className="flex flex-col md:flex-row items-center md:items-start reveal">
+                  <div className="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 mt-6 md:mt-0">
+                    <h3 className="font-semibold text-lg mb-2 text-masarna-orange">Initial Assessment</h3>
+                    <p className="text-gray-700 text-sm">We evaluate your current compliance status and identify areas that need attention.</p>
+                  </div>
+                  <div className="z-10 order-1 md:order-2">
+                    <div className="w-10 h-10 rounded-full bg-masarna-orange/10 border-4 border-white flex items-center justify-center shadow-sm">
+                      <span className="text-masarna-orange font-semibold">1</span>
+                    </div>
+                  </div>
+                  <div className="md:w-1/2 md:pl-12 order-3 mt-6 md:mt-0"></div>
+                </div>
+                
+                {/* Step 2 */}
+                <div className="flex flex-col md:flex-row items-center md:items-start reveal">
+                  <div className="md:w-1/2 md:pr-12 order-2 mt-6 md:mt-0"></div>
+                  <div className="z-10 order-1">
+                    <div className="w-10 h-10 rounded-full bg-masarna-orange/10 border-4 border-white flex items-center justify-center shadow-sm">
+                      <span className="text-masarna-orange font-semibold">2</span>
+                    </div>
+                  </div>
+                  <div className="md:w-1/2 md:pl-12 md:text-left order-3 mt-6 md:mt-0">
+                    <h3 className="font-semibold text-lg mb-2 text-masarna-orange">Strategy Development</h3>
+                    <p className="text-gray-700 text-sm">We create a tailored compliance strategy aligned with your business goals.</p>
+                  </div>
+                </div>
+                
+                {/* Step 3 */}
+                <div className="flex flex-col md:flex-row items-center md:items-start reveal">
+                  <div className="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 mt-6 md:mt-0">
+                    <h3 className="font-semibold text-lg mb-2 text-masarna-orange">Implementation</h3>
+                    <p className="text-gray-700 text-sm">We execute the strategy, establishing systems, procedures, and documentation.</p>
+                  </div>
+                  <div className="z-10 order-1 md:order-2">
+                    <div className="w-10 h-10 rounded-full bg-masarna-orange/10 border-4 border-white flex items-center justify-center shadow-sm">
+                      <span className="text-masarna-orange font-semibold">3</span>
+                    </div>
+                  </div>
+                  <div className="md:w-1/2 md:pl-12 order-3 mt-6 md:mt-0"></div>
+                </div>
+                
+                {/* Step 4 */}
+                <div className="flex flex-col md:flex-row items-center md:items-start reveal">
+                  <div className="md:w-1/2 md:pr-12 order-2 mt-6 md:mt-0"></div>
+                  <div className="z-10 order-1">
+                    <div className="w-10 h-10 rounded-full bg-masarna-orange/10 border-4 border-white flex items-center justify-center shadow-sm">
+                      <span className="text-masarna-orange font-semibold">4</span>
+                    </div>
+                  </div>
+                  <div className="md:w-1/2 md:pl-12 md:text-left order-3 mt-6 md:mt-0">
+                    <h3 className="font-semibold text-lg mb-2 text-masarna-orange">Monitoring & Optimization</h3>
+                    <p className="text-gray-700 text-sm">We continuously monitor compliance status and optimize processes for improvement.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Stats Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-bold mb-12 text-center reveal">Compliance Success Metrics</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto reveal">
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 text-center hover:shadow-md transition-shadow">
+              <div className="text-3xl font-bold text-masarna-orange mb-2">98%</div>
+              <p className="text-gray-700 text-sm">Compliance audit success rate for clients</p>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 text-center hover:shadow-md transition-shadow">
+              <div className="text-3xl font-bold text-masarna-orange mb-2">40%</div>
+              <p className="text-gray-700 text-sm">Average reduction in compliance-related costs</p>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 text-center hover:shadow-md transition-shadow">
+              <div className="text-3xl font-bold text-masarna-orange mb-2">75%</div>
+              <p className="text-gray-700 text-sm">Time saved on compliance management tasks</p>
+            </div>
           </div>
         </div>
       </section>
@@ -227,7 +368,7 @@ const Compliance = () => {
                   <ShieldCheck className="h-8 w-8 text-masarna-orange" />
                 </div>
                 <h3 className="text-lg font-medium mb-2">Expertise</h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-sm">
                   Our team brings deep knowledge of regulatory frameworks across various industries.
                 </p>
               </div>
@@ -237,7 +378,7 @@ const Compliance = () => {
                   <ClipboardCheck className="h-8 w-8 text-masarna-orange" />
                 </div>
                 <h3 className="text-lg font-medium mb-2">Efficiency</h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-sm">
                   We streamline compliance processes to reduce administrative burdens.
                 </p>
               </div>
@@ -247,7 +388,7 @@ const Compliance = () => {
                   <FileCheck className="h-8 w-8 text-masarna-orange" />
                 </div>
                 <h3 className="text-lg font-medium mb-2">Reliability</h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-sm">
                   With Masarna, you can trust that your compliance obligations are managed diligently.
                 </p>
               </div>
@@ -265,7 +406,7 @@ const Compliance = () => {
               Let Masarna be your trusted partner in compliance management, so you can concentrate on driving your business forward.
             </p>
             <Button 
-              className="bg-masarna-orange hover:bg-masarna-orange/90 text-white text-lg px-8 py-6"
+              className="bg-masarna-orange hover:bg-masarna-orange/90 hover:scale-105 transition-all duration-300 text-white text-lg px-8 py-6"
               onClick={() => window.location.href = '#contact'}
             >
               Schedule Your Free Compliance Assessment
