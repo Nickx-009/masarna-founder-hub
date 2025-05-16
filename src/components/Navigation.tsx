@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, Users, BarChart3, Shield, Target, TrendingUp, Settings, Briefcase, DollarSign, UserPlus, Sliders, ClipboardList, FileText, BookOpen, BarChart, FileCheck, Calculator, CheckSquare, Video, Mic, Mail, Building, Award } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -83,7 +82,7 @@ const Navigation = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link to="/services/legal" className="flex items-start text-gray-700 hover:text-[#f26522] group">
+                          <Link to="/services/compliance" className="flex items-start text-gray-700 hover:text-[#f26522] group">
                             <Shield className="h-5 w-5 mr-3 mt-0.5 text-[#f26522] group-hover:text-[#f26522]" />
                             <div>
                               <div className="font-medium">Legal & Compliance</div>
@@ -402,7 +401,7 @@ const Navigation = () => {
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/services/legal" className="w-full flex items-center">
+                    <Link to="/services/compliance" className="w-full flex items-center">
                       <Shield className="h-4 w-4 mr-2 text-[#f26522]" />
                       <span>Legal & Compliance</span>
                     </Link>

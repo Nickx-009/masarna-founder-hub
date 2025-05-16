@@ -1,9 +1,8 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
@@ -11,7 +10,6 @@ import NotFound from "./pages/NotFound";
 import Services from "./pages/Services";
 import HumanResources from "./pages/services/HumanResources";
 import Finance from "./pages/services/Finance";
-import Legal from "./pages/services/Legal";
 import Compliance from "./pages/services/Compliance";
 import Strategy from "./pages/services/Strategy";
 import Growth from "./pages/services/Growth";
@@ -60,8 +58,8 @@ const App = () => (
           <Route path="/services" element={<Services />} />
           <Route path="/services/human-resources" element={<HumanResources />} />
           <Route path="/services/finance" element={<Finance />} />
-          <Route path="/services/legal" element={<Legal />} />
           <Route path="/services/compliance" element={<Compliance />} />
+          <Route path="/services/legal" element={<Navigate to="/services/compliance" replace />} />
           <Route path="/services/strategy" element={<Strategy />} />
           <Route path="/services/growth" element={<Growth />} />
           <Route path="/services/operations" element={<Operations />} />
