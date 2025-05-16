@@ -51,6 +51,7 @@ const HowItWorks = () => {
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
             Our seamless process ensures your operations run efficiently while you focus on growing your business.
           </p>
+          <div className="w-24 h-1 bg-[#f26522] mx-auto mt-6"></div>
         </div>
         
         <div className="relative">
