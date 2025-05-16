@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -44,7 +45,7 @@ const Navigation = () => {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link to="/" className="font-bold font-poppins">
           <img
-            src="/lovable-uploads/86c10d18-0b76-47f7-a474-7fafd09629e3.png"
+            src="/lovable-uploads/4cef5407-2fed-4b3a-984a-ed7f0eb1be5c.png"
             alt="Masarna Logo"
             className="h-[42px] w-auto"
             style={{ maxWidth: '180px' }}

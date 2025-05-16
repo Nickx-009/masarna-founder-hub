@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="md:col-span-2">
             <Link to="/" className="block mb-4">
               <img
-                src="/lovable-uploads/86c10d18-0b76-47f7-a474-7fafd09629e3.png"
+                src="/lovable-uploads/4cef5407-2fed-4b3a-984a-ed7f0eb1be5c.png"
                 alt="Masarna Logo"
                 className="h-14 w-auto mb-6"
                 style={{ maxWidth: '180px' }}
