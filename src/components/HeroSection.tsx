@@ -74,6 +74,31 @@ const HeroSection = () => {
               See How It Works
             </Button>
           </div>
+          
+          {/* Trusted By Section */}
+          <div className="mt-16 reveal">
+            <p className="text-sm uppercase font-semibold tracking-wider text-gray-500 mb-6">
+              Trusted by 25+ startups
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+              {/* Placeholder Logos */}
+              <div className="w-24 h-12 bg-gray-100 rounded-md flex items-center justify-center">
+                <div className="text-gray-400 text-xs">Logo 1</div>
+              </div>
+              <div className="w-24 h-12 bg-gray-100 rounded-md flex items-center justify-center">
+                <div className="text-gray-400 text-xs">Logo 2</div>
+              </div>
+              <div className="w-24 h-12 bg-gray-100 rounded-md flex items-center justify-center">
+                <div className="text-gray-400 text-xs">Logo 3</div>
+              </div>
+              <div className="w-24 h-12 bg-gray-100 rounded-md flex items-center justify-center">
+                <div className="text-gray-400 text-xs">Logo 4</div>
+              </div>
+              <div className="w-24 h-12 bg-gray-100 rounded-md flex items-center justify-center hidden md:flex">
+                <div className="text-gray-400 text-xs">Logo 5</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       
