@@ -64,8 +64,6 @@ const HowItWorks = () => {
 
   return (
     <section id="how-it-works" className="py-20 bg-masarna-light-gray relative overflow-hidden">
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-40"></div>
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center mb-16">
