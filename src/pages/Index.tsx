@@ -13,11 +13,21 @@ import { initScrollAnimations } from '@/utils/scrollAnimations';
 
 const Index = () => {
   useEffect(() => {
-    // Initialize scroll animations
-    initScrollAnimations();
+    // Initialize scroll animations with enhanced options
+    initScrollAnimations({
+      threshold: 0.15,
+      staggerDelay: true
+    });
     
     // Update document title
     document.title = "Masarna - Operations-as-a-Service for Startups";
+    
+    // Add a class to enable page transitions
+    document.body.classList.add('page-loaded');
+    
+    return () => {
+      document.body.classList.remove('page-loaded');
+    };
   }, []);
 
   return (

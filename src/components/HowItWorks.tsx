@@ -25,27 +25,49 @@ const steps = [
 
 const HowItWorks = () => {
   const [visibleElements, setVisibleElements] = useState<number[]>([]);
+  const [animatedLine, setAnimatedLine] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         const stepNumber = parseInt(entry.target.getAttribute('data-step') || '0');
         if (entry.isIntersecting && !visibleElements.includes(stepNumber)) {
-          setVisibleElements(prev => [...prev, stepNumber]);
+          // Add a small delay for staggered animation
+          setTimeout(() => {
+            setVisibleElements(prev => [...prev, stepNumber]);
+          }, stepNumber * 150);
         }
       });
     }, { threshold: 0.2 });
     
     document.querySelectorAll('.step-card').forEach(el => observer.observe(el));
+
+    // Animate the line when section is visible
+    const lineObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        setAnimatedLine(true);
+      }
+    }, { threshold: 0.1 });
+    
+    const section = document.getElementById('how-it-works');
+    if (section) {
+      lineObserver.observe(section);
+    }
     
     return () => {
       document.querySelectorAll('.step-card').forEach(el => observer.unobserve(el));
+      if (section) {
+        lineObserver.unobserve(section);
+      }
     };
   }, [visibleElements]);
 
   return (
-    <section id="how-it-works" className="py-20 bg-masarna-light-gray">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="how-it-works" className="py-20 bg-masarna-light-gray relative overflow-hidden">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-40"></div>
+      
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Your Back-Office Ops, Fully Handled</h2>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
@@ -55,8 +77,19 @@ const HowItWorks = () => {
         </div>
         
         <div className="relative">
-          {/* Connection line */}
-          <div className="absolute top-0 bottom-0 left-1/2 w-1 bg-[#f26522]/20 transform -translate-x-1/2 hidden md:block"></div>
+          {/* Connection line with animated gradient effect */}
+          <div className={`absolute top-0 bottom-0 left-1/2 w-1 md:w-1.5 bg-gradient-to-b from-[#f26522]/10 via-[#f26522]/30 to-[#f26522]/10 transform -translate-x-1/2 hidden md:block ${animatedLine ? 'after:absolute after:top-0 after:left-0 after:right-0 after:bottom-0 after:bg-[#f26522]/40 after:animate-pulse' : ''}`}>
+            {/* Animated dots traveling along the line */}
+            <div className={`absolute top-0 h-4 w-4 left-1/2 -translate-x-1/2 -translate-y-1/2 ${animatedLine ? 'animate-bounce' : ''}`}>
+              <div className="h-2 w-2 rounded-full bg-[#f26522] shadow-[0_0_8px_rgba(242,101,34,0.6)]"></div>
+            </div>
+            <div className={`absolute top-1/2 h-4 w-4 left-1/2 -translate-x-1/2 -translate-y-1/2 ${animatedLine ? 'animate-bounce' : ''} delay-700`}>
+              <div className="h-2 w-2 rounded-full bg-[#f26522] shadow-[0_0_8px_rgba(242,101,34,0.6)]"></div>
+            </div>
+            <div className={`absolute bottom-0 h-4 w-4 left-1/2 -translate-x-1/2 translate-y-1/2 ${animatedLine ? 'animate-bounce' : ''} delay-1000`}>
+              <div className="h-2 w-2 rounded-full bg-[#f26522] shadow-[0_0_8px_rgba(242,101,34,0.6)]"></div>
+            </div>
+          </div>
           
           <div className="space-y-12 md:space-y-0">
             {steps.map((step, index) => (
@@ -69,18 +102,24 @@ const HowItWorks = () => {
                 }`}
                 data-step={step.number}
               >
-                {/* Step number circle */}
-                <div className={`absolute top-0 ${
-                  index % 2 === 0 ? 'md:right-0 md:-mr-8 lg:-mr-12' : 'md:left-0 md:-ml-8 lg:-ml-12'
-                } -mt-2 w-16 h-16 rounded-full bg-white shadow-md flex items-center justify-center z-10`}>
-                  <span className="text-[#f26522] text-2xl font-bold">{step.number}</span>
+                {/* Step number circle with enhanced styling */}
+                <div 
+                  className={`absolute top-0 ${
+                    index % 2 === 0 ? 'md:right-0 md:-mr-8 lg:-mr-12' : 'md:left-0 md:-ml-8 lg:-ml-12'
+                  } -mt-2 w-16 h-16 rounded-full bg-white shadow-md flex items-center justify-center z-10 
+                  ${visibleElements.includes(step.number) ? 'shadow-[0_0_15px_rgba(242,101,34,0.2)]' : ''} 
+                  transition-all duration-500 hover:scale-110`}
+                >
+                  <span className={`text-[#f26522] text-2xl font-bold ${visibleElements.includes(step.number) ? 'scale-100' : 'scale-0'} transition-transform duration-500 delay-300`}>
+                    {step.number}
+                  </span>
                 </div>
                 
-                <div className="bg-white rounded-lg shadow-md p-6 md:p-8">
-                  <h3 className="text-xl md:text-2xl font-bold mb-3 text-gray-900">{step.title}</h3>
+                <div className="bg-white rounded-lg shadow-md p-6 md:p-8 transition-all duration-300 hover:shadow-lg hover:border-[#f26522]/20 border border-transparent group">
+                  <h3 className="text-xl md:text-2xl font-bold mb-3 text-gray-900 group-hover:text-[#f26522] transition-colors">{step.title}</h3>
                   <p className="text-gray-700 mb-4">{step.description}</p>
-                  <div className="flex items-start gap-2 text-sm text-gray-600">
-                    <CheckCircle className="w-5 h-5 text-[#f26522] flex-shrink-0 mt-0.5" />
+                  <div className={`flex items-start gap-2 text-sm text-gray-600 ${visibleElements.includes(step.number) ? 'opacity-100' : 'opacity-0'} transition-opacity delay-500 duration-500`}>
+                    <CheckCircle className="w-5 h-5 text-[#f26522] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                     <p>{step.details}</p>
                   </div>
                 </div>
