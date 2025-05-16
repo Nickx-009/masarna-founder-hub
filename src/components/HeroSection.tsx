@@ -75,10 +75,10 @@ const HeroSection = () => {
             </Button>
           </div>
           
-          {/* Trusted By Section */}
+          {/* Trusted By Section - Updated with new text */}
           <div className="mt-16 reveal">
             <p className="text-sm uppercase font-semibold tracking-wider text-gray-500 mb-6">
-              Trusted by 25+ startups
+              Leading investors emphasize the strategic value of delegating operations to unlock leadership capacity
             </p>
             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
               {/* Placeholder Logos */}
