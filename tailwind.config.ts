@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -64,6 +65,7 @@ export default {
 				},
 				masarna: {
 					teal: '#0C7489',
+					orange: '#f26522',
 					gray: '#f5f5f5',
 					'dark-gray': '#333333',
 					'light-gray': '#f9f9f9',

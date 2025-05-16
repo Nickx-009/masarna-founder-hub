@@ -1,3 +1,4 @@
+
 import { Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -9,7 +10,7 @@ const Footer = () => {
           <div className="md:col-span-2">
             <Link to="/" className="block mb-4">
               <img
-                src="/lovable-uploads/4cef5407-2fed-4b3a-984a-ed7f0eb1be5c.png"
+                src="/lovable-uploads/5f95107d-6e25-46ce-aadd-db64bcedb580.png"
                 alt="Masarna Logo"
                 className="h-20 w-auto mb-6"
                 style={{ maxWidth: '240px' }}
@@ -20,7 +21,7 @@ const Footer = () => {
               We handle the operational details so you can focus on growth.
             </p>
             <div className="flex items-center">
-              <Mail className="w-5 h-5 mr-2 text-masarna-teal" />
+              <Mail className="w-5 h-5 mr-2 text-[#f26522]" />
               <a href="mailto:hello@masarna.com" className="text-gray-300 hover:text-white transition-colors">
                 hello@masarna.com
               </a>

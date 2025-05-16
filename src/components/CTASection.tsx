@@ -23,7 +23,7 @@ const CTASection = () => {
   return (
     <section 
       id="contact" 
-      className={`py-20 bg-gradient-to-br from-masarna-teal to-masarna-teal/80 text-white transition-all duration-1000 ${
+      className={`py-20 bg-gradient-to-br from-[#f26522] to-[#f26522]/80 text-white transition-all duration-1000 ${
         isVisible ? 'opacity-100' : 'opacity-90'
       }`}
     >
@@ -39,7 +39,7 @@ const CTASection = () => {
           </p>
           
           <Button 
-            className="bg-white text-masarna-teal hover:bg-gray-100 px-8 py-6 rounded-lg text-lg shadow-lg"
+            className="bg-white text-[#f26522] hover:bg-gray-100 px-8 py-6 rounded-lg text-lg shadow-lg"
             onClick={() => console.log("CTA button clicked")}
           >
             Book Your Free Ops Assessment

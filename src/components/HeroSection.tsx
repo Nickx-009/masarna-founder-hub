@@ -44,7 +44,7 @@ const HeroSection = () => {
             Operational Excellence for <br /> Ambitious Founders
           </h1>
           
-          <h2 className="text-xl md:text-2xl text-masarna-teal font-medium mb-8">
+          <h2 className="text-xl md:text-2xl text-[#f26522] font-medium mb-8">
             <TypewriterText 
               texts={typewriterTexts}
               className="min-h-[1.5em] inline-block"
@@ -61,14 +61,14 @@ const HeroSection = () => {
           
           <div className="flex flex-col sm:flex-row justify-center gap-4 reveal" ref={revealRef}>
             <Button 
-              className="bg-masarna-teal hover:bg-masarna-teal/90 text-white px-8 py-6 rounded-lg text-lg"
+              className="bg-[#f26522] hover:bg-[#f26522]/90 text-white px-8 py-6 rounded-lg text-lg"
               onClick={() => window.location.href = '#contact'}
             >
               Book Your Free Ops Assessment
             </Button>
             <Button 
               variant="outline" 
-              className="border-masarna-teal text-masarna-teal hover:bg-masarna-teal/10 px-8 py-6 rounded-lg text-lg"
+              className="border-[#f26522] text-[#f26522] hover:bg-[#f26522]/10 px-8 py-6 rounded-lg text-lg"
               onClick={() => window.location.href = '#how-it-works'}
             >
               See How It Works

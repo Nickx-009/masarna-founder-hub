@@ -45,7 +45,7 @@ const Navigation = () => {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link to="/" className="font-bold font-poppins">
           <img
-            src="/lovable-uploads/4cef5407-2fed-4b3a-984a-ed7f0eb1be5c.png"
+            src="/lovable-uploads/5f95107d-6e25-46ce-aadd-db64bcedb580.png"
             alt="Masarna Logo"
             className="h-[60px] w-auto"
             style={{ maxWidth: '220px' }}
@@ -58,51 +58,51 @@ const Navigation = () => {
             <NavigationMenuList>
               {/* Services Dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-gray-700 hover:text-masarna-teal">Services</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="text-gray-700 hover:text-[#f26522]">Services</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="grid grid-cols-2 gap-3 p-6 w-[500px]">
                     <div>
-                      <h3 className="font-medium text-lg mb-2 text-masarna-teal">Core Services</h3>
+                      <h3 className="font-medium text-lg mb-2 text-[#f26522]">Core Services</h3>
                       <ul className="space-y-2">
                         <li>
-                          <Link to="/services/human-resources" className="block text-gray-700 hover:text-masarna-teal">
+                          <Link to="/services/human-resources" className="block text-gray-700 hover:text-[#f26522]">
                             Human Resources
                           </Link>
                         </li>
                         <li>
-                          <Link to="/services/finance" className="block text-gray-700 hover:text-masarna-teal">
+                          <Link to="/services/finance" className="block text-gray-700 hover:text-[#f26522]">
                             Finance & Operations
                           </Link>
                         </li>
                         <li>
-                          <Link to="/services/legal" className="block text-gray-700 hover:text-masarna-teal">
+                          <Link to="/services/legal" className="block text-gray-700 hover:text-[#f26522]">
                             Legal & Compliance
                           </Link>
                         </li>
                       </ul>
                     </div>
                     <div>
-                      <h3 className="font-medium text-lg mb-2 text-masarna-teal">Specialized Services</h3>
+                      <h3 className="font-medium text-lg mb-2 text-[#f26522]">Specialized Services</h3>
                       <ul className="space-y-2">
                         <li>
-                          <Link to="/services/strategy" className="block text-gray-700 hover:text-masarna-teal">
+                          <Link to="/services/strategy" className="block text-gray-700 hover:text-[#f26522]">
                             Strategy & Planning
                           </Link>
                         </li>
                         <li>
-                          <Link to="/services/growth" className="block text-gray-700 hover:text-masarna-teal">
+                          <Link to="/services/growth" className="block text-gray-700 hover:text-[#f26522]">
                             Growth & Scaling
                           </Link>
                         </li>
                         <li>
-                          <Link to="/services/operations" className="block text-gray-700 hover:text-masarna-teal">
+                          <Link to="/services/operations" className="block text-gray-700 hover:text-[#f26522]">
                             Operations Management
                           </Link>
                         </li>
                       </ul>
                     </div>
                     <div className="col-span-2 mt-4 pt-4 border-t border-gray-100">
-                      <Link to="/services" className="text-masarna-teal hover:underline font-medium">
+                      <Link to="/services" className="text-[#f26522] hover:underline font-medium">
                         View all services →
                       </Link>
                     </div>
@@ -112,51 +112,51 @@ const Navigation = () => {
 
               {/* Solutions Dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-gray-700 hover:text-masarna-teal">Solutions</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="text-gray-700 hover:text-[#f26522]">Solutions</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="grid grid-cols-2 gap-3 p-6 w-[600px]">
                     <div>
-                      <h3 className="font-medium text-lg mb-2 text-masarna-teal">Fractional Leadership</h3>
+                      <h3 className="font-medium text-lg mb-2 text-[#f26522]">Fractional Leadership</h3>
                       <ul className="space-y-2">
                         <li>
-                          <Link to="/solutions/chief-of-staff" className="block text-gray-700 hover:text-masarna-teal">
+                          <Link to="/solutions/chief-of-staff" className="block text-gray-700 hover:text-[#f26522]">
                             Chief of Staff
                           </Link>
                         </li>
                         <li>
-                          <Link to="/solutions/fractional-cfo" className="block text-gray-700 hover:text-masarna-teal">
+                          <Link to="/solutions/fractional-cfo" className="block text-gray-700 hover:text-[#f26522]">
                             Fractional CFO
                           </Link>
                         </li>
                         <li>
-                          <Link to="/solutions/head-of-hr" className="block text-gray-700 hover:text-masarna-teal">
+                          <Link to="/solutions/head-of-hr" className="block text-gray-700 hover:text-[#f26522]">
                             Head of HR
                           </Link>
                         </li>
                       </ul>
                     </div>
                     <div>
-                      <h3 className="font-medium text-lg mb-2 text-masarna-teal">Specialized Roles</h3>
+                      <h3 className="font-medium text-lg mb-2 text-[#f26522]">Specialized Roles</h3>
                       <ul className="space-y-2">
                         <li>
-                          <Link to="/solutions/fractional-recruiter" className="block text-gray-700 hover:text-masarna-teal">
+                          <Link to="/solutions/fractional-recruiter" className="block text-gray-700 hover:text-[#f26522]">
                             Fractional Recruiter
                           </Link>
                         </li>
                         <li>
-                          <Link to="/solutions/operations-manager" className="block text-gray-700 hover:text-masarna-teal">
+                          <Link to="/solutions/operations-manager" className="block text-gray-700 hover:text-[#f26522]">
                             Operations Manager
                           </Link>
                         </li>
                         <li>
-                          <Link to="/solutions/project-manager" className="block text-gray-700 hover:text-masarna-teal">
+                          <Link to="/solutions/project-manager" className="block text-gray-700 hover:text-[#f26522]">
                             Project Manager
                           </Link>
                         </li>
                       </ul>
                     </div>
                     <div className="col-span-2 mt-4 pt-4 border-t border-gray-100">
-                      <Link to="/solutions" className="text-masarna-teal hover:underline font-medium">
+                      <Link to="/solutions" className="text-[#f26522] hover:underline font-medium">
                         All leadership solutions →
                       </Link>
                     </div>
@@ -166,86 +166,86 @@ const Navigation = () => {
 
               {/* Resources Dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-gray-700 hover:text-masarna-teal">Resources</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="text-gray-700 hover:text-[#f26522]">Resources</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="grid grid-cols-4 gap-3 p-6 w-[900px]">
                     <div>
-                      <h3 className="font-medium text-lg mb-2 text-masarna-teal">Knowledge Center</h3>
+                      <h3 className="font-medium text-lg mb-2 text-[#f26522]">Knowledge Center</h3>
                       <ul className="space-y-2">
                         <li>
-                          <Link to="/resources/blog" className="block text-gray-700 hover:text-masarna-teal">
+                          <Link to="/resources/blog" className="block text-gray-700 hover:text-[#f26522]">
                             Blog
                           </Link>
                         </li>
                         <li>
-                          <Link to="/resources/guides" className="block text-gray-700 hover:text-masarna-teal">
+                          <Link to="/resources/guides" className="block text-gray-700 hover:text-[#f26522]">
                             Startup Guides
                           </Link>
                         </li>
                         <li>
-                          <Link to="/resources/case-studies" className="block text-gray-700 hover:text-masarna-teal">
+                          <Link to="/resources/case-studies" className="block text-gray-700 hover:text-[#f26522]">
                             Case Studies
                           </Link>
                         </li>
                       </ul>
                     </div>
                     <div>
-                      <h3 className="font-medium text-lg mb-2 text-masarna-teal">Tools</h3>
+                      <h3 className="font-medium text-lg mb-2 text-[#f26522]">Tools</h3>
                       <ul className="space-y-2">
                         <li>
-                          <Link to="/resources/templates" className="block text-gray-700 hover:text-masarna-teal">
+                          <Link to="/resources/templates" className="block text-gray-700 hover:text-[#f26522]">
                             Templates
                           </Link>
                         </li>
                         <li>
-                          <Link to="/resources/calculators" className="block text-gray-700 hover:text-masarna-teal">
+                          <Link to="/resources/calculators" className="block text-gray-700 hover:text-[#f26522]">
                             Calculators
                           </Link>
                         </li>
                         <li>
-                          <Link to="/resources/checklists" className="block text-gray-700 hover:text-masarna-teal">
+                          <Link to="/resources/checklists" className="block text-gray-700 hover:text-[#f26522]">
                             Checklists
                           </Link>
                         </li>
                       </ul>
                     </div>
                     <div>
-                      <h3 className="font-medium text-lg mb-2 text-masarna-teal">Learn</h3>
+                      <h3 className="font-medium text-lg mb-2 text-[#f26522]">Learn</h3>
                       <ul className="space-y-2">
                         <li>
-                          <Link to="/resources/webinars" className="block text-gray-700 hover:text-masarna-teal">
+                          <Link to="/resources/webinars" className="block text-gray-700 hover:text-[#f26522]">
                             Webinars
                           </Link>
                         </li>
                         <li>
-                          <Link to="/resources/podcast" className="block text-gray-700 hover:text-masarna-teal">
+                          <Link to="/resources/podcast" className="block text-gray-700 hover:text-[#f26522]">
                             Podcast
                           </Link>
                         </li>
                         <li>
-                          <Link to="/resources/newsletter" className="block text-gray-700 hover:text-masarna-teal">
+                          <Link to="/resources/newsletter" className="block text-gray-700 hover:text-[#f26522]">
                             Newsletter
                           </Link>
                         </li>
                       </ul>
                     </div>
                     <div>
-                      <h3 className="font-medium text-lg mb-2 text-masarna-teal">Company</h3>
+                      <h3 className="font-medium text-lg mb-2 text-[#f26522]">Company</h3>
                       <ul className="space-y-2">
                         <li>
-                          <Link to="/about-us" className="block text-gray-700 hover:text-masarna-teal">
+                          <Link to="/about-us" className="block text-gray-700 hover:text-[#f26522]">
                             About Us
                           </Link>
                         </li>
                         <li>
-                          <Link to="/career" className="block text-gray-700 hover:text-masarna-teal">
+                          <Link to="/career" className="block text-gray-700 hover:text-[#f26522]">
                             Career
                           </Link>
                         </li>
                       </ul>
                     </div>
                     <div className="col-span-4 mt-4 pt-4 border-t border-gray-100">
-                      <Link to="/resources" className="text-masarna-teal hover:underline font-medium">
+                      <Link to="/resources" className="text-[#f26522] hover:underline font-medium">
                         All resources →
                       </Link>
                     </div>
@@ -256,7 +256,7 @@ const Navigation = () => {
               {/* Pricing (Direct link) - Updated to match other menu items */}
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link to="/pricing" className="text-gray-700 hover:text-masarna-teal transition-colors inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium">
+                  <Link to="/pricing" className="text-gray-700 hover:text-[#f26522] transition-colors inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium">
                     Pricing
                   </Link>
                 </NavigationMenuLink>
@@ -268,7 +268,7 @@ const Navigation = () => {
         {/* Call to Action Button */}
         <div className="hidden md:block">
           <Button 
-            className="bg-masarna-teal hover:bg-masarna-teal/90 text-white rounded-lg" 
+            className="bg-[#f26522] hover:bg-[#f26522]/90 text-white rounded-lg" 
             onClick={() => window.location.href = '#contact'}
           >
             Book Assessment
@@ -310,7 +310,7 @@ const Navigation = () => {
                     <Link to="/services/strategy" className="w-full">Strategy & Planning</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/services" className="w-full font-medium text-masarna-teal">View all services</Link>
+                    <Link to="/services" className="w-full font-medium text-[#f26522]">View all services</Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -337,7 +337,7 @@ const Navigation = () => {
                     <Link to="/solutions/fractional-recruiter" className="w-full">Fractional Recruiter</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/solutions" className="w-full font-medium text-masarna-teal">All solutions</Link>
+                    <Link to="/solutions" className="w-full font-medium text-[#f26522]">All solutions</Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -367,7 +367,7 @@ const Navigation = () => {
                     <Link to="/career" className="w-full">Career</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/resources" className="w-full font-medium text-masarna-teal">All resources</Link>
+                    <Link to="/resources" className="w-full font-medium text-[#f26522]">All resources</Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -376,7 +376,7 @@ const Navigation = () => {
             {/* Mobile Pricing (Direct Link) */}
             <Link 
               to="/pricing" 
-              className="text-gray-700 hover:text-masarna-teal transition-colors py-2 px-4"
+              className="text-gray-700 hover:text-[#f26522] transition-colors py-2 px-4"
               onClick={() => setMobileMenuOpen(false)}
             >
               Pricing
@@ -384,7 +384,7 @@ const Navigation = () => {
             
             {/* Mobile CTA */}
             <Button 
-              className="bg-masarna-teal hover:bg-masarna-teal/90 text-white w-full rounded-lg mt-2" 
+              className="bg-[#f26522] hover:bg-[#f26522]/90 text-white w-full rounded-lg mt-2" 
               onClick={() => {
                 window.location.href = '#contact';
                 setMobileMenuOpen(false);

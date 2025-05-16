@@ -56,7 +56,7 @@ const HowItWorks = () => {
         
         <div className="relative">
           {/* Connection line */}
-          <div className="absolute top-0 bottom-0 left-1/2 w-1 bg-masarna-teal/20 transform -translate-x-1/2 hidden md:block"></div>
+          <div className="absolute top-0 bottom-0 left-1/2 w-1 bg-[#f26522]/20 transform -translate-x-1/2 hidden md:block"></div>
           
           <div className="space-y-12 md:space-y-0">
             {steps.map((step, index) => (
@@ -73,14 +73,14 @@ const HowItWorks = () => {
                 <div className={`absolute top-0 ${
                   index % 2 === 0 ? 'md:right-0 md:-mr-8 lg:-mr-12' : 'md:left-0 md:-ml-8 lg:-ml-12'
                 } -mt-2 w-16 h-16 rounded-full bg-white shadow-md flex items-center justify-center z-10`}>
-                  <span className="text-masarna-teal text-2xl font-bold">{step.number}</span>
+                  <span className="text-[#f26522] text-2xl font-bold">{step.number}</span>
                 </div>
                 
                 <div className="bg-white rounded-lg shadow-md p-6 md:p-8">
                   <h3 className="text-xl md:text-2xl font-bold mb-3 text-gray-900">{step.title}</h3>
                   <p className="text-gray-700 mb-4">{step.description}</p>
                   <div className="flex items-start gap-2 text-sm text-gray-600">
-                    <CheckCircle className="w-5 h-5 text-masarna-teal flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-[#f26522] flex-shrink-0 mt-0.5" />
                     <p>{step.details}</p>
                   </div>
                 </div>
