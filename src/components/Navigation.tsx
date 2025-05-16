@@ -47,8 +47,8 @@ const Navigation = () => {
           <img
             src="/lovable-uploads/86c10d18-0b76-47f7-a474-7fafd09629e3.png"
             alt="Masarna Logo"
-            className="h-10 w-auto"
-            style={{ maxWidth: '180px', maxHeight: '50px' }}
+            className="h-14 w-auto"
+            style={{ maxWidth: '180px' }}
           />
         </Link>
         
