@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Users, Briefcase, Shield, CheckCircle } from 'lucide-react';
+import { UserPlus, DollarSign, FileCheck, Award, Target, TrendingUp, CheckCircle } from 'lucide-react';
 import CTASection from '@/components/CTASection';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -93,7 +93,7 @@ const HumanResources = () => {
             <Card className="border border-gray-200 shadow-md hover:shadow-lg transition-shadow reveal">
               <CardHeader className="text-center pb-2">
                 <div className="mx-auto mb-4 p-3 rounded-full bg-blue-50">
-                  <Users className="h-10 w-10 text-masarna-orange" />
+                  <UserPlus className="h-10 w-10 text-masarna-orange" />
                 </div>
                 <CardTitle className="text-xl font-semibold text-masarna-orange">
                   Employee Lifecycle Management
@@ -128,7 +128,7 @@ const HumanResources = () => {
             <Card className="border border-gray-200 shadow-md hover:shadow-lg transition-shadow reveal">
               <CardHeader className="text-center pb-2">
                 <div className="mx-auto mb-4 p-3 rounded-full bg-blue-50">
-                  <Briefcase className="h-10 w-10 text-masarna-orange" />
+                  <DollarSign className="h-10 w-10 text-masarna-orange" />
                 </div>
                 <CardTitle className="text-xl font-semibold text-masarna-orange">
                   Efficient Payroll Processing
@@ -163,7 +163,7 @@ const HumanResources = () => {
             <Card className="border border-gray-200 shadow-md hover:shadow-lg transition-shadow reveal">
               <CardHeader className="text-center pb-2">
                 <div className="mx-auto mb-4 p-3 rounded-full bg-blue-50">
-                  <Shield className="h-10 w-10 text-masarna-orange" />
+                  <FileCheck className="h-10 w-10 text-masarna-orange" />
                 </div>
                 <CardTitle className="text-xl font-semibold text-masarna-orange">
                   Benefits & Compliance
@@ -206,7 +206,7 @@ const HumanResources = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
               <div className="text-center">
                 <div className="inline-block p-3 bg-masarna-orange/10 rounded-full mb-4">
-                  <Users className="h-8 w-8 text-masarna-orange" />
+                  <Award className="h-8 w-8 text-masarna-orange" />
                 </div>
                 <h3 className="text-lg font-medium mb-2">Expertise</h3>
                 <p className="text-gray-700">
@@ -216,7 +216,7 @@ const HumanResources = () => {
               
               <div className="text-center">
                 <div className="inline-block p-3 bg-masarna-orange/10 rounded-full mb-4">
-                  <Briefcase className="h-8 w-8 text-masarna-orange" />
+                  <Target className="h-8 w-8 text-masarna-orange" />
                 </div>
                 <h3 className="text-lg font-medium mb-2">Employee-Centric</h3>
                 <p className="text-gray-700">
@@ -226,7 +226,7 @@ const HumanResources = () => {
               
               <div className="text-center">
                 <div className="inline-block p-3 bg-masarna-orange/10 rounded-full mb-4">
-                  <Shield className="h-8 w-8 text-masarna-orange" />
+                  <TrendingUp className="h-8 w-8 text-masarna-orange" />
                 </div>
                 <h3 className="text-lg font-medium mb-2">Focus on Growth</h3>
                 <p className="text-gray-700">
