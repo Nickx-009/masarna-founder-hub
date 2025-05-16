@@ -29,7 +29,7 @@ const services = [
       "Risk assessment"
     ],
     icon: Shield,
-    link: "/services/legal"
+    link: "/services/compliance"
   },
   {
     id: 3,

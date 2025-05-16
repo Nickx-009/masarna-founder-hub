@@ -19,7 +19,7 @@ const Services = () => {
     {
       title: 'Legal & Compliance',
       description: 'Navigate legal requirements and ensure compliance.',
-      link: '/services/legal',
+      link: '/services/compliance',
     },
     {
       title: 'Strategy & Planning',

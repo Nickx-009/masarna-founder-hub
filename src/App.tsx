@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -11,6 +12,7 @@ import Services from "./pages/Services";
 import HumanResources from "./pages/services/HumanResources";
 import Finance from "./pages/services/Finance";
 import Legal from "./pages/services/Legal";
+import Compliance from "./pages/services/Compliance";
 import Strategy from "./pages/services/Strategy";
 import Growth from "./pages/services/Growth";
 import Operations from "./pages/services/Operations";
@@ -59,6 +61,7 @@ const App = () => (
           <Route path="/services/human-resources" element={<HumanResources />} />
           <Route path="/services/finance" element={<Finance />} />
           <Route path="/services/legal" element={<Legal />} />
+          <Route path="/services/compliance" element={<Compliance />} />
           <Route path="/services/strategy" element={<Strategy />} />
           <Route path="/services/growth" element={<Growth />} />
           <Route path="/services/operations" element={<Operations />} />
