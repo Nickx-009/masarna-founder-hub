@@ -19,6 +19,30 @@ const HumanResources = () => {
     });
   }, []);
 
+  // HR process steps
+  const processSteps = [
+    {
+      number: "01",
+      title: "Needs Assessment",
+      description: "We analyze your current HR practices and identify areas for improvement."
+    },
+    {
+      number: "02",
+      title: "Strategy Development",
+      description: "We create a tailored HR strategy aligned with your business goals and culture."
+    },
+    {
+      number: "03",
+      title: "Implementation",
+      description: "We execute the strategy, establishing systems, processes, and documentation."
+    },
+    {
+      number: "04",
+      title: "Monitoring & Optimization",
+      description: "We continuously monitor HR performance and optimize processes for improvement."
+    }
+  ];
+
   return (
     <PageLayout title="Human Resources Services" description="Complete HR solutions for startups">
       {/* Hero Section */}
@@ -242,73 +266,33 @@ const HumanResources = () => {
         </div>
       </section>
       
-      {/* HR Process Timeline */}
+      {/* HR Process Timeline - UPDATED to match Finance page */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold mb-10 text-center reveal">Our HR Process</h2>
+            <h2 className="text-3xl font-bold mb-12 text-center reveal">Our HR Process</h2>
             
             <div className="relative">
-              {/* Timeline line */}
-              <div className="absolute left-0 md:left-1/2 transform md:translate-x-[-50%] h-full w-0.5 bg-masarna-orange/20"></div>
+              {/* Connecting Line */}
+              <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 h-full w-px bg-masarna-orange/30 z-0 hidden md:block"></div>
               
-              {/* Timeline steps */}
-              <div className="space-y-12 relative">
-                {/* Step 1 */}
-                <div className="flex flex-col md:flex-row items-center md:items-start reveal">
-                  <div className="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 mt-6 md:mt-0">
-                    <h3 className="font-semibold text-lg mb-2 text-masarna-orange">Needs Assessment</h3>
-                    <p className="text-gray-700 text-sm">We analyze your current HR practices and identify areas for improvement.</p>
-                  </div>
-                  <div className="z-10 order-1 md:order-2">
-                    <div className="w-10 h-10 rounded-full bg-masarna-orange/10 border-4 border-white flex items-center justify-center shadow-sm">
-                      <span className="text-masarna-orange font-semibold">1</span>
+              <div className="space-y-12 md:space-y-0 relative z-10">
+                {processSteps.map((step, index) => (
+                  <div 
+                    key={index} 
+                    className={`flex flex-col md:flex-row items-center md:items-start gap-6 reveal ${
+                      index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse text-right'
+                    }`}
+                  >
+                    <div className="w-12 h-12 rounded-full bg-masarna-orange flex items-center justify-center text-white font-bold text-xl flex-shrink-0 md:mt-0">
+                      {step.number}
+                    </div>
+                    <div className={`md:w-5/12 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                      <h3 className="text-xl font-bold mb-2 text-gray-900">{step.title}</h3>
+                      <p className="text-gray-700">{step.description}</p>
                     </div>
                   </div>
-                  <div className="md:w-1/2 md:pl-12 order-3 mt-6 md:mt-0"></div>
-                </div>
-                
-                {/* Step 2 */}
-                <div className="flex flex-col md:flex-row items-center md:items-start reveal">
-                  <div className="md:w-1/2 md:pr-12 order-2 mt-6 md:mt-0"></div>
-                  <div className="z-10 order-1">
-                    <div className="w-10 h-10 rounded-full bg-masarna-orange/10 border-4 border-white flex items-center justify-center shadow-sm">
-                      <span className="text-masarna-orange font-semibold">2</span>
-                    </div>
-                  </div>
-                  <div className="md:w-1/2 md:pl-12 md:text-left order-3 mt-6 md:mt-0">
-                    <h3 className="font-semibold text-lg mb-2 text-masarna-orange">Strategy Development</h3>
-                    <p className="text-gray-700 text-sm">We create a tailored HR strategy aligned with your business goals and culture.</p>
-                  </div>
-                </div>
-                
-                {/* Step 3 */}
-                <div className="flex flex-col md:flex-row items-center md:items-start reveal">
-                  <div className="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 mt-6 md:mt-0">
-                    <h3 className="font-semibold text-lg mb-2 text-masarna-orange">Implementation</h3>
-                    <p className="text-gray-700 text-sm">We execute the strategy, establishing systems, processes, and documentation.</p>
-                  </div>
-                  <div className="z-10 order-1 md:order-2">
-                    <div className="w-10 h-10 rounded-full bg-masarna-orange/10 border-4 border-white flex items-center justify-center shadow-sm">
-                      <span className="text-masarna-orange font-semibold">3</span>
-                    </div>
-                  </div>
-                  <div className="md:w-1/2 md:pl-12 order-3 mt-6 md:mt-0"></div>
-                </div>
-                
-                {/* Step 4 */}
-                <div className="flex flex-col md:flex-row items-center md:items-start reveal">
-                  <div className="md:w-1/2 md:pr-12 order-2 mt-6 md:mt-0"></div>
-                  <div className="z-10 order-1">
-                    <div className="w-10 h-10 rounded-full bg-masarna-orange/10 border-4 border-white flex items-center justify-center shadow-sm">
-                      <span className="text-masarna-orange font-semibold">4</span>
-                    </div>
-                  </div>
-                  <div className="md:w-1/2 md:pl-12 md:text-left order-3 mt-6 md:mt-0">
-                    <h3 className="font-semibold text-lg mb-2 text-masarna-orange">Monitoring & Optimization</h3>
-                    <p className="text-gray-700 text-sm">We continuously monitor HR performance and optimize processes for improvement.</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
