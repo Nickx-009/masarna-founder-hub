@@ -1,0 +1,90 @@
+
+import React from 'react';
+import PageLayout from '@/components/PageLayout';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+
+const Calculators = () => {
+  const calculatorList = [
+    {
+      title: "Startup Runway Calculator",
+      description: "Determine how long your current funding will last based on your burn rate and revenue projections.",
+      category: "Finance",
+      complexity: "Basic",
+    },
+    {
+      title: "Equity Dilution Calculator",
+      description: "Understand the impact of funding rounds on founder and employee equity ownership.",
+      category: "Finance",
+      complexity: "Advanced",
+    },
+    {
+      title: "Hiring Cost Calculator",
+      description: "Calculate the true cost of hiring new employees, including recruitment, onboarding, and benefits.",
+      category: "HR",
+      complexity: "Intermediate",
+    },
+    {
+      title: "SaaS Unit Economics Calculator",
+      description: "Calculate CAC, LTV, and other critical SaaS metrics to evaluate your business model.",
+      category: "Growth",
+      complexity: "Advanced",
+    },
+    {
+      title: "Operations Efficiency Estimator",
+      description: "Estimate potential time and cost savings from streamlining your operational processes.",
+      category: "Operations",
+      complexity: "Intermediate",
+    },
+    {
+      title: "Compliance Risk Assessment Tool",
+      description: "Evaluate your exposure to regulatory risks based on your business model and location.",
+      category: "Legal",
+      complexity: "Advanced",
+    },
+  ];
+
+  return (
+    <PageLayout title="Calculators" description="Tools to help you make data-driven decisions">
+      <div className="container mx-auto px-4 py-12">
+        <div className="max-w-5xl mx-auto">
+          <h1 className="text-4xl font-bold mb-6">Calculators</h1>
+          <p className="text-lg text-gray-700 mb-12">
+            Make more informed decisions with our specialized calculators designed to provide actionable insights for startup founders and operators.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            {calculatorList.map((calculator, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+                <div className="flex items-center mb-3">
+                  <span className="text-xs font-medium px-2 py-1 bg-masarna-teal/10 text-masarna-teal rounded-full">{calculator.category}</span>
+                  <span className="text-xs text-gray-500 ml-3">{calculator.complexity}</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-gray-800">{calculator.title}</h3>
+                <p className="text-gray-600 mb-4">{calculator.description}</p>
+                <Button variant="outline" className="text-masarna-teal border-masarna-teal hover:bg-masarna-teal/10">
+                  Use Calculator
+                </Button>
+              </div>
+            ))}
+          </div>
+          
+          <div className="bg-masarna-teal/10 p-8 md:p-12 rounded-xl text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Need a custom calculation?</h2>
+            <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+              Our financial and operational experts can help you build custom models and calculations tailored to your specific business needs.
+            </p>
+            <Button 
+              className="bg-masarna-teal hover:bg-masarna-teal/90 text-white"
+              onClick={() => window.location.href = '#contact'}
+            >
+              Request Custom Analysis
+            </Button>
+          </div>
+        </div>
+      </div>
+    </PageLayout>
+  );
+};
+
+export default Calculators;
