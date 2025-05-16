@@ -3,28 +3,20 @@ import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { UserPlus, DollarSign, FileCheck, Award, Target, TrendingUp, CheckCircle } from 'lucide-react';
+import { UserPlus, DollarSign, FileCheck, Award, Target, TrendingUp, CheckCircle, Check } from 'lucide-react';
 import CTASection from '@/components/CTASection';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Separator } from "@/components/ui/separator";
+import { initScrollAnimations } from '@/utils/scrollAnimations';
 
 const HumanResources = () => {
-  // Set up scroll animations
+  // Set up scroll animations with staggered effect
   useEffect(() => {
-    const revealElements = document.querySelectorAll('.reveal');
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-      });
-    }, { threshold: 0.1 });
-    
-    revealElements.forEach(el => observer.observe(el));
-    
-    return () => {
-      revealElements.forEach(el => observer.unobserve(el));
-    };
+    initScrollAnimations({ 
+      threshold: 0.1,
+      staggerDelay: true,
+      staggerAmount: 120
+    });
   }, []);
 
   return (
@@ -53,13 +45,13 @@ const HumanResources = () => {
             
             <div className="flex flex-col sm:flex-row justify-center gap-4 reveal">
               <Button 
-                className="bg-masarna-orange hover:bg-masarna-orange/90 text-white"
+                className="bg-masarna-orange hover:bg-masarna-orange/90 hover:scale-105 transition-all duration-300 text-white"
                 onClick={() => window.location.href = '#contact'}
               >
                 Book a Free Consultation
               </Button>
               <Link to="/services">
-                <Button variant="outline" className="border-masarna-orange text-masarna-orange hover:bg-masarna-orange/10">
+                <Button variant="outline" className="border-masarna-orange text-masarna-orange hover:bg-masarna-orange/10 hover:scale-105 transition-all duration-300">
                   Explore All Services
                 </Button>
               </Link>
@@ -88,111 +80,259 @@ const HumanResources = () => {
       {/* Service Categories */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12 reveal">Our HR Services</h2>
+          
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Employee Lifecycle Management */}
-            <Card className="border border-gray-200 shadow-md hover:shadow-lg transition-shadow reveal">
+            <Card className="border border-gray-200 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 h-full reveal">
               <CardHeader className="text-center pb-2">
-                <div className="mx-auto mb-4 p-3 rounded-full bg-blue-50">
+                <div className="mx-auto mb-4 p-3 rounded-full bg-masarna-orange/10">
                   <UserPlus className="h-10 w-10 text-masarna-orange" />
                 </div>
                 <CardTitle className="text-xl font-semibold text-masarna-orange">
                   Employee Lifecycle Management
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+              <Separator className="mx-8 bg-gray-100" />
+              <CardContent className="pt-4 px-8">
                 <p className="text-gray-700 mb-6 text-center">
                   From onboarding to transitions, we oversee every phase of the employee journey.
                 </p>
-                <ul className="space-y-3">
+                <ul className="space-y-2.5">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Onboarding & Offboarding</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <Check className="w-3 h-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-800 text-sm leading-tight">
+                      <span className="font-medium">Onboarding & Offboarding:</span> Comprehensive processes for smooth transitions.
+                    </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">IT & Systems Setup</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <Check className="w-3 h-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-800 text-sm leading-tight">
+                      <span className="font-medium">IT & Systems Setup:</span> Ensuring new hires have the tools they need.
+                    </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Equity & Compensation</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <Check className="w-3 h-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-800 text-sm leading-tight">
+                      <span className="font-medium">Equity & Compensation:</span> Developing competitive and fair compensation structures.
+                    </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Promotions & Career Development</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <Check className="w-3 h-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-800 text-sm leading-tight">
+                      <span className="font-medium">Promotions & Career Development:</span> Supporting employee growth and advancement.
+                    </span>
                   </li>
                 </ul>
               </CardContent>
             </Card>
 
             {/* Payroll Processing */}
-            <Card className="border border-gray-200 shadow-md hover:shadow-lg transition-shadow reveal">
+            <Card className="border border-gray-200 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 h-full reveal">
               <CardHeader className="text-center pb-2">
-                <div className="mx-auto mb-4 p-3 rounded-full bg-blue-50">
+                <div className="mx-auto mb-4 p-3 rounded-full bg-masarna-orange/10">
                   <DollarSign className="h-10 w-10 text-masarna-orange" />
                 </div>
                 <CardTitle className="text-xl font-semibold text-masarna-orange">
                   Efficient Payroll Processing
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+              <Separator className="mx-8 bg-gray-100" />
+              <CardContent className="pt-4 px-8">
                 <p className="text-gray-700 mb-6 text-center">
                   Accurate and timely payroll management for your entire workforce.
                 </p>
-                <ul className="space-y-3">
+                <ul className="space-y-2.5">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Global Payroll Management</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <Check className="w-3 h-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-800 text-sm leading-tight">
+                      <span className="font-medium">Global Payroll Management:</span> Handling multi-country payroll complexities.
+                    </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Contractor Payments</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <Check className="w-3 h-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-800 text-sm leading-tight">
+                      <span className="font-medium">Contractor Payments:</span> Streamlined processes for freelance and contract work.
+                    </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Bonuses & Incentives</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <Check className="w-3 h-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-800 text-sm leading-tight">
+                      <span className="font-medium">Bonuses & Incentives:</span> Designing and implementing performance-based rewards.
+                    </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Tax Compliance</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <Check className="w-3 h-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-800 text-sm leading-tight">
+                      <span className="font-medium">Tax Compliance:</span> Ensuring adherence to local and international tax laws.
+                    </span>
                   </li>
                 </ul>
               </CardContent>
             </Card>
 
             {/* Benefits Administration */}
-            <Card className="border border-gray-200 shadow-md hover:shadow-lg transition-shadow reveal">
+            <Card className="border border-gray-200 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 h-full reveal">
               <CardHeader className="text-center pb-2">
-                <div className="mx-auto mb-4 p-3 rounded-full bg-blue-50">
+                <div className="mx-auto mb-4 p-3 rounded-full bg-masarna-orange/10">
                   <FileCheck className="h-10 w-10 text-masarna-orange" />
                 </div>
                 <CardTitle className="text-xl font-semibold text-masarna-orange">
                   Benefits & Compliance
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+              <Separator className="mx-8 bg-gray-100" />
+              <CardContent className="pt-4 px-8">
                 <p className="text-gray-700 mb-6 text-center">
                   Navigating the complexities of benefits and regulatory requirements.
                 </p>
-                <ul className="space-y-3">
+                <ul className="space-y-2.5">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Benefits Management</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <Check className="w-3 h-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-800 text-sm leading-tight">
+                      <span className="font-medium">Benefits Management:</span> Selecting and administering competitive benefits packages.
+                    </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Regulatory Compliance</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <Check className="w-3 h-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-800 text-sm leading-tight">
+                      <span className="font-medium">Regulatory Compliance:</span> Staying up-to-date with changing employment laws.
+                    </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Policy Development</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <Check className="w-3 h-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-800 text-sm leading-tight">
+                      <span className="font-medium">Policy Development:</span> Creating clear and effective workplace policies.
+                    </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Training Programs</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <Check className="w-3 h-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-800 text-sm leading-tight">
+                      <span className="font-medium">Training Programs:</span> Developing and implementing effective staff training.
+                    </span>
                   </li>
                 </ul>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+      
+      {/* HR Process Timeline */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold mb-10 text-center reveal">Our HR Process</h2>
+            
+            <div className="relative">
+              {/* Timeline line */}
+              <div className="absolute left-0 md:left-1/2 transform md:translate-x-[-50%] h-full w-0.5 bg-masarna-orange/20"></div>
+              
+              {/* Timeline steps */}
+              <div className="space-y-12 relative">
+                {/* Step 1 */}
+                <div className="flex flex-col md:flex-row items-center md:items-start reveal">
+                  <div className="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 mt-6 md:mt-0">
+                    <h3 className="font-semibold text-lg mb-2 text-masarna-orange">Needs Assessment</h3>
+                    <p className="text-gray-700 text-sm">We analyze your current HR practices and identify areas for improvement.</p>
+                  </div>
+                  <div className="z-10 order-1 md:order-2">
+                    <div className="w-10 h-10 rounded-full bg-masarna-orange/10 border-4 border-white flex items-center justify-center shadow-sm">
+                      <span className="text-masarna-orange font-semibold">1</span>
+                    </div>
+                  </div>
+                  <div className="md:w-1/2 md:pl-12 order-3 mt-6 md:mt-0"></div>
+                </div>
+                
+                {/* Step 2 */}
+                <div className="flex flex-col md:flex-row items-center md:items-start reveal">
+                  <div className="md:w-1/2 md:pr-12 order-2 mt-6 md:mt-0"></div>
+                  <div className="z-10 order-1">
+                    <div className="w-10 h-10 rounded-full bg-masarna-orange/10 border-4 border-white flex items-center justify-center shadow-sm">
+                      <span className="text-masarna-orange font-semibold">2</span>
+                    </div>
+                  </div>
+                  <div className="md:w-1/2 md:pl-12 md:text-left order-3 mt-6 md:mt-0">
+                    <h3 className="font-semibold text-lg mb-2 text-masarna-orange">Strategy Development</h3>
+                    <p className="text-gray-700 text-sm">We create a tailored HR strategy aligned with your business goals and culture.</p>
+                  </div>
+                </div>
+                
+                {/* Step 3 */}
+                <div className="flex flex-col md:flex-row items-center md:items-start reveal">
+                  <div className="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 mt-6 md:mt-0">
+                    <h3 className="font-semibold text-lg mb-2 text-masarna-orange">Implementation</h3>
+                    <p className="text-gray-700 text-sm">We execute the strategy, establishing systems, processes, and documentation.</p>
+                  </div>
+                  <div className="z-10 order-1 md:order-2">
+                    <div className="w-10 h-10 rounded-full bg-masarna-orange/10 border-4 border-white flex items-center justify-center shadow-sm">
+                      <span className="text-masarna-orange font-semibold">3</span>
+                    </div>
+                  </div>
+                  <div className="md:w-1/2 md:pl-12 order-3 mt-6 md:mt-0"></div>
+                </div>
+                
+                {/* Step 4 */}
+                <div className="flex flex-col md:flex-row items-center md:items-start reveal">
+                  <div className="md:w-1/2 md:pr-12 order-2 mt-6 md:mt-0"></div>
+                  <div className="z-10 order-1">
+                    <div className="w-10 h-10 rounded-full bg-masarna-orange/10 border-4 border-white flex items-center justify-center shadow-sm">
+                      <span className="text-masarna-orange font-semibold">4</span>
+                    </div>
+                  </div>
+                  <div className="md:w-1/2 md:pl-12 md:text-left order-3 mt-6 md:mt-0">
+                    <h3 className="font-semibold text-lg mb-2 text-masarna-orange">Monitoring & Optimization</h3>
+                    <p className="text-gray-700 text-sm">We continuously monitor HR performance and optimize processes for improvement.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Stats Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-bold mb-12 text-center reveal">HR Success Metrics</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto reveal">
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 text-center hover:shadow-md transition-shadow">
+              <div className="text-3xl font-bold text-masarna-orange mb-2">90%</div>
+              <p className="text-gray-700 text-sm">Improvement in employee onboarding satisfaction</p>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 text-center hover:shadow-md transition-shadow">
+              <div className="text-3xl font-bold text-masarna-orange mb-2">35%</div>
+              <p className="text-gray-700 text-sm">Average reduction in HR administrative time</p>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 text-center hover:shadow-md transition-shadow">
+              <div className="text-3xl font-bold text-masarna-orange mb-2">45%</div>
+              <p className="text-gray-700 text-sm">Increase in employee retention for our clients</p>
+            </div>
           </div>
         </div>
       </section>
@@ -209,7 +349,7 @@ const HumanResources = () => {
                   <Award className="h-8 w-8 text-masarna-orange" />
                 </div>
                 <h3 className="text-lg font-medium mb-2">Expertise</h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-sm">
                   Our team stays abreast of evolving HR practices to serve you better.
                 </p>
               </div>
@@ -219,7 +359,7 @@ const HumanResources = () => {
                   <Target className="h-8 w-8 text-masarna-orange" />
                 </div>
                 <h3 className="text-lg font-medium mb-2">Employee-Centric</h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-sm">
                   We prioritize your team's well-being and satisfaction above all.
                 </p>
               </div>
@@ -229,7 +369,7 @@ const HumanResources = () => {
                   <TrendingUp className="h-8 w-8 text-masarna-orange" />
                 </div>
                 <h3 className="text-lg font-medium mb-2">Focus on Growth</h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-sm">
                   By handling HR intricacies, we free you to concentrate on scaling your business.
                 </p>
               </div>
@@ -247,7 +387,7 @@ const HumanResources = () => {
               Let Masarna be your trusted partner in human resources, so you can focus on what you do best—growing your organization.
             </p>
             <Button 
-              className="bg-masarna-orange hover:bg-masarna-orange/90 text-white text-lg px-8 py-6"
+              className="bg-masarna-orange hover:bg-masarna-orange/90 hover:scale-105 transition-all duration-300 text-white text-lg px-8 py-6"
               onClick={() => window.location.href = '#contact'}
             >
               Schedule Your Free HR Assessment
