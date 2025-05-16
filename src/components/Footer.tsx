@@ -1,4 +1,3 @@
-
 import { Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -12,8 +11,8 @@ const Footer = () => {
               <img
                 src="/lovable-uploads/4cef5407-2fed-4b3a-984a-ed7f0eb1be5c.png"
                 alt="Masarna Logo"
-                className="h-14 w-auto mb-6"
-                style={{ maxWidth: '180px' }}
+                className="h-20 w-auto mb-6"
+                style={{ maxWidth: '240px' }}
               />
             </Link>
             <p className="text-gray-300 mb-6 max-w-md">
