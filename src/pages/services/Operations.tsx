@@ -1,119 +1,408 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { Settings, ClipboardList, Cog, BarChart, CheckCircle, ArrowRight } from 'lucide-react';
+import CTASection from '@/components/CTASection';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { initScrollAnimations } from '@/utils/scrollAnimations';
 
 const Operations = () => {
+  // Set up scroll animations
+  useEffect(() => {
+    initScrollAnimations({ staggerDelay: true, staggerAmount: 100 });
+  }, []);
+
+  // Operations process steps
+  const processSteps = [
+    {
+      number: "01",
+      title: "Discovery",
+      description: "We analyze your current operations and identify improvement areas"
+    },
+    {
+      number: "02",
+      title: "Design",
+      description: "We design optimized processes and systems for your specific needs"
+    },
+    {
+      number: "03",
+      title: "Implementation",
+      description: "We implement new processes, tools, and systems across your organization"
+    },
+    {
+      number: "04",
+      title: "Optimization",
+      description: "We continuously monitor and refine operations for maximum efficiency"
+    }
+  ];
+
+  // Success metrics
+  const metrics = [
+    { value: "35%", label: "Average operational cost reduction" },
+    { value: "68%", label: "Increase in operational efficiency" },
+    { value: "42%", label: "Reduction in process completion time" },
+    { value: "91%", label: "Of clients report improved scalability" }
+  ];
+
   return (
     <PageLayout title="Operations Services" description="Operations management services for startups">
-      <div className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold mb-6">Operations Management Services</h1>
-          <p className="text-lg text-gray-700 mb-8">
-            Our operations management services help startups streamline their operations, improve efficiency, 
-            and build scalable processes to support sustainable growth.
-          </p>
-          
-          <div className="bg-white p-8 rounded-lg shadow-md border border-gray-200 mb-12">
-            <h2 className="text-2xl font-semibold mb-4 text-masarna-teal">Our Operations Services Include:</h2>
-            <ul className="space-y-3 mb-6">
-              <li className="flex items-start">
-                <svg 
-                  className="h-5 w-5 mr-2 mt-0.5 text-masarna-teal" 
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-gray-700">Business process optimization</span>
-              </li>
-              <li className="flex items-start">
-                <svg 
-                  className="h-5 w-5 mr-2 mt-0.5 text-masarna-teal" 
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-gray-700">Workflow design and implementation</span>
-              </li>
-              <li className="flex items-start">
-                <svg 
-                  className="h-5 w-5 mr-2 mt-0.5 text-masarna-teal" 
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-gray-700">Systems selection and integration</span>
-              </li>
-              <li className="flex items-start">
-                <svg 
-                  className="h-5 w-5 mr-2 mt-0.5 text-masarna-teal" 
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-gray-700">Project management</span>
-              </li>
-              <li className="flex items-start">
-                <svg 
-                  className="h-5 w-5 mr-2 mt-0.5 text-masarna-teal" 
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-gray-700">SOP development and documentation</span>
-              </li>
-              <li className="flex items-start">
-                <svg 
-                  className="h-5 w-5 mr-2 mt-0.5 text-masarna-teal" 
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-gray-700">Vendor management and optimization</span>
-              </li>
-            </ul>
-          </div>
-          
-          <div className="bg-masarna-teal/10 p-8 rounded-lg mt-12">
-            <h3 className="text-xl font-semibold mb-4">Ready to optimize your operations?</h3>
-            <p className="text-gray-700 mb-6">
-              Schedule a free consultation to discuss your specific operational needs and how Masarna can help.
+      {/* Hero Section */}
+      <section className="relative pt-20 pb-16 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
+        {/* Background grid pattern */}
+        <div className="absolute inset-0 z-0">
+          <div className="w-full h-full bg-grid-pattern-dynamic"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 md:px-6 z-10 relative">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 reveal">
+              Operations Management Services
+            </h1>
+            
+            <h2 className="text-xl md:text-2xl text-masarna-orange font-medium mb-6 reveal">
+              Streamline Your Processes, Maximize Your Efficiency
+            </h2>
+            
+            <p className="text-lg text-gray-700 mb-8 reveal">
+              Our operations management services help startups build scalable, efficient processes
+              that support growth while reducing operational friction and costs.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            
+            <div className="flex flex-col sm:flex-row justify-center gap-4 reveal">
               <Button 
-                className="bg-masarna-teal hover:bg-masarna-teal/90 text-white"
+                className="bg-masarna-orange hover:bg-masarna-orange/90 text-white"
                 onClick={() => window.location.href = '#contact'}
               >
-                Schedule Consultation
+                Book a Free Consultation
               </Button>
               <Link to="/services">
-                <Button variant="outline" className="border-masarna-teal text-masarna-teal hover:bg-masarna-teal/10">
-                  View All Services
+                <Button variant="outline" className="border-masarna-orange text-masarna-orange hover:bg-masarna-orange/10">
+                  Explore All Services
                 </Button>
               </Link>
             </div>
           </div>
         </div>
-      </div>
+        
+        {/* Decorative shape */}
+        <div className="absolute bottom-0 left-0 w-full h-16 bg-white" style={{
+          clipPath: 'polygon(0 100%, 100% 100%, 100% 0)'
+        }}></div>
+      </section>
+
+      {/* Introduction Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <p className="text-lg text-gray-700 mb-6 reveal">
+              At Masarna, we understand that efficient operations are the backbone of any successful startup.
+              Our team specializes in designing and implementing scalable processes that grow with your business
+              while maximizing efficiency and reducing costs.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Categories */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center reveal">Our Operations Services</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Process Optimization */}
+            <Card className="border border-gray-200 shadow-md hover:shadow-lg transition-shadow hover:scale-[1.02] reveal service-card">
+              <CardHeader className="text-center pb-2">
+                <div className="mx-auto mb-4 p-3 rounded-full bg-masarna-orange/10">
+                  <Settings className="h-10 w-10 text-masarna-orange" />
+                </div>
+                <CardTitle className="text-xl font-semibold text-masarna-orange">
+                  Business Process Optimization
+                </CardTitle>
+              </CardHeader>
+              <div className="w-full h-px bg-gray-200 my-2"></div>
+              <CardContent>
+                <p className="text-gray-700 mb-6 text-center">
+                  We analyze and optimize your core business processes to improve efficiency and reduce costs.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <CheckCircle className="h-3 w-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-700">
+                      <span className="font-medium">Process</span> Mapping & Analysis
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <CheckCircle className="h-3 w-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-700">
+                      <span className="font-medium">Bottleneck</span> Identification & Elimination
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <CheckCircle className="h-3 w-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-700">
+                      <span className="font-medium">Workflow</span> Redesign & Improvement
+                    </span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Systems Integration */}
+            <Card className="border border-gray-200 shadow-md hover:shadow-lg transition-shadow hover:scale-[1.02] reveal service-card">
+              <CardHeader className="text-center pb-2">
+                <div className="mx-auto mb-4 p-3 rounded-full bg-masarna-orange/10">
+                  <Cog className="h-10 w-10 text-masarna-orange" />
+                </div>
+                <CardTitle className="text-xl font-semibold text-masarna-orange">
+                  Systems Selection & Integration
+                </CardTitle>
+              </CardHeader>
+              <div className="w-full h-px bg-gray-200 my-2"></div>
+              <CardContent>
+                <p className="text-gray-700 mb-6 text-center">
+                  We help you select and implement the right tools and systems to support your operations.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <CheckCircle className="h-3 w-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-700">
+                      <span className="font-medium">Technology</span> Needs Assessment
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <CheckCircle className="h-3 w-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-700">
+                      <span className="font-medium">Software</span> Selection & Implementation
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <CheckCircle className="h-3 w-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-700">
+                      <span className="font-medium">System</span> Integration & Automation
+                    </span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Documentation */}
+            <Card className="border border-gray-200 shadow-md hover:shadow-lg transition-shadow hover:scale-[1.02] reveal service-card">
+              <CardHeader className="text-center pb-2">
+                <div className="mx-auto mb-4 p-3 rounded-full bg-masarna-orange/10">
+                  <ClipboardList className="h-10 w-10 text-masarna-orange" />
+                </div>
+                <CardTitle className="text-xl font-semibold text-masarna-orange">
+                  SOP Development & Documentation
+                </CardTitle>
+              </CardHeader>
+              <div className="w-full h-px bg-gray-200 my-2"></div>
+              <CardContent>
+                <p className="text-gray-700 mb-6 text-center">
+                  We create clear, actionable standard operating procedures to ensure consistency and quality.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <CheckCircle className="h-3 w-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-700">
+                      <span className="font-medium">Process</span> Documentation & Standardization
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <CheckCircle className="h-3 w-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-700">
+                      <span className="font-medium">Training</span> Material Development
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <CheckCircle className="h-3 w-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-700">
+                      <span className="font-medium">Knowledge</span> Management Systems
+                    </span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Operational Metrics */}
+            <Card className="border border-gray-200 shadow-md hover:shadow-lg transition-shadow hover:scale-[1.02] reveal service-card">
+              <CardHeader className="text-center pb-2">
+                <div className="mx-auto mb-4 p-3 rounded-full bg-masarna-orange/10">
+                  <BarChart className="h-10 w-10 text-masarna-orange" />
+                </div>
+                <CardTitle className="text-xl font-semibold text-masarna-orange">
+                  Operational Metrics & Reporting
+                </CardTitle>
+              </CardHeader>
+              <div className="w-full h-px bg-gray-200 my-2"></div>
+              <CardContent>
+                <p className="text-gray-700 mb-6 text-center">
+                  We establish key operational metrics and reporting systems to track and improve performance.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <CheckCircle className="h-3 w-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-700">
+                      <span className="font-medium">KPI</span> Development & Tracking
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <CheckCircle className="h-3 w-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-700">
+                      <span className="font-medium">Dashboard</span> Creation & Implementation
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <CheckCircle className="h-3 w-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-700">
+                      <span className="font-medium">Performance</span> Analysis & Reporting
+                    </span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+      
+      {/* Process Timeline Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-bold mb-12 text-center reveal">Our Operations Process</h2>
+            
+            <div className="relative">
+              {/* Connecting Line */}
+              <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 h-full w-px bg-masarna-orange/30 z-0 hidden md:block"></div>
+              
+              <div className="space-y-12 md:space-y-0 relative z-10">
+                {processSteps.map((step, index) => (
+                  <div 
+                    key={index} 
+                    className={`flex flex-col md:flex-row items-center md:items-start gap-6 reveal ${
+                      index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse text-right'
+                    }`}
+                  >
+                    <div className="w-12 h-12 rounded-full bg-masarna-orange flex items-center justify-center text-white font-bold text-xl flex-shrink-0 md:mt-0">
+                      {step.number}
+                    </div>
+                    <div className={`md:w-5/12 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                      <h3 className="text-xl font-bold mb-2 text-gray-900">{step.title}</h3>
+                      <p className="text-gray-700">{step.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Success Metrics Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-12 text-center reveal">Our Impact</h2>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+              {metrics.map((metric, index) => (
+                <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 text-center reveal">
+                  <div className="text-3xl md:text-4xl font-bold text-masarna-orange mb-2">{metric.value}</div>
+                  <p className="text-gray-700 text-sm">{metric.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Why Choose Masarna */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-semibold mb-8 text-center reveal">Why Choose Masarna for Operations</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
+              <div className="text-center">
+                <div className="inline-block p-3 bg-masarna-orange/10 rounded-full mb-4">
+                  <Settings className="h-8 w-8 text-masarna-orange" />
+                </div>
+                <h3 className="text-lg font-medium mb-2">Experience</h3>
+                <p className="text-gray-700">
+                  Our team brings extensive experience optimizing operations across diverse industries.
+                </p>
+              </div>
+              
+              <div className="text-center">
+                <div className="inline-block p-3 bg-masarna-orange/10 rounded-full mb-4">
+                  <Cog className="h-8 w-8 text-masarna-orange" />
+                </div>
+                <h3 className="text-lg font-medium mb-2">Practical</h3>
+                <p className="text-gray-700">
+                  We develop practical solutions that work for your specific business context.
+                </p>
+              </div>
+              
+              <div className="text-center">
+                <div className="inline-block p-3 bg-masarna-orange/10 rounded-full mb-4">
+                  <BarChart className="h-8 w-8 text-masarna-orange" />
+                </div>
+                <h3 className="text-lg font-medium mb-2">Results-Focused</h3>
+                <p className="text-gray-700">
+                  Our approach is centered on delivering measurable operational improvements.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Final CTA Section */}
+      <section className="bg-masarna-orange/10 py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center reveal">
+            <h2 className="text-2xl font-bold mb-4">Ready to optimize your operations?</h2>
+            <p className="text-lg text-gray-700 mb-8">
+              Let Masarna help you build efficient, scalable operations that support your business growth.
+            </p>
+            <Button 
+              className="bg-masarna-orange hover:bg-masarna-orange/90 text-white text-lg px-8 py-6 group"
+              onClick={() => window.location.href = '#contact'}
+            >
+              Schedule Your Free Operations Assessment
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </div>
+        </div>
+      </section>
+      
+      {/* Use the shared CTA Section component */}
+      <CTASection />
     </PageLayout>
   );
 };
