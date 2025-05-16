@@ -43,8 +43,13 @@ const Navigation = () => {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link to="/" className="text-2xl font-bold text-masarna-teal font-poppins">
-          Masarna
+        <Link to="/" className="font-bold font-poppins">
+          <img
+            src="/lovable-uploads/86c10d18-0b76-47f7-a474-7fafd09629e3.png"
+            alt="Masarna Logo"
+            className="h-10 w-auto"
+            style={{ maxWidth: '180px', maxHeight: '50px' }}
+          />
         </Link>
         
         {/* Desktop Navigation with Mega Menu */}

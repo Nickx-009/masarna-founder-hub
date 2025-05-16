@@ -1,5 +1,6 @@
 
 import { Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -7,7 +8,14 @@ const Footer = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">Masarna</h3>
+            <Link to="/" className="block mb-4">
+              <img
+                src="/lovable-uploads/86c10d18-0b76-47f7-a474-7fafd09629e3.png"
+                alt="Masarna Logo"
+                className="h-10 w-auto mb-6"
+                style={{ maxWidth: '180px', maxHeight: '50px' }}
+              />
+            </Link>
             <p className="text-gray-300 mb-6 max-w-md">
               Operations-as-a-Service for ambitious founders and startups.
               We handle the operational details so you can focus on growth.
