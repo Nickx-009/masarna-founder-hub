@@ -3,29 +3,48 @@ import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { DollarSign, BarChart, FileText, Calculator, CheckCircle } from 'lucide-react';
+import { DollarSign, BarChart, FileText, Calculator, CheckCircle, ArrowRight } from 'lucide-react';
 import CTASection from '@/components/CTASection';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { initScrollAnimations } from '@/utils/scrollAnimations';
 
 const Finance = () => {
   // Set up scroll animations
   useEffect(() => {
-    const revealElements = document.querySelectorAll('.reveal');
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-      });
-    }, { threshold: 0.1 });
-    
-    revealElements.forEach(el => observer.observe(el));
-    
-    return () => {
-      revealElements.forEach(el => observer.unobserve(el));
-    };
+    initScrollAnimations({ staggerDelay: true, staggerAmount: 100 });
   }, []);
+
+  // Financial service process steps
+  const processSteps = [
+    {
+      number: "01",
+      title: "Assessment",
+      description: "We analyze your current financial operations and processes"
+    },
+    {
+      number: "02",
+      title: "Strategy",
+      description: "We develop a tailored financial management strategy for your needs"
+    },
+    {
+      number: "03",
+      title: "Implementation",
+      description: "We deploy systems and processes for optimal financial operations"
+    },
+    {
+      number: "04",
+      title: "Optimization",
+      description: "We continually refine and improve your financial processes"
+    }
+  ];
+
+  // Success metrics
+  const metrics = [
+    { value: "40%", label: "Average reduction in financial management costs" },
+    { value: "65%", label: "Faster monthly close process" },
+    { value: "89%", label: "Of clients report improved financial clarity" },
+    { value: "3.5x", label: "Return on investment in financial services" }
+  ];
 
   return (
     <PageLayout title="Finance Services" description="Financial management services for startups">
@@ -88,130 +107,235 @@ const Finance = () => {
       {/* Service Categories */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center reveal">Our Finance Services</h2>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* Financial Operations */}
-            <Card className="border border-gray-200 shadow-md hover:shadow-lg transition-shadow reveal">
+            <Card className="border border-gray-200 shadow-md hover:shadow-lg transition-shadow hover:scale-[1.02] reveal service-card">
               <CardHeader className="text-center pb-2">
-                <div className="mx-auto mb-4 p-3 rounded-full bg-blue-50">
+                <div className="mx-auto mb-4 p-3 rounded-full bg-masarna-orange/10">
                   <DollarSign className="h-10 w-10 text-masarna-orange" />
                 </div>
                 <CardTitle className="text-xl font-semibold text-masarna-orange">
                   Comprehensive Financial Operations
                 </CardTitle>
               </CardHeader>
+              <div className="w-full h-px bg-gray-200 my-2"></div>
               <CardContent>
                 <p className="text-gray-700 mb-6 text-center">
                   We handle the complexities of financial management, allowing you to focus on strategic initiatives.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Accounts Payable & Receivable</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <CheckCircle className="h-3 w-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-700">
+                      <span className="font-medium">Accounts Payable</span> & Receivable Management
+                    </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Banking Operations</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <CheckCircle className="h-3 w-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-700">
+                      <span className="font-medium">Banking</span> Operations & Reconciliation
+                    </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Expense Management</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <CheckCircle className="h-3 w-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-700">
+                      <span className="font-medium">Expense</span> Management & Tracking
+                    </span>
                   </li>
                 </ul>
               </CardContent>
             </Card>
 
             {/* Revenue Management */}
-            <Card className="border border-gray-200 shadow-md hover:shadow-lg transition-shadow reveal">
+            <Card className="border border-gray-200 shadow-md hover:shadow-lg transition-shadow hover:scale-[1.02] reveal service-card">
               <CardHeader className="text-center pb-2">
-                <div className="mx-auto mb-4 p-3 rounded-full bg-blue-50">
+                <div className="mx-auto mb-4 p-3 rounded-full bg-masarna-orange/10">
                   <BarChart className="h-10 w-10 text-masarna-orange" />
                 </div>
                 <CardTitle className="text-xl font-semibold text-masarna-orange">
                   Revenue Management & Optimization
                 </CardTitle>
               </CardHeader>
+              <div className="w-full h-px bg-gray-200 my-2"></div>
               <CardContent>
                 <p className="text-gray-700 mb-6 text-center">
                   Ensuring a healthy cash flow is vital. Our services help maintain optimal financial performance.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Billing & Collections</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <CheckCircle className="h-3 w-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-700">
+                      <span className="font-medium">Billing</span> & Collections Optimization
+                    </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Cash Flow Analysis</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <CheckCircle className="h-3 w-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-700">
+                      <span className="font-medium">Cash Flow</span> Analysis & Forecasting
+                    </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Credit Management</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <CheckCircle className="h-3 w-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-700">
+                      <span className="font-medium">Credit</span> Management & Risk Assessment
+                    </span>
                   </li>
                 </ul>
               </CardContent>
             </Card>
 
             {/* Compliance & Reporting */}
-            <Card className="border border-gray-200 shadow-md hover:shadow-lg transition-shadow reveal">
+            <Card className="border border-gray-200 shadow-md hover:shadow-lg transition-shadow hover:scale-[1.02] reveal service-card">
               <CardHeader className="text-center pb-2">
-                <div className="mx-auto mb-4 p-3 rounded-full bg-blue-50">
+                <div className="mx-auto mb-4 p-3 rounded-full bg-masarna-orange/10">
                   <FileText className="h-10 w-10 text-masarna-orange" />
                 </div>
                 <CardTitle className="text-xl font-semibold text-masarna-orange">
                   Compliance & Financial Reporting
                 </CardTitle>
               </CardHeader>
+              <div className="w-full h-px bg-gray-200 my-2"></div>
               <CardContent>
                 <p className="text-gray-700 mb-6 text-center">
                   Stay ahead of regulatory requirements with our expertise in financial reporting and compliance.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Audit Preparation</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <CheckCircle className="h-3 w-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-700">
+                      <span className="font-medium">Audit</span> Preparation & Support
+                    </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Tax Compliance</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <CheckCircle className="h-3 w-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-700">
+                      <span className="font-medium">Tax</span> Compliance & Planning
+                    </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Financial Reporting</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <CheckCircle className="h-3 w-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-700">
+                      <span className="font-medium">Financial</span> Statement Preparation
+                    </span>
                   </li>
                 </ul>
               </CardContent>
             </Card>
 
             {/* Strategic Planning */}
-            <Card className="border border-gray-200 shadow-md hover:shadow-lg transition-shadow reveal">
+            <Card className="border border-gray-200 shadow-md hover:shadow-lg transition-shadow hover:scale-[1.02] reveal service-card">
               <CardHeader className="text-center pb-2">
-                <div className="mx-auto mb-4 p-3 rounded-full bg-blue-50">
+                <div className="mx-auto mb-4 p-3 rounded-full bg-masarna-orange/10">
                   <Calculator className="h-10 w-10 text-masarna-orange" />
                 </div>
                 <CardTitle className="text-xl font-semibold text-masarna-orange">
                   Strategic Financial Planning
                 </CardTitle>
               </CardHeader>
+              <div className="w-full h-px bg-gray-200 my-2"></div>
               <CardContent>
                 <p className="text-gray-700 mb-6 text-center">
                   Align your financial strategies with your business goals for sustainable growth.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Budgeting & Forecasting</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <CheckCircle className="h-3 w-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-700">
+                      <span className="font-medium">Budgeting</span> & Financial Forecasting
+                    </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Financial Analysis</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <CheckCircle className="h-3 w-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-700">
+                      <span className="font-medium">Financial</span> Analysis & Decision Support
+                    </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
-                    <span className="text-gray-700">Investor Relations</span>
+                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                      <CheckCircle className="h-3 w-3 text-masarna-orange" />
+                    </span>
+                    <span className="text-gray-700">
+                      <span className="font-medium">Investor</span> Relations & Fundraising Support
+                    </span>
                   </li>
                 </ul>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+      
+      {/* Process Timeline Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-bold mb-12 text-center reveal">Our Financial Services Process</h2>
+            
+            <div className="relative">
+              {/* Connecting Line */}
+              <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 h-full w-px bg-masarna-orange/30 z-0 hidden md:block"></div>
+              
+              <div className="space-y-12 md:space-y-0 relative z-10">
+                {processSteps.map((step, index) => (
+                  <div 
+                    key={index} 
+                    className={`flex flex-col md:flex-row items-center md:items-start gap-6 reveal ${
+                      index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse text-right'
+                    }`}
+                  >
+                    <div className="w-12 h-12 rounded-full bg-masarna-orange flex items-center justify-center text-white font-bold text-xl flex-shrink-0 md:mt-0">
+                      {step.number}
+                    </div>
+                    <div className={`md:w-5/12 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                      <h3 className="text-xl font-bold mb-2 text-gray-900">{step.title}</h3>
+                      <p className="text-gray-700">{step.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Success Metrics Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-12 text-center reveal">Our Impact</h2>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+              {metrics.map((metric, index) => (
+                <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 text-center reveal">
+                  <div className="text-3xl md:text-4xl font-bold text-masarna-orange mb-2">{metric.value}</div>
+                  <p className="text-gray-700 text-sm">{metric.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -258,7 +382,7 @@ const Finance = () => {
       </section>
       
       {/* Final CTA Section */}
-      <div className="bg-masarna-orange/10 py-16">
+      <section className="bg-masarna-orange/10 py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center reveal">
             <h2 className="text-2xl font-bold mb-4">Ready to optimize your financial operations?</h2>
@@ -266,14 +390,15 @@ const Finance = () => {
               Let Masarna be your trusted partner in financial management, so you can concentrate on driving your business forward.
             </p>
             <Button 
-              className="bg-masarna-orange hover:bg-masarna-orange/90 text-white text-lg px-8 py-6"
+              className="bg-masarna-orange hover:bg-masarna-orange/90 text-white text-lg px-8 py-6 group"
               onClick={() => window.location.href = '#contact'}
             >
               Schedule Your Free Financial Assessment
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
         </div>
-      </div>
+      </section>
       
       {/* Use the shared CTA Section component */}
       <CTASection />
