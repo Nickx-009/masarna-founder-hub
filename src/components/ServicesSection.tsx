@@ -87,7 +87,7 @@ const ServicesSection = () => {
           <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-6">
             We take care of critical operational functions so you can focus on growing your startup.
           </p>
-          <h3 className="text-2xl md:text-3xl font-semibold text-masarna-teal mt-8 mb-12">
+          <h3 className="text-2xl md:text-3xl font-semibold text-masarna-orange mt-8 mb-12">
             Offload ops to your fractional operations team
           </h3>
         </div>
@@ -101,24 +101,24 @@ const ServicesSection = () => {
               }`}
               data-service-id={service.id}
             >
-              <div className="w-16 h-16 mb-6 bg-masarna-teal/10 rounded-full flex items-center justify-center">
-                <service.icon className="w-8 h-8 text-masarna-teal" />
+              <div className="w-16 h-16 mb-6 bg-masarna-orange/10 rounded-full flex items-center justify-center">
+                <service.icon className="w-8 h-8 text-masarna-orange" />
               </div>
               
-              <span className="text-masarna-teal text-sm font-medium">{service.tagline}</span>
+              <span className="text-masarna-orange text-sm font-medium">{service.tagline}</span>
               <h3 className="text-xl font-bold my-3 text-gray-900">{service.title}</h3>
               
               <ul className="space-y-3 my-4 flex-grow">
                 {service.bulletPoints.map((point, index) => (
                   <li key={index} className="flex items-start">
-                    <Check className="w-5 h-5 text-masarna-teal mr-2 mt-0.5 flex-shrink-0" />
+                    <Check className="w-5 h-5 text-masarna-orange mr-2 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700">{point}</span>
                   </li>
                 ))}
               </ul>
               
               <Link to={service.link} className="mt-4 inline-block">
-                <Button variant="link" className="text-masarna-teal p-0 hover:text-masarna-teal/80">
+                <Button variant="link" className="text-masarna-orange p-0 hover:text-masarna-orange/80">
                   Learn more →
                 </Button>
               </Link>

@@ -71,13 +71,13 @@ const Pricing = () => {
               key={index} 
               className={`rounded-xl overflow-hidden shadow-lg border transition-all ${
                 plan.featured 
-                  ? 'border-masarna-teal scale-105 md:scale-110 z-10 bg-white' 
+                  ? 'border-masarna-orange scale-105 md:scale-110 z-10 bg-white' 
                   : 'border-gray-200 bg-white hover:shadow-xl'
               }`}
             >
               <div 
                 className={`p-6 ${
-                  plan.featured ? 'bg-masarna-teal text-white' : 'bg-gray-50 text-masarna-teal'
+                  plan.featured ? 'bg-masarna-orange text-white' : 'bg-gray-50 text-masarna-orange'
                 }`}
               >
                 <h3 className="text-xl font-bold">{plan.name}</h3>
@@ -95,7 +95,7 @@ const Pricing = () => {
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-start">
                       <svg 
-                        className={`h-5 w-5 mr-2 mt-0.5 ${plan.featured ? 'text-masarna-teal' : 'text-gray-500'}`} 
+                        className={`h-5 w-5 mr-2 mt-0.5 ${plan.featured ? 'text-masarna-orange' : 'text-gray-500'}`} 
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -111,8 +111,8 @@ const Pricing = () => {
                 <Button 
                   className={`w-full py-6 ${
                     plan.featured 
-                      ? 'bg-masarna-teal hover:bg-masarna-teal/90 text-white' 
-                      : 'bg-white text-masarna-teal border border-masarna-teal hover:bg-masarna-teal/10'
+                      ? 'bg-masarna-orange hover:bg-masarna-orange/90 text-white' 
+                      : 'bg-white text-masarna-orange border border-masarna-orange hover:bg-masarna-orange/10'
                   }`}
                   onClick={() => window.location.href = '#contact'}
                 >
@@ -129,7 +129,7 @@ const Pricing = () => {
             We understand that every business is unique. Contact us to discuss how we can tailor our services to meet your specific operational needs.
           </p>
           <Button 
-            className="bg-masarna-teal hover:bg-masarna-teal/90 text-white px-8 py-6 text-lg rounded-lg"
+            className="bg-masarna-orange hover:bg-masarna-orange/90 text-white px-8 py-6 text-lg rounded-lg"
             onClick={() => window.location.href = '#contact'}
           >
             Schedule a Consultation
@@ -140,19 +140,19 @@ const Pricing = () => {
           <h2 className="text-2xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div>
-              <h3 className="font-semibold text-lg mb-2 text-masarna-teal">Can I change plans later?</h3>
+              <h3 className="font-semibold text-lg mb-2 text-masarna-orange">Can I change plans later?</h3>
               <p className="text-gray-700">Yes, you can upgrade or downgrade your plan at any time as your business needs change.</p>
             </div>
             <div>
-              <h3 className="font-semibold text-lg mb-2 text-masarna-teal">Is there a minimum contract period?</h3>
+              <h3 className="font-semibold text-lg mb-2 text-masarna-orange">Is there a minimum contract period?</h3>
               <p className="text-gray-700">We typically recommend a 3-month minimum engagement to see meaningful results, but we can discuss your specific situation.</p>
             </div>
             <div>
-              <h3 className="font-semibold text-lg mb-2 text-masarna-teal">How quickly can you start?</h3>
+              <h3 className="font-semibold text-lg mb-2 text-masarna-orange">How quickly can you start?</h3>
               <p className="text-gray-700">We can typically begin work within 1-2 weeks of finalizing our agreement.</p>
             </div>
             <div>
-              <h3 className="font-semibold text-lg mb-2 text-masarna-teal">Do you offer any discounts?</h3>
+              <h3 className="font-semibold text-lg mb-2 text-masarna-orange">Do you offer any discounts?</h3>
               <p className="text-gray-700">We offer special rates for startups that commit to quarterly or annual contracts.</p>
             </div>
           </div>

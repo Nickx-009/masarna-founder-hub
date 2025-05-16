@@ -93,9 +93,9 @@ const HumanResources = () => {
             <Card className="border border-gray-200 shadow-md hover:shadow-lg transition-shadow reveal">
               <CardHeader className="text-center pb-2">
                 <div className="mx-auto mb-4 p-3 rounded-full bg-blue-50">
-                  <Users className="h-10 w-10 text-masarna-teal" />
+                  <Users className="h-10 w-10 text-masarna-orange" />
                 </div>
-                <CardTitle className="text-xl font-semibold text-masarna-teal">
+                <CardTitle className="text-xl font-semibold text-masarna-orange">
                   Employee Lifecycle Management
                 </CardTitle>
               </CardHeader>
@@ -105,19 +105,19 @@ const HumanResources = () => {
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-teal" />
+                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
                     <span className="text-gray-700">Onboarding & Offboarding</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-teal" />
+                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
                     <span className="text-gray-700">IT & Systems Setup</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-teal" />
+                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
                     <span className="text-gray-700">Equity & Compensation</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-teal" />
+                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
                     <span className="text-gray-700">Promotions & Career Development</span>
                   </li>
                 </ul>
@@ -128,9 +128,9 @@ const HumanResources = () => {
             <Card className="border border-gray-200 shadow-md hover:shadow-lg transition-shadow reveal">
               <CardHeader className="text-center pb-2">
                 <div className="mx-auto mb-4 p-3 rounded-full bg-blue-50">
-                  <Briefcase className="h-10 w-10 text-masarna-teal" />
+                  <Briefcase className="h-10 w-10 text-masarna-orange" />
                 </div>
-                <CardTitle className="text-xl font-semibold text-masarna-teal">
+                <CardTitle className="text-xl font-semibold text-masarna-orange">
                   Efficient Payroll Processing
                 </CardTitle>
               </CardHeader>
@@ -140,19 +140,19 @@ const HumanResources = () => {
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-teal" />
+                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
                     <span className="text-gray-700">Global Payroll Management</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-teal" />
+                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
                     <span className="text-gray-700">Contractor Payments</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-teal" />
+                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
                     <span className="text-gray-700">Bonuses & Incentives</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-teal" />
+                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
                     <span className="text-gray-700">Tax Compliance</span>
                   </li>
                 </ul>
@@ -163,9 +163,9 @@ const HumanResources = () => {
             <Card className="border border-gray-200 shadow-md hover:shadow-lg transition-shadow reveal">
               <CardHeader className="text-center pb-2">
                 <div className="mx-auto mb-4 p-3 rounded-full bg-blue-50">
-                  <Shield className="h-10 w-10 text-masarna-teal" />
+                  <Shield className="h-10 w-10 text-masarna-orange" />
                 </div>
-                <CardTitle className="text-xl font-semibold text-masarna-teal">
+                <CardTitle className="text-xl font-semibold text-masarna-orange">
                   Benefits & Compliance
                 </CardTitle>
               </CardHeader>
@@ -175,19 +175,19 @@ const HumanResources = () => {
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-teal" />
+                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
                     <span className="text-gray-700">Benefits Management</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-teal" />
+                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
                     <span className="text-gray-700">Regulatory Compliance</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-teal" />
+                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
                     <span className="text-gray-700">Policy Development</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-teal" />
+                    <CheckCircle className="h-5 w-5 mr-2 mt-0.5 text-masarna-orange" />
                     <span className="text-gray-700">Training Programs</span>
                   </li>
                 </ul>
@@ -205,8 +205,8 @@ const HumanResources = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
               <div className="text-center">
-                <div className="inline-block p-3 bg-masarna-teal/10 rounded-full mb-4">
-                  <Users className="h-8 w-8 text-masarna-teal" />
+                <div className="inline-block p-3 bg-masarna-orange/10 rounded-full mb-4">
+                  <Users className="h-8 w-8 text-masarna-orange" />
                 </div>
                 <h3 className="text-lg font-medium mb-2">Expertise</h3>
                 <p className="text-gray-700">
@@ -215,8 +215,8 @@ const HumanResources = () => {
               </div>
               
               <div className="text-center">
-                <div className="inline-block p-3 bg-masarna-teal/10 rounded-full mb-4">
-                  <Briefcase className="h-8 w-8 text-masarna-teal" />
+                <div className="inline-block p-3 bg-masarna-orange/10 rounded-full mb-4">
+                  <Briefcase className="h-8 w-8 text-masarna-orange" />
                 </div>
                 <h3 className="text-lg font-medium mb-2">Employee-Centric</h3>
                 <p className="text-gray-700">
@@ -225,8 +225,8 @@ const HumanResources = () => {
               </div>
               
               <div className="text-center">
-                <div className="inline-block p-3 bg-masarna-teal/10 rounded-full mb-4">
-                  <Shield className="h-8 w-8 text-masarna-teal" />
+                <div className="inline-block p-3 bg-masarna-orange/10 rounded-full mb-4">
+                  <Shield className="h-8 w-8 text-masarna-orange" />
                 </div>
                 <h3 className="text-lg font-medium mb-2">Focus on Growth</h3>
                 <p className="text-gray-700">
@@ -239,7 +239,7 @@ const HumanResources = () => {
       </section>
       
       {/* Final CTA Section */}
-      <div className="bg-masarna-teal/10 py-16">
+      <div className="bg-masarna-orange/10 py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center reveal">
             <h2 className="text-2xl font-bold mb-4">Ready to transform your HR operations?</h2>
@@ -247,7 +247,7 @@ const HumanResources = () => {
               Let Masarna be your trusted partner in human resources, so you can focus on what you do best—growing your organization.
             </p>
             <Button 
-              className="bg-masarna-teal hover:bg-masarna-teal/90 text-white text-lg px-8 py-6"
+              className="bg-masarna-orange hover:bg-masarna-orange/90 text-white text-lg px-8 py-6"
               onClick={() => window.location.href = '#contact'}
             >
               Schedule Your Free HR Assessment

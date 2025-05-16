@@ -55,10 +55,10 @@ const Solutions = () => {
               key={index} 
               className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-100"
             >
-              <h3 className="text-xl font-semibold mb-3 text-masarna-teal">{solution.title}</h3>
+              <h3 className="text-xl font-semibold mb-3 text-masarna-orange">{solution.title}</h3>
               <p className="text-gray-700 mb-5">{solution.description}</p>
               <Link to={solution.link}>
-                <Button variant="outline" className="border-masarna-teal text-masarna-teal hover:bg-masarna-teal/10">
+                <Button variant="outline" className="border-masarna-orange text-masarna-orange hover:bg-masarna-orange/10">
                   Learn More
                 </Button>
               </Link>
@@ -66,13 +66,13 @@ const Solutions = () => {
           ))}
         </div>
 
-        <div className="mt-20 text-center bg-masarna-teal/10 p-8 md:p-12 rounded-xl">
+        <div className="mt-20 text-center bg-masarna-orange/10 p-8 md:p-12 rounded-xl">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Need leadership support?</h2>
           <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
             Let us match you with the perfect fractional leader for your business needs and growth stage.
           </p>
           <Button 
-            className="bg-masarna-teal hover:bg-masarna-teal/90 text-white px-8 py-6 text-lg rounded-lg"
+            className="bg-masarna-orange hover:bg-masarna-orange/90 text-white px-8 py-6 text-lg rounded-lg"
             onClick={() => window.location.href = '#contact'}
           >
             Schedule a Consultation
