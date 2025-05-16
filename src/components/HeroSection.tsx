@@ -102,8 +102,8 @@ const HeroSection = () => {
         </div>
       </div>
       
-      {/* Decorative shape */}
-      <div className="absolute bottom-0 left-0 w-full h-16 bg-masarna-gray" style={{
+      {/* Decorative shape - Updated color to #f26522 (orange) */}
+      <div className="absolute bottom-0 left-0 w-full h-16 bg-[#f26522]" style={{
         clipPath: 'polygon(0 100%, 100% 100%, 100% 0)'
       }}></div>
     </section>
