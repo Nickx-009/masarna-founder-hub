@@ -237,11 +237,13 @@ const Navigation = () => {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
-              {/* Pricing (Direct link) */}
+              {/* Pricing (Direct link) - Updated to match other menu items */}
               <NavigationMenuItem>
-                <Link to="/pricing" className="text-gray-700 hover:text-masarna-teal transition-colors font-medium p-2">
-                  Pricing
-                </Link>
+                <NavigationMenuLink asChild>
+                  <Link to="/pricing" className="text-gray-700 hover:text-masarna-teal transition-colors inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium">
+                    Pricing
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
