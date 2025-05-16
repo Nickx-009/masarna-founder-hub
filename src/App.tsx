@@ -36,6 +36,10 @@ import Webinars from "./pages/resources/Webinars";
 import Podcast from "./pages/resources/Podcast";
 import Newsletter from "./pages/resources/Newsletter";
 
+// Company Pages
+import AboutUs from "./pages/company/AboutUs";
+import Career from "./pages/company/Career";
+
 // Other Pages
 import Pricing from "./pages/Pricing";
 
@@ -79,6 +83,10 @@ const App = () => (
           <Route path="/resources/webinars" element={<Webinars />} />
           <Route path="/resources/podcast" element={<Podcast />} />
           <Route path="/resources/newsletter" element={<Newsletter />} />
+          
+          {/* Company Routes */}
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/career" element={<Career />} />
           
           {/* Other Routes */}
           <Route path="/pricing" element={<Pricing />} />

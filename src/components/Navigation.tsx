@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -167,7 +168,7 @@ const Navigation = () => {
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="text-gray-700 hover:text-masarna-teal">Resources</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="grid grid-cols-3 gap-3 p-6 w-[750px]">
+                  <div className="grid grid-cols-4 gap-3 p-6 w-[900px]">
                     <div>
                       <h3 className="font-medium text-lg mb-2 text-masarna-teal">Knowledge Center</h3>
                       <ul className="space-y-2">
@@ -228,7 +229,22 @@ const Navigation = () => {
                         </li>
                       </ul>
                     </div>
-                    <div className="col-span-3 mt-4 pt-4 border-t border-gray-100">
+                    <div>
+                      <h3 className="font-medium text-lg mb-2 text-masarna-teal">Company</h3>
+                      <ul className="space-y-2">
+                        <li>
+                          <Link to="/about-us" className="block text-gray-700 hover:text-masarna-teal">
+                            About Us
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/career" className="block text-gray-700 hover:text-masarna-teal">
+                            Career
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="col-span-4 mt-4 pt-4 border-t border-gray-100">
                       <Link to="/resources" className="text-masarna-teal hover:underline font-medium">
                         All resources →
                       </Link>
@@ -343,6 +359,12 @@ const Navigation = () => {
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link to="/resources/templates" className="w-full">Templates</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/about-us" className="w-full">About Us</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/career" className="w-full">Career</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link to="/resources" className="w-full font-medium text-masarna-teal">All resources</Link>
