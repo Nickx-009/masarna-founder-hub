@@ -89,7 +89,7 @@ const TestimonialsSection = () => {
                     </div>
                     <div className="flex-grow">
                       <p className="text-lg md:text-xl text-gray-700 mb-6 italic">"{testimonial.quote}"</p>
-                      <Separator className="mb-4" />
+                      <Separator className="mb-4 bg-[#f26522]" />
                       <div>
                         <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
                         <p className="text-gray-600 text-sm">{testimonial.role}</p>
