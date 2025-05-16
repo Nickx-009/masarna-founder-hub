@@ -29,7 +29,7 @@ const Career = () => {
   ];
 
   return (
-    <PageLayout>
+    <PageLayout title="Careers">
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Join Our Team</h1>
