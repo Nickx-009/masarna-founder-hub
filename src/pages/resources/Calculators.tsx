@@ -99,19 +99,19 @@ const Calculators = () => {
               return (
                 <div key={index} className="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
                   <div className="flex items-center mb-3">
-                    <span className="text-xs font-medium px-2 py-1 bg-masarna-teal/10 text-masarna-teal rounded-full">{calculator.category}</span>
+                    <span className="text-xs font-medium px-2 py-1 bg-masarna-orange/10 text-masarna-orange rounded-full">{calculator.category}</span>
                     <span className="text-xs text-gray-500 ml-3">{calculator.complexity}</span>
                   </div>
                   <div className="flex items-start mb-2">
-                    <div className="mr-3 p-2 bg-masarna-teal/10 rounded-full">
-                      <Icon className="h-5 w-5 text-masarna-teal" />
+                    <div className="mr-3 p-2 bg-masarna-orange/10 rounded-full">
+                      <Icon className="h-5 w-5 text-masarna-orange" />
                     </div>
                     <h3 className="text-xl font-semibold text-gray-800">{calculator.title}</h3>
                   </div>
                   <p className="text-gray-600 mb-4 ml-10">{calculator.description}</p>
                   <Button 
                     variant="outline" 
-                    className="ml-10 text-masarna-teal border-masarna-teal hover:bg-masarna-teal/10"
+                    className="ml-10 text-masarna-orange border-masarna-orange hover:bg-masarna-orange/10"
                     onClick={() => calculator.setOpenState(true)}
                   >
                     Use Calculator
@@ -126,13 +126,13 @@ const Calculators = () => {
             })}
           </div>
           
-          <div className="bg-masarna-teal/10 p-8 md:p-12 rounded-xl text-center">
+          <div className="bg-masarna-orange/10 p-8 md:p-12 rounded-xl text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Need a custom calculation?</h2>
             <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
               Our financial and operational experts can help you build custom models and calculations tailored to your specific business needs.
             </p>
             <Button 
-              className="bg-masarna-teal hover:bg-masarna-teal/90 text-white"
+              className="bg-masarna-orange hover:bg-masarna-orange/90 text-white"
               onClick={() => window.location.href = '/contact'}
             >
               Request Custom Analysis

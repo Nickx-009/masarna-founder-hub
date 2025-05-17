@@ -195,8 +195,8 @@ export function ComplianceRiskCalculator({
       <DialogContent className="sm:max-w-[650px]">
         <DialogHeader>
           <div className="flex items-center gap-2 mb-2">
-            <div className="p-2 rounded-full bg-masarna-teal/10">
-              <Shield className="h-5 w-5 text-masarna-teal" />
+            <div className="p-2 rounded-full bg-masarna-orange/10">
+              <Shield className="h-5 w-5 text-masarna-orange" />
             </div>
             <DialogTitle>Compliance Risk Assessment Tool</DialogTitle>
           </div>
@@ -247,9 +247,9 @@ export function ComplianceRiskCalculator({
                         {...field}
                       >
                         <option value="">Select company size</option>
-                        <option value="small">Small (< 50 employees)</option>
+                        <option value="small">Small (&lt; 50 employees)</option>
                         <option value="medium">Medium (50-250 employees)</option>
-                        <option value="large">Large (> 250 employees)</option>
+                        <option value="large">Large (&gt; 250 employees)</option>
                       </select>
                     </FormControl>
                     <FormMessage />
@@ -410,7 +410,7 @@ export function ComplianceRiskCalculator({
             </div>
             
             <div className="flex gap-4">
-              <Button type="submit" className="flex-1 bg-masarna-teal hover:bg-masarna-teal/90">
+              <Button type="submit" className="flex-1 bg-masarna-orange hover:bg-masarna-orange/90">
                 Assess Risk
               </Button>
               <Button type="button" onClick={resetCalculator} variant="outline" className="flex-1">
@@ -421,8 +421,8 @@ export function ComplianceRiskCalculator({
         </Form>
         
         {result && (
-          <div className="mt-6 p-4 bg-masarna-teal/10 rounded-lg">
-            <h3 className="text-lg font-medium mb-3 text-masarna-teal">Risk Assessment Results</h3>
+          <div className="mt-6 p-4 bg-masarna-orange/10 rounded-lg">
+            <h3 className="text-lg font-medium mb-3 text-masarna-orange">Risk Assessment Results</h3>
             
             <div className="mb-4">
               <div className="flex items-center mb-2">
@@ -441,7 +441,7 @@ export function ComplianceRiskCalculator({
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
-              <div className="flex justify-between items-center p-3 bg-white rounded border border-masarna-teal/20">
+              <div className="flex justify-between items-center p-3 bg-white rounded border border-masarna-orange/20">
                 <span className="text-sm font-medium">Data Privacy Risk:</span>
                 <span className={`px-2 py-0.5 text-xs rounded-full text-white font-medium ${
                   result.dataPrivacyRisk === "High" ? "bg-red-500" : 
@@ -450,7 +450,7 @@ export function ComplianceRiskCalculator({
                   {result.dataPrivacyRisk}
                 </span>
               </div>
-              <div className="flex justify-between items-center p-3 bg-white rounded border border-masarna-teal/20">
+              <div className="flex justify-between items-center p-3 bg-white rounded border border-masarna-orange/20">
                 <span className="text-sm font-medium">Data Security Risk:</span>
                 <span className={`px-2 py-0.5 text-xs rounded-full text-white font-medium ${
                   result.dataSecurityRisk === "High" ? "bg-red-500" : 
@@ -459,7 +459,7 @@ export function ComplianceRiskCalculator({
                   {result.dataSecurityRisk}
                 </span>
               </div>
-              <div className="flex justify-between items-center p-3 bg-white rounded border border-masarna-teal/20">
+              <div className="flex justify-between items-center p-3 bg-white rounded border border-masarna-orange/20">
                 <span className="text-sm font-medium">Labor Compliance Risk:</span>
                 <span className={`px-2 py-0.5 text-xs rounded-full text-white font-medium ${
                   result.laborComplianceRisk === "High" ? "bg-red-500" : 
@@ -468,7 +468,7 @@ export function ComplianceRiskCalculator({
                   {result.laborComplianceRisk}
                 </span>
               </div>
-              <div className="flex justify-between items-center p-3 bg-white rounded border border-masarna-teal/20">
+              <div className="flex justify-between items-center p-3 bg-white rounded border border-masarna-orange/20">
                 <span className="text-sm font-medium">Financial Regulatory Risk:</span>
                 <span className={`px-2 py-0.5 text-xs rounded-full text-white font-medium ${
                   result.financialRegulatoryRisk === "High" ? "bg-red-500" : 
@@ -479,7 +479,7 @@ export function ComplianceRiskCalculator({
               </div>
             </div>
             
-            <div className="mt-4 p-4 bg-white rounded border border-masarna-teal/20">
+            <div className="mt-4 p-4 bg-white rounded border border-masarna-orange/20">
               <p className="font-medium mb-2">Priority Actions:</p>
               <ol className="list-decimal list-inside space-y-1 text-sm">
                 {result.priorityActions.length > 0 ? (
