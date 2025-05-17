@@ -7,28 +7,29 @@ import {
   CarouselNext, 
   CarouselPrevious 
 } from "@/components/ui/carousel";
-import { ImageIcon, Camera } from 'lucide-react';
+import { Camera, Laptop, Globe } from 'lucide-react';
 
+// Updated gallery images to reflect remote work culture
 const galleryImages = [
   {
-    url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
-    caption: "Team collaboration session"
-  },
-  {
     url: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
-    caption: "Our annual team retreat"
+    caption: "Our annual virtual team retreat"
   },
   {
-    url: "https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
-    caption: "Whiteboard strategy session"
+    url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+    caption: "Remote work flexibility for our team members"
   },
   {
-    url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
-    caption: "Our workspace environment"
+    url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+    caption: "Virtual collaboration sessions that drive innovation"
   },
   {
-    url: "https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
-    caption: "Team-building event"
+    url: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+    caption: "Remote-first workspace setups"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+    caption: "Global team connecting across time zones"
   }
 ];
 
@@ -41,14 +42,15 @@ const CultureGallery = () => {
             <div className="sticky top-24">
               <div className="flex items-center mb-4">
                 <div className="p-3 bg-masarna-orange/10 rounded-full">
-                  <Camera className="w-6 h-6 text-masarna-orange" />
+                  <Globe className="w-6 h-6 text-masarna-orange" />
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold ml-4 text-gray-900">Our Culture</h2>
               </div>
               
               <p className="text-gray-600 mb-6">
-                At Masarna, we foster a culture of innovation, collaboration, and continuous learning. 
-                We believe that our team's diverse perspectives and experiences are our greatest strength.
+                At Masarna, we foster a culture of innovation, collaboration, and continuous learning
+                as a <span className="font-semibold text-masarna-orange">fully remote company</span>. 
+                We believe that our team's diverse perspectives and experiences from around the world are our greatest strength.
               </p>
               
               <div className="flex flex-col gap-4">
@@ -56,22 +58,41 @@ const CultureGallery = () => {
                   <div className="bg-masarna-orange/20 p-2 rounded-full">
                     <div className="bg-masarna-orange w-2 h-2 rounded-full"></div>
                   </div>
-                  <p className="ml-3 text-gray-700">Flexible work environment that prioritizes outcomes</p>
+                  <p className="ml-3 text-gray-700">Remote-first, flexible work environment that prioritizes outcomes</p>
                 </div>
                 
                 <div className="flex items-start">
                   <div className="bg-masarna-orange/20 p-2 rounded-full">
                     <div className="bg-masarna-orange w-2 h-2 rounded-full"></div>
                   </div>
-                  <p className="ml-3 text-gray-700">Continuous learning and professional development</p>
+                  <p className="ml-3 text-gray-700">Continuous learning and professional development across time zones</p>
                 </div>
                 
                 <div className="flex items-start">
                   <div className="bg-masarna-orange/20 p-2 rounded-full">
                     <div className="bg-masarna-orange w-2 h-2 rounded-full"></div>
                   </div>
-                  <p className="ml-3 text-gray-700">Regular team events and collaborative workshops</p>
+                  <p className="ml-3 text-gray-700">Regular virtual team events and collaborative workshops</p>
                 </div>
+
+                <div className="flex items-start">
+                  <div className="bg-masarna-orange/20 p-2 rounded-full">
+                    <div className="bg-masarna-orange w-2 h-2 rounded-full"></div>
+                  </div>
+                  <p className="ml-3 text-gray-700">Global team distributed across multiple countries and continents</p>
+                </div>
+              </div>
+
+              <div className="mt-8 p-4 bg-masarna-orange/5 border border-masarna-orange/20 rounded-lg">
+                <div className="flex items-center mb-2">
+                  <Laptop className="w-5 h-5 text-masarna-orange mr-2" />
+                  <h3 className="font-semibold text-gray-800">Remote-First Benefits</h3>
+                </div>
+                <p className="text-sm text-gray-600">
+                  Our remote work culture enables us to hire the best talent globally, 
+                  promote work-life balance, and reduce environmental impact while delivering exceptional 
+                  results for our clients.
+                </p>
               </div>
             </div>
           </div>
