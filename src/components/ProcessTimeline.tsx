@@ -130,11 +130,13 @@ const ProcessTimeline = ({
             }}
           >
             {/* Hide scrollbar for Chrome, Safari and Opera */}
-            <style jsx>{`
-              div::-webkit-scrollbar {
-                display: none;
-              }
-            `}</style>
+            <style>
+              {`
+                div::-webkit-scrollbar {
+                  display: none;
+                }
+              `}
+            </style>
             
             {steps.map((step, index) => (
               <div 
