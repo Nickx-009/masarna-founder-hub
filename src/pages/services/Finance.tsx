@@ -3,10 +3,12 @@ import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { DollarSign, BarChart, FileText, Calculator, CheckCircle, ArrowRight } from 'lucide-react';
+import { DollarSign, BarChart, FileText, Calculator, CheckCircle } from 'lucide-react';
 import CTASection from '@/components/CTASection';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { initScrollAnimations } from '@/utils/scrollAnimations';
+import ProcessTimeline from '@/components/ProcessTimeline';
+import MetricsDisplay from '@/components/MetricsDisplay';
 
 const Finance = () => {
   // Set up scroll animations
@@ -294,30 +296,7 @@ const Finance = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-12 text-center reveal">Our Financial Services Process</h2>
-            
-            <div className="relative">
-              {/* Connecting Line */}
-              <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 h-full w-px bg-masarna-orange/30 z-0 hidden md:block"></div>
-              
-              <div className="space-y-12 md:space-y-0 relative z-10">
-                {processSteps.map((step, index) => (
-                  <div 
-                    key={index} 
-                    className={`flex flex-col md:flex-row items-center md:items-start gap-6 reveal ${
-                      index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse text-right'
-                    }`}
-                  >
-                    <div className="w-12 h-12 rounded-full bg-masarna-orange flex items-center justify-center text-white font-bold text-xl flex-shrink-0 md:mt-0">
-                      {step.number}
-                    </div>
-                    <div className={`md:w-5/12 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                      <h3 className="text-xl font-bold mb-2 text-gray-900">{step.title}</h3>
-                      <p className="text-gray-700">{step.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <ProcessTimeline steps={processSteps} />
           </div>
         </div>
       </section>
@@ -327,15 +306,7 @@ const Finance = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-12 text-center reveal">Our Impact</h2>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-              {metrics.map((metric, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 text-center reveal">
-                  <div className="text-3xl md:text-4xl font-bold text-masarna-orange mb-2">{metric.value}</div>
-                  <p className="text-gray-700 text-sm">{metric.label}</p>
-                </div>
-              ))}
-            </div>
+            <MetricsDisplay metrics={metrics} />
           </div>
         </div>
       </section>
@@ -377,25 +348,6 @@ const Finance = () => {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Final CTA Section */}
-      <section className="bg-masarna-orange/10 py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center reveal">
-            <h2 className="text-2xl font-bold mb-4">Ready to optimize your financial operations?</h2>
-            <p className="text-lg text-gray-700 mb-8">
-              Let Masarna be your trusted partner in financial management, so you can concentrate on driving your business forward.
-            </p>
-            <Button 
-              className="bg-masarna-orange hover:bg-masarna-orange/90 text-white text-lg px-8 py-6 group"
-              onClick={() => window.location.href = '#contact'}
-            >
-              Schedule Your Free Financial Assessment
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
           </div>
         </div>
       </section>
