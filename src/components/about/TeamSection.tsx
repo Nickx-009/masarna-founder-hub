@@ -1,12 +1,14 @@
+
 import React, { useState } from 'react';
 import { Linkedin, Mail, Coffee, Bike, Headphones, Mountain, Book, Plane } from 'lucide-react';
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 // Sample team data - replace with actual team members
 const teamMembers = [
   {
     name: 'Sarah Johnson',
     role: 'CEO & Founder',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
+    image: '/placeholder.svg',
     bio: 'Former operations lead at two successful startups. Passionate about helping founders scale efficiently.',
     funFact: 'Makes her own kombucha',
     funFactIcon: <Coffee className="w-4 h-4" />,
@@ -15,7 +17,7 @@ const teamMembers = [
   {
     name: 'David Chen',
     role: 'Head of Operations',
-    image: 'https://images.unsplash.com/photo-1556157382-97eda2f9e2bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80',
+    image: '/placeholder.svg',
     bio: 'Streamlined operations for 15+ tech startups. Expert in creating systems that scale.',
     funFact: 'Competitive cyclist',
     funFactIcon: <Bike className="w-4 h-4" />,
@@ -24,7 +26,7 @@ const teamMembers = [
   {
     name: 'Priya Sharma',
     role: 'Finance Lead',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80',
+    image: '/placeholder.svg',
     bio: 'Former CFO with experience managing finances for rapidly growing startups. MBA from Wharton.',
     funFact: 'Podcast addict',
     funFactIcon: <Headphones className="w-4 h-4" />,
@@ -33,7 +35,7 @@ const teamMembers = [
   {
     name: 'James Wilson',
     role: 'Legal & Compliance',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80',
+    image: '/placeholder.svg',
     bio: 'Corporate attorney with a focus on startup law. Helps companies navigate complex regulatory environments.',
     funFact: 'Weekend hiker',
     funFactIcon: <Mountain className="w-4 h-4" />,
@@ -42,7 +44,7 @@ const teamMembers = [
   {
     name: 'Elena Rodriguez',
     role: 'HR Director',
-    image: 'https://images.unsplash.com/photo-1567532939604-b41b3fd74a1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80',
+    image: '/placeholder.svg',
     bio: 'Specialist in building HR systems and culture for fast-growing teams. Previously at Stripe and Airbnb.',
     funFact: 'Reads 50 books yearly',
     funFactIcon: <Book className="w-4 h-4" />,
@@ -51,7 +53,7 @@ const teamMembers = [
   {
     name: 'Marcus Taylor',
     role: 'Growth Strategist',
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80',
+    image: '/placeholder.svg',
     bio: 'Helped scale multiple SaaS companies from seed to Series B. Focused on sustainable growth models.',
     funFact: 'Visited 42 countries',
     funFactIcon: <Plane className="w-4 h-4" />,
@@ -61,6 +63,15 @@ const teamMembers = [
 
 const TeamSection = () => {
   const [hoveredMember, setHoveredMember] = useState<number | null>(null);
+  
+  // Function to generate initials from name
+  const getInitials = (name: string) => {
+    return name
+      .split(' ')
+      .map(part => part[0])
+      .join('')
+      .toUpperCase();
+  };
 
   return (
     <section className="py-20 bg-white">
@@ -81,12 +92,13 @@ const TeamSection = () => {
               onMouseLeave={() => setHoveredMember(null)}
             >
               <div className="bg-white rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl relative group">
-                <div className="h-64 relative overflow-hidden">
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
-                  />
+                <div className="h-64 relative overflow-hidden flex items-center justify-center bg-gradient-to-b from-masarna-orange/10 to-masarna-orange/5 p-6">
+                  <Avatar className="w-40 h-40 border-4 border-white shadow-lg">
+                    <AvatarImage src={member.image} alt={member.name} />
+                    <AvatarFallback className="text-4xl font-bold bg-masarna-orange text-white">
+                      {getInitials(member.name)}
+                    </AvatarFallback>
+                  </Avatar>
                   
                   <div className={`absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-5 transition-opacity duration-300 ${hoveredMember === index ? 'opacity-100' : 'opacity-0'}`}>
                     <div className="flex items-center gap-2 text-white">
