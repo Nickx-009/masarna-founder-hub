@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { LinkedIn, Mail, Coffee, Bike, Headphones, Mountains, Book, Plane } from 'lucide-react';
+import { Linkedin, Mail, Coffee, Bike, Headphones, Mountain, Book, Plane } from 'lucide-react';
 
 // Sample team data - replace with actual team members
 const teamMembers = [
@@ -37,7 +36,7 @@ const teamMembers = [
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80',
     bio: 'Corporate attorney with a focus on startup law. Helps companies navigate complex regulatory environments.',
     funFact: 'Weekend hiker',
-    funFactIcon: <Mountains className="w-4 h-4" />,
+    funFactIcon: <Mountain className="w-4 h-4" />,
     linkedin: 'https://linkedin.com/'
   },
   {
@@ -112,7 +111,7 @@ const TeamSection = () => {
                       rel="noopener noreferrer"
                       className="p-2 bg-gray-100 hover:bg-masarna-orange/10 rounded-full transition-colors"
                     >
-                      <LinkedIn className="w-5 h-5 text-gray-600 hover:text-masarna-orange" />
+                      <Linkedin className="w-5 h-5 text-gray-600 hover:text-masarna-orange" />
                     </a>
                     <a 
                       href={`mailto:${member.name.toLowerCase().replace(' ', '.')}@masarna.com`}
