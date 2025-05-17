@@ -2,12 +2,13 @@ import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Settings, BarChart, FileCheck, Briefcase, CheckCircle } from 'lucide-react';
+import { Settings, BarChart, FileCheck, Briefcase, CheckCircle, Clipboard, Cog } from 'lucide-react';
 import CTASection from '@/components/CTASection';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { initScrollAnimations } from '@/utils/scrollAnimations';
 import ProcessSteps from '@/components/ProcessSteps';
 import MetricsDisplay from '@/components/MetricsDisplay';
+import { ClipboardList } from 'lucide-react';
 
 const Operations = () => {
   // Set up scroll animations

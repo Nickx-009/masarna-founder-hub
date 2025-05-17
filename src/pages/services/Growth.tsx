@@ -1,8 +1,9 @@
+
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { LineChart, BarChart, FileText, Target, CheckCircle } from 'lucide-react';
+import { LineChart, BarChart, FileText, Target, CheckCircle, TrendingUp, Users } from 'lucide-react';
 import CTASection from '@/components/CTASection';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { initScrollAnimations } from '@/utils/scrollAnimations';
@@ -356,3 +357,4 @@ const Growth = () => {
 };
 
 export default Growth;
+
