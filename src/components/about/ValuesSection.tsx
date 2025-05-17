@@ -10,7 +10,7 @@ const values = [
   },
   {
     title: 'Founder First',
-    description: 'We work to support founders' visions and help them achieve their goals.',
+    description: 'We work to support founders\' visions and help them achieve their goals.',
     icon: <Users className="w-6 h-6" />
   },
   {
