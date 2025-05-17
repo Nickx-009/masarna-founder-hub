@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
@@ -249,7 +248,7 @@ const Growth = () => {
             <Card className="border border-gray-200 shadow-md hover:shadow-lg transition-shadow hover:scale-[1.02] reveal service-card">
               <CardHeader className="text-center pb-2">
                 <div className="mx-auto mb-4 p-3 rounded-full bg-masarna-orange/10">
-                  <BarChart3 className="h-10 w-10 text-masarna-orange" />
+                  <BarChart className="h-10 w-10 text-masarna-orange" />
                 </div>
                 <CardTitle className="text-xl font-semibold text-masarna-orange">
                   Growth Metrics & KPI Development
@@ -338,7 +337,7 @@ const Growth = () => {
               
               <div className="text-center">
                 <div className="inline-block p-3 bg-masarna-orange/10 rounded-full mb-4">
-                  <BarChart3 className="h-8 w-8 text-masarna-orange" />
+                  <BarChart className="h-8 w-8 text-masarna-orange" />
                 </div>
                 <h3 className="text-lg font-medium mb-2">Measurable</h3>
                 <p className="text-gray-700">
@@ -357,4 +356,3 @@ const Growth = () => {
 };
 
 export default Growth;
-
