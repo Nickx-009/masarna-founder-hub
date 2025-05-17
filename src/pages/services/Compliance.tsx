@@ -7,6 +7,7 @@ import CTASection from '@/components/CTASection';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from "@/components/ui/separator";
 import { initScrollAnimations } from '@/utils/scrollAnimations';
+import ProcessSteps from '@/components/ProcessSteps';
 
 const Compliance = () => {
   // Set up scroll animations with staggered effect
@@ -17,6 +18,29 @@ const Compliance = () => {
       staggerAmount: 120
     });
   }, []);
+
+  const complianceProcessSteps = [
+    {
+      number: "1",
+      title: "Initial Assessment",
+      description: "We evaluate your current compliance status and identify areas that need attention."
+    },
+    {
+      number: "2",
+      title: "Strategy Development",
+      description: "We create a tailored compliance strategy aligned with your business goals."
+    },
+    {
+      number: "3",
+      title: "Implementation",
+      description: "We execute the strategy, establishing systems, procedures, and documentation."
+    },
+    {
+      number: "4",
+      title: "Monitoring & Optimization",
+      description: "We continuously monitor compliance status and optimize processes for improvement."
+    }
+  ];
 
   return (
     <PageLayout title="Compliance Services" description="Streamline your compliance operations with Masarna">
@@ -260,76 +284,13 @@ const Compliance = () => {
         </div>
       </section>
       
-      {/* Compliance Process Timeline */}
+      {/* Compliance Process Timeline - Updated to use ProcessSteps component */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold mb-10 text-center reveal">Our Compliance Process</h2>
-            
-            <div className="relative">
-              {/* Timeline line */}
-              <div className="absolute left-0 md:left-1/2 transform md:translate-x-[-50%] h-full w-0.5 bg-masarna-orange/20"></div>
-              
-              {/* Timeline steps */}
-              <div className="space-y-12 relative">
-                {/* Step 1 */}
-                <div className="flex flex-col md:flex-row items-center md:items-start reveal">
-                  <div className="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 mt-6 md:mt-0">
-                    <h3 className="font-semibold text-lg mb-2 text-masarna-orange">Initial Assessment</h3>
-                    <p className="text-gray-700 text-sm">We evaluate your current compliance status and identify areas that need attention.</p>
-                  </div>
-                  <div className="z-10 order-1 md:order-2">
-                    <div className="w-10 h-10 rounded-full bg-masarna-orange/10 border-4 border-white flex items-center justify-center shadow-sm">
-                      <span className="text-masarna-orange font-semibold">1</span>
-                    </div>
-                  </div>
-                  <div className="md:w-1/2 md:pl-12 order-3 mt-6 md:mt-0"></div>
-                </div>
-                
-                {/* Step 2 */}
-                <div className="flex flex-col md:flex-row items-center md:items-start reveal">
-                  <div className="md:w-1/2 md:pr-12 order-2 mt-6 md:mt-0"></div>
-                  <div className="z-10 order-1">
-                    <div className="w-10 h-10 rounded-full bg-masarna-orange/10 border-4 border-white flex items-center justify-center shadow-sm">
-                      <span className="text-masarna-orange font-semibold">2</span>
-                    </div>
-                  </div>
-                  <div className="md:w-1/2 md:pl-12 md:text-left order-3 mt-6 md:mt-0">
-                    <h3 className="font-semibold text-lg mb-2 text-masarna-orange">Strategy Development</h3>
-                    <p className="text-gray-700 text-sm">We create a tailored compliance strategy aligned with your business goals.</p>
-                  </div>
-                </div>
-                
-                {/* Step 3 */}
-                <div className="flex flex-col md:flex-row items-center md:items-start reveal">
-                  <div className="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 mt-6 md:mt-0">
-                    <h3 className="font-semibold text-lg mb-2 text-masarna-orange">Implementation</h3>
-                    <p className="text-gray-700 text-sm">We execute the strategy, establishing systems, procedures, and documentation.</p>
-                  </div>
-                  <div className="z-10 order-1 md:order-2">
-                    <div className="w-10 h-10 rounded-full bg-masarna-orange/10 border-4 border-white flex items-center justify-center shadow-sm">
-                      <span className="text-masarna-orange font-semibold">3</span>
-                    </div>
-                  </div>
-                  <div className="md:w-1/2 md:pl-12 order-3 mt-6 md:mt-0"></div>
-                </div>
-                
-                {/* Step 4 */}
-                <div className="flex flex-col md:flex-row items-center md:items-start reveal">
-                  <div className="md:w-1/2 md:pr-12 order-2 mt-6 md:mt-0"></div>
-                  <div className="z-10 order-1">
-                    <div className="w-10 h-10 rounded-full bg-masarna-orange/10 border-4 border-white flex items-center justify-center shadow-sm">
-                      <span className="text-masarna-orange font-semibold">4</span>
-                    </div>
-                  </div>
-                  <div className="md:w-1/2 md:pl-12 md:text-left order-3 mt-6 md:mt-0">
-                    <h3 className="font-semibold text-lg mb-2 text-masarna-orange">Monitoring & Optimization</h3>
-                    <p className="text-gray-700 text-sm">We continuously monitor compliance status and optimize processes for improvement.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <ProcessSteps 
+            steps={complianceProcessSteps} 
+            title="Our Compliance Process" 
+          />
         </div>
       </section>
       
