@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
@@ -7,7 +6,7 @@ import { DollarSign, BarChart, FileText, Calculator, CheckCircle } from 'lucide-
 import CTASection from '@/components/CTASection';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { initScrollAnimations } from '@/utils/scrollAnimations';
-import ProcessTimeline from '@/components/ProcessTimeline';
+import CandidateJourneyTimeline from '@/components/CandidateJourneyTimeline';
 import MetricsDisplay from '@/components/MetricsDisplay';
 
 const Finance = () => {
@@ -296,7 +295,7 @@ const Finance = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-12 text-center reveal">Our Financial Services Process</h2>
-            <ProcessTimeline steps={processSteps} />
+            <CandidateJourneyTimeline steps={processSteps} />
           </div>
         </div>
       </section>
