@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
@@ -5,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { ArrowDown, ArrowRight, Fuel, Hexagon, Circle, Calendar, Clock, Briefcase, Handshake, User, UserCheck, CircleDot, FileCheck } from 'lucide-react';
 import CTASection from '@/components/CTASection';
 import { Card, CardContent } from '@/components/ui/card';
-import ProcessTimeline from '@/components/ProcessTimeline';
+import CandidateJourneyTimeline from '@/components/CandidateJourneyTimeline';
 import {
   Carousel,
   CarouselContent,
@@ -285,11 +286,10 @@ const FractionalRecruiter = () => {
             </p>
           </div>
           
-          {/* Horizontal Timeline */}
+          {/* Using our new Candidate Journey Timeline component */}
           <div className="mt-16 reveal">
-            <ProcessTimeline 
+            <CandidateJourneyTimeline 
               steps={candidateJourneySteps}
-              orientation="horizontal"
               showEmotions={true}
               showMetrics={true}
             />
