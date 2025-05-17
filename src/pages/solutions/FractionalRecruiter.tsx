@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
@@ -6,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { ArrowDown, ArrowRight, Fuel, Hexagon, Circle, Calendar, Clock, Briefcase, Handshake, User, UserCheck, CircleDot, FileCheck } from 'lucide-react';
 import CTASection from '@/components/CTASection';
 import { Card, CardContent } from '@/components/ui/card';
+import ProcessSteps from '@/components/ProcessSteps';
 import CandidateJourneyTimeline from '@/components/CandidateJourneyTimeline';
 import {
   Carousel,
@@ -77,6 +77,35 @@ const FractionalRecruiter = () => {
         label: "90-day Retention",
         value: "98%"
       }
+    }
+  ];
+
+  // Define simplified recruitment process steps for the ProcessSteps component
+  const recruitmentProcessSteps = [
+    {
+      number: "01",
+      title: "Awareness & Attraction",
+      description: "Creating compelling employer branding that attracts top candidates to your opportunities"
+    },
+    {
+      number: "02",
+      title: "Application & Screening",
+      description: "Streamlined application process with clear feedback and timely communication"
+    },
+    {
+      number: "03",
+      title: "Interview Experience",
+      description: "Structured interviews that evaluate skills while showcasing company culture"
+    },
+    {
+      number: "04",
+      title: "Offer & Decision",
+      description: "Transparent compensation discussions and responsive offer management"
+    },
+    {
+      number: "05",
+      title: "Onboarding & Integration",
+      description: "Comprehensive onboarding that sets new hires up for success from day one"
     }
   ];
 
@@ -276,7 +305,7 @@ const FractionalRecruiter = () => {
         </div>
       </section>
       
-      {/* Enhanced Candidate Journey Experience */}
+      {/* Enhanced Candidate Journey Experience - Now using ProcessSteps */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12 reveal">
@@ -286,12 +315,11 @@ const FractionalRecruiter = () => {
             </p>
           </div>
           
-          {/* Using our new Candidate Journey Timeline component */}
+          {/* Using our ProcessSteps component */}
           <div className="mt-16 reveal">
-            <CandidateJourneyTimeline 
-              steps={candidateJourneySteps}
-              showEmotions={true}
-              showMetrics={true}
+            <ProcessSteps 
+              steps={recruitmentProcessSteps}
+              title="Our Recruitment Process"
             />
           </div>
           
