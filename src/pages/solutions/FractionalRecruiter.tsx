@@ -2,7 +2,7 @@ import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { ArrowDown, ArrowRight, Fuel, Hexagon, Circle, Calendar, Clock, Briefcase, Handshake, User, UserCheck, CircleDot, FileCheck } from 'lucide-react';
+import { ArrowDown, ArrowRight, Fuel, Hexagon, Calendar, Clock, Briefcase, Handshake, User, UserCheck, CircleDot, FileCheck, Target, Users, Search } from 'lucide-react';
 import CTASection from '@/components/CTASection';
 import { Card, CardContent } from '@/components/ui/card';
 import ProcessSteps from '@/components/ProcessSteps';
@@ -215,7 +215,7 @@ const FractionalRecruiter = () => {
         }}></div>
       </section>
 
-      {/* Talent Acquisition Framework Section */}
+      {/* Talent Acquisition Framework Section with updated icons */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12 reveal">
@@ -225,14 +225,14 @@ const FractionalRecruiter = () => {
             </p>
           </div>
           
-          {/* Framework Visualization */}
+          {/* Framework Visualization with unique icons */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
-            {/* Framework Item 1 */}
+            {/* Framework Item 1 - Updated icon to Target */}
             <div className="relative p-6 transition-all hover:scale-105 duration-300">
               <div className="absolute inset-0 bg-masarna-orange/5 rounded-xl"></div>
               <div className="relative flex flex-col items-center p-4">
                 <div className="w-16 h-16 flex items-center justify-center bg-masarna-orange/10 rounded-full mb-4">
-                  <Hexagon className="h-8 w-8 text-masarna-orange" />
+                  <Target className="h-8 w-8 text-masarna-orange" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Strategy & Planning</h3>
                 <ul className="text-gray-700 space-y-2">
@@ -252,12 +252,12 @@ const FractionalRecruiter = () => {
               </div>
             </div>
             
-            {/* Framework Item 2 */}
+            {/* Framework Item 2 - Updated icon to Search */}
             <div className="relative p-6 transition-all hover:scale-105 duration-300">
               <div className="absolute inset-0 bg-masarna-orange/5 rounded-xl"></div>
               <div className="relative flex flex-col items-center p-4">
                 <div className="w-16 h-16 flex items-center justify-center bg-masarna-orange/10 rounded-full mb-4">
-                  <Hexagon className="h-8 w-8 text-masarna-orange" />
+                  <Search className="h-8 w-8 text-masarna-orange" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Sourcing & Attraction</h3>
                 <ul className="text-gray-700 space-y-2">
@@ -277,12 +277,12 @@ const FractionalRecruiter = () => {
               </div>
             </div>
             
-            {/* Framework Item 3 */}
+            {/* Framework Item 3 - Updated icon to Users */}
             <div className="relative p-6 transition-all hover:scale-105 duration-300">
               <div className="absolute inset-0 bg-masarna-orange/5 rounded-xl"></div>
               <div className="relative flex flex-col items-center p-4">
                 <div className="w-16 h-16 flex items-center justify-center bg-masarna-orange/10 rounded-full mb-4">
-                  <Hexagon className="h-8 w-8 text-masarna-orange" />
+                  <Users className="h-8 w-8 text-masarna-orange" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Selection & Closing</h3>
                 <ul className="text-gray-700 space-y-2">
