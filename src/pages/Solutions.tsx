@@ -12,7 +12,7 @@ const Solutions = () => {
       link: '/solutions/chief-of-staff',
     },
     {
-      title: 'Fractional CFO',
+      title: 'CFO',
       description: 'Expert financial leadership without the full-time cost.',
       link: '/solutions/fractional-cfo',
     },

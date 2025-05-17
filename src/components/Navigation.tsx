@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, Users, BarChart3, Shield, Target, TrendingUp, Settings, Briefcase, DollarSign, UserPlus, Sliders, ClipboardList, FileText, BookOpen, BarChart, FileCheck, Calculator, CheckSquare, Video, Mic, Mail, Building, Award } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -154,7 +155,7 @@ const Navigation = () => {
                           <Link to="/solutions/fractional-cfo" className="flex items-start text-gray-700 hover:text-[#f26522] group">
                             <DollarSign className="h-5 w-5 mr-3 mt-0.5 text-[#f26522] group-hover:text-[#f26522]" />
                             <div>
-                              <div className="font-medium">Fractional CFO</div>
+                              <div className="font-medium">CFO</div>
                               <div className="text-sm text-gray-500">Financial strategy without full-time cost</div>
                             </div>
                           </Link>
@@ -439,7 +440,7 @@ const Navigation = () => {
                   <DropdownMenuItem asChild>
                     <Link to="/solutions/fractional-cfo" className="w-full flex items-center">
                       <DollarSign className="h-4 w-4 mr-2 text-[#f26522]" />
-                      <span>Fractional CFO</span>
+                      <span>CFO</span>
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
