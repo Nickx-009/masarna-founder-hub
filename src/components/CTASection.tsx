@@ -35,7 +35,7 @@ const CTASection = () => {
           
           <p className="text-xl mb-10 opacity-90">
             Book a free 30-minute consultation with our experts and discover how 
-            Masarna can help optimize your business operations.
+            Masarna can help optimize your business.
           </p>
           
           <Button 

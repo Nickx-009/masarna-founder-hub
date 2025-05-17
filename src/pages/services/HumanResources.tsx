@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
@@ -361,24 +360,6 @@ const HumanResources = () => {
           </div>
         </div>
       </section>
-      
-      {/* Final CTA Section */}
-      <div className="bg-masarna-orange/10 py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center reveal">
-            <h2 className="text-2xl font-bold mb-4">Ready to transform your HR operations?</h2>
-            <p className="text-lg text-gray-700 mb-8">
-              Let Masarna be your trusted partner in human resources, so you can focus on what you do best—growing your organization.
-            </p>
-            <Button 
-              className="bg-masarna-orange hover:bg-masarna-orange/90 hover:scale-105 transition-all duration-300 text-white text-lg px-8 py-6"
-              onClick={() => window.location.href = '#contact'}
-            >
-              Schedule Your Free HR Assessment
-            </Button>
-          </div>
-        </div>
-      </div>
       
       {/* Use the shared CTA Section component */}
       <CTASection />
