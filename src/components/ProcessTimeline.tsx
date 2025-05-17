@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface ProcessStep {
   number: string;
@@ -30,7 +31,9 @@ const ProcessTimeline = ({
   showEmotions = false,
   showMetrics = false
 }: ProcessTimelineProps) => {
-  const isHorizontal = orientation === 'horizontal';
+  const isMobile = useIsMobile();
+  // Force vertical layout on mobile devices when horizontal is requested
+  const isHorizontal = orientation === 'horizontal' && !isMobile;
   
   if (isHorizontal) {
     return (
@@ -39,11 +42,11 @@ const ProcessTimeline = ({
           {/* Connecting Line */}
           <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-full h-px bg-masarna-orange/30 z-0"></div>
           
-          <div className="flex justify-between relative z-10">
+          <div className="flex justify-between relative z-10 overflow-x-auto pb-6">
             {steps.map((step, index) => (
               <div 
                 key={index} 
-                className={`flex flex-col items-center text-center reveal hover-scale px-4 ${
+                className={`flex flex-col items-center text-center reveal hover-scale px-4 min-w-[200px] ${
                   index === 0 ? 'pl-0' : index === steps.length - 1 ? 'pr-0' : ''
                 }`}
               >
@@ -79,26 +82,26 @@ const ProcessTimeline = ({
     );
   }
   
+  // Mobile-optimized vertical timeline
   return (
     <div className={`max-w-5xl mx-auto ${className}`}>
       <div className="relative">
         {/* Connecting Line */}
-        <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 h-full w-px bg-masarna-orange/30 z-0 hidden md:block"></div>
+        <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 top-0 h-full w-px bg-masarna-orange/30 z-0"></div>
         
-        <div className="space-y-12 md:space-y-0 relative z-10">
+        <div className="space-y-12 relative z-10">
           {steps.map((step, index) => (
             <div 
               key={index} 
-              className={`flex flex-col md:flex-row items-center md:items-start gap-6 reveal ${
-                index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse text-right'
-              }`}
+              className="flex items-start gap-6 reveal"
             >
-              <div className="w-12 h-12 rounded-full bg-masarna-orange flex items-center justify-center text-white font-bold text-xl flex-shrink-0 md:mt-0">
+              <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-masarna-orange flex items-center justify-center text-white font-bold text-base md:text-xl flex-shrink-0">
                 {step.icon || step.number}
               </div>
-              <div className={`md:w-5/12 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                <h3 className="text-xl font-bold mb-2 text-gray-900">{step.title}</h3>
-                <p className="text-gray-700">{step.description}</p>
+              
+              <div className="flex-1">
+                <h3 className="text-lg md:text-xl font-bold mb-2 text-gray-900">{step.title}</h3>
+                <p className="text-sm md:text-base text-gray-700">{step.description}</p>
                 
                 {showEmotions && step.emotion && (
                   <div className="mt-3 bg-masarna-orange/5 px-3 py-2 rounded-lg">
