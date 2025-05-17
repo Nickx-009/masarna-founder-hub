@@ -1,9 +1,8 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { ArrowDown, ArrowRight, Funnel, Hexagon, Circle, Calendar, Clock, Briefcase, Handshake } from 'lucide-react';
+import { ArrowDown, ArrowRight, Fuel, Hexagon, Circle, Calendar, Clock, Briefcase, Handshake } from 'lucide-react';
 import CTASection from '@/components/CTASection';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -38,7 +37,7 @@ const FractionalRecruiter = () => {
           <div className="max-w-3xl mx-auto relative py-10 reveal">
             <div className="bg-white rounded-xl shadow-lg p-6 relative z-10">
               <div className="flex items-center justify-center mb-8">
-                <Funnel size={40} className="text-masarna-orange" />
+                <Fuel size={40} className="text-masarna-orange" />
                 <h2 className="text-2xl font-semibold ml-3">The Talent Pipeline Challenge</h2>
               </div>
               
@@ -295,7 +294,7 @@ const FractionalRecruiter = () => {
           </div>
         </div>
       </section>
-
+      
       {/* Before & After Transformation Showcase */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
