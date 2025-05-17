@@ -44,7 +44,7 @@ const AboutSection = () => {
               and equity management, specifically tailored to the startup ecosystem.
             </p>
             
-            <p className="font-medium text-lg text-masarna-teal">
+            <p className="font-medium text-lg text-masarna-orange">
               We're not just a service provider—we're your proactive operational partner, 
               committed to your long-term success.
             </p>
