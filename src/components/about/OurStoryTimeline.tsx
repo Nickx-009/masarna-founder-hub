@@ -4,25 +4,25 @@ import { CalendarDays, Award, Rocket, Users, Globe } from 'lucide-react';
 
 const timelineData = [
   {
-    year: '2022',
+    year: '2024',
     title: 'Masarna Founded',
     description: 'Founded by former startup operators who understand the unique challenges of building and scaling companies.',
     icon: <CalendarDays className="w-6 h-6 text-white" />
   },
   {
-    year: '2023',
+    year: '2024',
     title: 'First 10 Clients',
     description: 'Reached our first milestone of helping 10 startups streamline their operations and accelerate growth.',
     icon: <Award className="w-6 h-6 text-white" />
   },
   {
-    year: '2023',
+    year: '2024',
     title: 'Team Expansion',
     description: 'Expanded our team with experts across HR, Finance, Legal, and Operations to better serve our clients.',
     icon: <Users className="w-6 h-6 text-white" />
   },
   {
-    year: '2024',
+    year: '2025',
     title: 'Global Reach',
     description: 'Started working with clients across 3 continents, helping startups scale internationally.',
     icon: <Globe className="w-6 h-6 text-white" />
