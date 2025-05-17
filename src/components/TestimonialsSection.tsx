@@ -2,6 +2,8 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
+import { Card } from '@/components/ui/card';
+import { Check } from 'lucide-react';
 
 const testimonials = [
   {
@@ -56,7 +58,7 @@ const TestimonialsSection = () => {
   }, []);
 
   return (
-    <section id="testimonials" className={`py-20 bg-gradient-to-br from-masarna-teal/5 to-masarna-teal/10 transition-opacity duration-1000 ${visibleSection ? 'opacity-100' : 'opacity-0'}`}>
+    <section id="testimonials" className={`py-20 bg-gradient-to-br from-masarna-orange/5 to-masarna-orange/10 transition-opacity duration-1000 ${visibleSection ? 'opacity-100' : 'opacity-0'}`}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Why Founders Love Masarna</h2>
@@ -76,27 +78,34 @@ const TestimonialsSection = () => {
                     : 'opacity-0 translate-y-8 pointer-events-none'
                 }`}
               >
-                <div className="bg-white rounded-lg shadow-lg p-8 md:p-10">
-                  <div className="flex flex-col md:flex-row md:items-center gap-6">
-                    <div className="flex-shrink-0">
-                      <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-masarna-teal">
-                        <img 
-                          src={testimonial.image} 
-                          alt={testimonial.name}
-                          className="w-full h-full object-cover" 
-                        />
+                <Card className="border border-masarna-orange/20 shadow-lg">
+                  <div className="p-8 md:p-10">
+                    <div className="flex flex-col md:flex-row md:items-center gap-6">
+                      <div className="flex-shrink-0">
+                        <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-masarna-orange">
+                          <img 
+                            src={testimonial.image} 
+                            alt={testimonial.name}
+                            className="w-full h-full object-cover" 
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <div className="flex-grow">
-                      <p className="text-lg md:text-xl text-gray-700 mb-6 italic">"{testimonial.quote}"</p>
-                      <Separator className="mb-4 bg-[#f26522]" />
-                      <div>
-                        <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
-                        <p className="text-gray-600 text-sm">{testimonial.role}</p>
+                      <div className="flex-grow">
+                        <div className="flex items-center mb-4">
+                          <Check className="text-masarna-orange mr-2" />
+                          <p className="font-medium text-masarna-orange">Verified Client</p>
+                        </div>
+                        
+                        <p className="text-lg md:text-xl text-gray-700 mb-6 italic">"{testimonial.quote}"</p>
+                        <Separator className="mb-4 bg-masarna-orange/30" />
+                        <div>
+                          <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
+                          <p className="text-gray-600 text-sm">{testimonial.role}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </Card>
               </div>
             ))}
           </div>
@@ -107,7 +116,7 @@ const TestimonialsSection = () => {
                 key={index}
                 onClick={() => setActiveTestimonial(index)}
                 className={`w-3 h-3 rounded-full transition-all ${
-                  index === activeTestimonial ? 'bg-masarna-teal scale-125' : 'bg-gray-300'
+                  index === activeTestimonial ? 'bg-masarna-orange scale-125' : 'bg-gray-300'
                 }`}
                 aria-label={`View testimonial ${index + 1}`}
               />
@@ -116,7 +125,7 @@ const TestimonialsSection = () => {
           
           <div className="text-center mt-12">
             <Button 
-              className="bg-masarna-teal hover:bg-masarna-teal/90 text-white px-6 py-5 rounded-lg"
+              className="bg-masarna-orange hover:bg-masarna-orange/90 text-white px-6 py-5 rounded-lg"
               onClick={() => window.location.href = '#contact'}
             >
               Join Our Happy Clients
