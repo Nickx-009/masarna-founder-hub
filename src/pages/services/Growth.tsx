@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { TrendingUp, Target, Users, BarChart3, CheckCircle, ArrowRight } from 'lucide-react';
+import { LineChart, BarChart, FileText, Target, CheckCircle } from 'lucide-react';
 import CTASection from '@/components/CTASection';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { initScrollAnimations } from '@/utils/scrollAnimations';
-import CandidateJourneyTimeline from '@/components/CandidateJourneyTimeline';
+import ProcessSteps from '@/components/ProcessSteps';
 import MetricsDisplay from '@/components/MetricsDisplay';
 
 const Growth = () => {
@@ -15,36 +15,36 @@ const Growth = () => {
     initScrollAnimations({ staggerDelay: true, staggerAmount: 100 });
   }, []);
 
-  // Growth process steps
+  // Growth service process steps
   const processSteps = [
     {
       number: "01",
-      title: "Assessment",
-      description: "We analyze your current growth metrics and market positioning"
+      title: "Market Analysis",
+      description: "We analyze your market position and identify growth opportunities"
     },
     {
       number: "02",
-      title: "Strategy",
-      description: "We develop a tailored growth strategy aligned with your business goals"
+      title: "Strategy Development",
+      description: "We create a tailored growth strategy aligned with your business goals"
     },
     {
       number: "03",
       title: "Implementation",
-      description: "We execute growth initiatives and optimize acquisition channels"
+      description: "We execute the strategy with focused campaigns and initiatives"
     },
     {
       number: "04",
-      title: "Scaling",
-      description: "We refine and scale successful growth strategies for sustained results"
+      title: "Optimization",
+      description: "We measure results and continuously optimize for better performance"
     }
   ];
 
   // Success metrics
   const metrics = [
-    { value: "57%", label: "Average increase in customer acquisition" },
-    { value: "3.2x", label: "Average return on marketing investment" },
-    { value: "45%", label: "Reduction in customer acquisition cost" },
-    { value: "85%", label: "Of clients achieve growth targets" }
+    { value: "75%", label: "Average increase in qualified leads" },
+    { value: "45%", label: "Growth in customer acquisition" },
+    { value: "85%", label: "Client retention improvement" },
+    { value: "3.2x", label: "Return on marketing investment" }
   ];
 
   return (
@@ -291,13 +291,10 @@ const Growth = () => {
         </div>
       </section>
       
-      {/* Process Timeline Section */}
+      {/* Process Timeline Section - UPDATED */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center reveal">Our Growth Process</h2>
-            <CandidateJourneyTimeline steps={processSteps} />
-          </div>
+          <ProcessSteps steps={processSteps} title="Our Growth Process" />
         </div>
       </section>
 

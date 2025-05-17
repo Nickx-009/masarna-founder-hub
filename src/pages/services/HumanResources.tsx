@@ -7,6 +7,7 @@ import CTASection from '@/components/CTASection';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from "@/components/ui/separator";
 import { initScrollAnimations } from '@/utils/scrollAnimations';
+import ProcessSteps from '@/components/ProcessSteps';
 
 const HumanResources = () => {
   // Set up scroll animations with staggered effect
@@ -265,36 +266,10 @@ const HumanResources = () => {
         </div>
       </section>
       
-      {/* HR Process Timeline - UPDATED to match Finance page */}
+      {/* HR Process Timeline - Using our new component */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center reveal">Our HR Process</h2>
-            
-            <div className="relative">
-              {/* Connecting Line */}
-              <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 h-full w-px bg-masarna-orange/30 z-0 hidden md:block"></div>
-              
-              <div className="space-y-12 md:space-y-0 relative z-10">
-                {processSteps.map((step, index) => (
-                  <div 
-                    key={index} 
-                    className={`flex flex-col md:flex-row items-center md:items-start gap-6 reveal ${
-                      index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse text-right'
-                    }`}
-                  >
-                    <div className="w-12 h-12 rounded-full bg-masarna-orange flex items-center justify-center text-white font-bold text-xl flex-shrink-0 md:mt-0">
-                      {step.number}
-                    </div>
-                    <div className={`md:w-5/12 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                      <h3 className="text-xl font-bold mb-2 text-gray-900">{step.title}</h3>
-                      <p className="text-gray-700">{step.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+          <ProcessSteps steps={processSteps} title="Our HR Process" />
         </div>
       </section>
       

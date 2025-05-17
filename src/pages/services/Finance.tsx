@@ -6,7 +6,7 @@ import { DollarSign, BarChart, FileText, Calculator, CheckCircle } from 'lucide-
 import CTASection from '@/components/CTASection';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { initScrollAnimations } from '@/utils/scrollAnimations';
-import CandidateJourneyTimeline from '@/components/CandidateJourneyTimeline';
+import ProcessSteps from '@/components/ProcessSteps';
 import MetricsDisplay from '@/components/MetricsDisplay';
 
 const Finance = () => {
@@ -290,13 +290,10 @@ const Finance = () => {
         </div>
       </section>
       
-      {/* Process Timeline Section */}
+      {/* Process Timeline Section - UPDATED */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center reveal">Our Financial Services Process</h2>
-            <CandidateJourneyTimeline steps={processSteps} />
-          </div>
+          <ProcessSteps steps={processSteps} title="Our Financial Services Process" />
         </div>
       </section>
 

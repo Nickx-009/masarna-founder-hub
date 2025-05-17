@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Settings, ClipboardList, Cog, BarChart, CheckCircle } from 'lucide-react';
+import { Settings, BarChart, FileCheck, Briefcase, CheckCircle } from 'lucide-react';
 import CTASection from '@/components/CTASection';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { initScrollAnimations } from '@/utils/scrollAnimations';
-import CandidateJourneyTimeline from '@/components/CandidateJourneyTimeline';
+import ProcessSteps from '@/components/ProcessSteps';
 import MetricsDisplay from '@/components/MetricsDisplay';
 
 const Operations = () => {
@@ -15,36 +15,36 @@ const Operations = () => {
     initScrollAnimations({ staggerDelay: true, staggerAmount: 100 });
   }, []);
 
-  // Operations process steps
+  // Operations service process steps
   const processSteps = [
     {
       number: "01",
-      title: "Discovery",
-      description: "We analyze your current operations and identify improvement areas"
+      title: "Assessment",
+      description: "We analyze your current operations and identify inefficiencies"
     },
     {
       number: "02",
-      title: "Design",
-      description: "We design optimized processes and systems for your specific needs"
+      title: "Process Design",
+      description: "We design optimized operational processes tailored to your business"
     },
     {
       number: "03",
       title: "Implementation",
-      description: "We implement new processes, tools, and systems across your organization"
+      description: "We roll out new systems and processes with minimal disruption"
     },
     {
       number: "04",
-      title: "Optimization",
-      description: "We continuously monitor and refine operations for maximum efficiency"
+      title: "Continuous Improvement",
+      description: "We monitor performance and refine processes for optimal results"
     }
   ];
 
   // Success metrics
   const metrics = [
-    { value: "35%", label: "Average operational cost reduction" },
-    { value: "68%", label: "Increase in operational efficiency" },
-    { value: "42%", label: "Reduction in process completion time" },
-    { value: "91%", label: "Of clients report improved scalability" }
+    { value: "35%", label: "Average reduction in operational costs" },
+    { value: "50%", label: "Improvement in process efficiency" },
+    { value: "60%", label: "Reduction in operational errors" },
+    { value: "25%", label: "Increase in customer satisfaction" }
   ];
 
   return (
@@ -291,13 +291,10 @@ const Operations = () => {
         </div>
       </section>
       
-      {/* Process Timeline Section */}
+      {/* Process Timeline Section - UPDATED */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center reveal">Our Operations Process</h2>
-            <CandidateJourneyTimeline steps={processSteps} />
-          </div>
+          <ProcessSteps steps={processSteps} title="Our Operations Process" />
         </div>
       </section>
 
