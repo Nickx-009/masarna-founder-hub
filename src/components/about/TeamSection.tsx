@@ -8,7 +8,7 @@ const teamMembers = [
   {
     name: 'Sarah Johnson',
     role: 'CEO & Founder',
-    image: '/placeholder.svg',
+    image: '/lovable-uploads/cdd76ebf-239b-4d54-8d69-6b920bec1ba6.png', // Updated image path for Sarah
     bio: 'Former operations lead at two successful startups. Passionate about helping founders scale efficiently.',
     funFact: 'Makes her own kombucha',
     funFactIcon: <Coffee className="w-4 h-4" />,
@@ -93,12 +93,22 @@ const TeamSection = () => {
             >
               <div className="bg-white rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl relative group">
                 <div className="h-64 relative overflow-hidden flex items-center justify-center bg-gradient-to-b from-masarna-orange/10 to-masarna-orange/5 p-6">
-                  <Avatar className="w-40 h-40 border-4 border-white shadow-lg">
-                    <AvatarImage src={member.image} alt={member.name} />
-                    <AvatarFallback className="text-4xl font-bold bg-masarna-orange text-white">
-                      {getInitials(member.name)}
-                    </AvatarFallback>
-                  </Avatar>
+                  {member.name === 'Sarah Johnson' ? (
+                    <div className="w-40 h-40 relative">
+                      <img 
+                        src={member.image} 
+                        alt={member.name} 
+                        className="w-full h-full object-cover object-center rounded-full border-4 border-white shadow-lg"
+                      />
+                    </div>
+                  ) : (
+                    <Avatar className="w-40 h-40 border-4 border-white shadow-lg">
+                      <AvatarImage src={member.image} alt={member.name} />
+                      <AvatarFallback className="text-4xl font-bold bg-masarna-orange text-white">
+                        {getInitials(member.name)}
+                      </AvatarFallback>
+                    </Avatar>
+                  )}
                   
                   <div className={`absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-5 transition-opacity duration-300 ${hoveredMember === index ? 'opacity-100' : 'opacity-0'}`}>
                     <div className="flex items-center gap-2 text-white">
