@@ -7,7 +7,7 @@ const teamMembers = [
   {
     name: 'Sarah Johnson',
     role: 'CEO & Founder',
-    image: '/lovable-uploads/4cef5407-2fed-4b3a-984a-ed7f0eb1be5c.png',
+    image: '/lovable-uploads/10d97769-3695-46c9-80db-296777b8ee54.png',
     bio: 'Former operations lead at two successful startups. Passionate about helping founders scale efficiently.',
     funFact: 'Makes her own kombucha',
     funFactIcon: <Coffee className="w-4 h-4" />,
