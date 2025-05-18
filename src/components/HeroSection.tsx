@@ -31,14 +31,14 @@ const HeroSection = () => {
     "Your vision. Our expertise. Perfect synergy."
   ];
 
-  // Partner logos array with descriptions
+  // Partner logos array with descriptions - using the newly uploaded logos
   const partnerLogos = [
-    { id: 1, src: "/lovable-uploads/4c19cc81-9f30-4ff8-b639-79916ff68ecd.png", alt: "VC Partner Logo" },
-    { id: 2, src: "/lovable-uploads/4cef5407-2fed-4b3a-984a-ed7f0eb1be5c.png", alt: "Investment Partner Logo" },
-    { id: 3, src: "/lovable-uploads/5f95107d-6e25-46ce-aadd-db64bcedb580.png", alt: "Tech Partner Logo" },
-    { id: 4, src: "/lovable-uploads/86c10d18-0b76-47f7-a474-7fafd09629e3.png", alt: "Financial Partner Logo" },
-    { id: 5, src: "/lovable-uploads/cdd76ebf-239b-4d54-8d69-6b920bec1ba6.png", alt: "Strategy Partner Logo" },
-    { id: 6, src: "/lovable-uploads/b49dc31a-e3c1-4deb-810d-518f9f7f937d.png", alt: "Innovation Partner Logo" }
+    { id: 1, src: "/lovable-uploads/48baa83a-1563-47d0-8916-4c1b39372029.png", alt: "A Logo" },
+    { id: 2, src: "/lovable-uploads/5d1ee6cb-01ad-47cd-9d5f-91cd5275b540.png", alt: "Techstars Logo" },
+    { id: 3, src: "/lovable-uploads/0018a5ba-4539-48fa-a6b4-31a8eaf44178.png", alt: "MassChallenge Logo" },
+    { id: 4, src: "/lovable-uploads/97b0ecd0-2a73-4f0c-965c-4eab302c6df9.png", alt: "Plug and Play Logo" },
+    { id: 5, src: "/lovable-uploads/a4fbfafb-2f30-4e6d-8c61-944e4f5f697d.png", alt: "Seedcamp Logo" },
+    { id: 6, src: "/lovable-uploads/240683e7-7d44-4801-9c5a-19fcbd217cea.png", alt: "Y Combinator Logo" },
   ];
 
   return (
@@ -85,21 +85,21 @@ const HeroSection = () => {
             </Button>
           </div>
           
-          {/* Trusted By Section - Updated with actual logos */}
+          {/* Trusted By Section - Updated with all logos in a single row */}
           <div className="mt-16 reveal">
             <p className="text-base text-gray-600 mb-6">
               Leading investors emphasize the strategic value of delegating operations to unlock leadership capacity
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-10 max-w-4xl mx-auto">
+            <div className="flex flex-row justify-center items-center gap-6 md:gap-10 max-w-5xl mx-auto overflow-x-auto py-4">
               {partnerLogos.map((logo) => (
                 <div 
                   key={logo.id} 
-                  className="w-24 h-24 flex items-center justify-center transition-all duration-300 group"
+                  className="flex-shrink-0 w-16 h-16 flex items-center justify-center"
                 >
                   <img 
                     src={logo.src} 
                     alt={logo.alt}
-                    className="max-h-12 max-w-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    className="w-12 h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300"
                     loading="lazy"
                   />
                 </div>
