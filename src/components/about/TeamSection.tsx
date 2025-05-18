@@ -1,14 +1,13 @@
 
 import React, { useState } from 'react';
 import { Linkedin, Mail, Coffee, Bike, Headphones, Mountain, Book, Plane } from 'lucide-react';
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 // Sample team data - replace with actual team members
 const teamMembers = [
   {
     name: 'Sarah Johnson',
     role: 'CEO & Founder',
-    image: '/placeholder.svg',
+    image: '/lovable-uploads/4cef5407-2fed-4b3a-984a-ed7f0eb1be5c.png',
     bio: 'Former operations lead at two successful startups. Passionate about helping founders scale efficiently.',
     funFact: 'Makes her own kombucha',
     funFactIcon: <Coffee className="w-4 h-4" />,
@@ -17,7 +16,7 @@ const teamMembers = [
   {
     name: 'David Chen',
     role: 'Head of Operations',
-    image: '/placeholder.svg',
+    image: '/lovable-uploads/5f95107d-6e25-46ce-aadd-db64bcedb580.png',
     bio: 'Streamlined operations for 15+ tech startups. Expert in creating systems that scale.',
     funFact: 'Competitive cyclist',
     funFactIcon: <Bike className="w-4 h-4" />,
@@ -26,7 +25,7 @@ const teamMembers = [
   {
     name: 'Priya Sharma',
     role: 'Finance Lead',
-    image: '/placeholder.svg',
+    image: '/lovable-uploads/4c19cc81-9f30-4ff8-b639-79916ff68ecd.png',
     bio: 'Former CFO with experience managing finances for rapidly growing startups. MBA from Wharton.',
     funFact: 'Podcast addict',
     funFactIcon: <Headphones className="w-4 h-4" />,
@@ -35,7 +34,7 @@ const teamMembers = [
   {
     name: 'James Wilson',
     role: 'Legal & Compliance',
-    image: '/placeholder.svg',
+    image: '/lovable-uploads/86c10d18-0b76-47f7-a474-7fafd09629e3.png',
     bio: 'Corporate attorney with a focus on startup law. Helps companies navigate complex regulatory environments.',
     funFact: 'Weekend hiker',
     funFactIcon: <Mountain className="w-4 h-4" />,
@@ -44,7 +43,7 @@ const teamMembers = [
   {
     name: 'Elena Rodriguez',
     role: 'HR Director',
-    image: '/placeholder.svg',
+    image: '/lovable-uploads/4cef5407-2fed-4b3a-984a-ed7f0eb1be5c.png',
     bio: 'Specialist in building HR systems and culture for fast-growing teams. Previously at Stripe and Airbnb.',
     funFact: 'Reads 50 books yearly',
     funFactIcon: <Book className="w-4 h-4" />,
@@ -53,7 +52,7 @@ const teamMembers = [
   {
     name: 'Marcus Taylor',
     role: 'Growth Strategist',
-    image: '/placeholder.svg',
+    image: '/lovable-uploads/5f95107d-6e25-46ce-aadd-db64bcedb580.png',
     bio: 'Helped scale multiple SaaS companies from seed to Series B. Focused on sustainable growth models.',
     funFact: 'Visited 42 countries',
     funFactIcon: <Plane className="w-4 h-4" />,
@@ -63,15 +62,6 @@ const teamMembers = [
 
 const TeamSection = () => {
   const [hoveredMember, setHoveredMember] = useState<number | null>(null);
-  
-  // Function to generate initials from name
-  const getInitials = (name: string) => {
-    return name
-      .split(' ')
-      .map(part => part[0])
-      .join('')
-      .toUpperCase();
-  };
 
   return (
     <section className="py-20 bg-white">
@@ -92,13 +82,14 @@ const TeamSection = () => {
               onMouseLeave={() => setHoveredMember(null)}
             >
               <div className="bg-white rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl relative group">
-                <div className="h-64 relative overflow-hidden flex items-center justify-center bg-gradient-to-b from-masarna-orange/10 to-masarna-orange/5 p-6">
-                  <Avatar className="w-40 h-40 border-4 border-white shadow-lg">
-                    <AvatarImage src={member.image} alt={member.name} />
-                    <AvatarFallback className="text-4xl font-bold bg-masarna-orange text-white">
-                      {getInitials(member.name)}
-                    </AvatarFallback>
-                  </Avatar>
+                <div className="h-64 relative overflow-hidden flex items-center justify-center bg-gradient-to-b from-masarna-orange/5 to-white">
+                  <div className="w-full h-full p-6 flex items-center justify-center">
+                    <img 
+                      src={member.image} 
+                      alt={member.name} 
+                      className="h-auto max-h-full w-auto max-w-full object-contain"
+                    />
+                  </div>
                   
                   <div className={`absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-5 transition-opacity duration-300 ${hoveredMember === index ? 'opacity-100' : 'opacity-0'}`}>
                     <div className="flex items-center gap-2 text-white">
