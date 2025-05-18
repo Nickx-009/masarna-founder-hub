@@ -42,6 +42,7 @@ import Career from "./pages/company/Career";
 
 // Other Pages
 import Pricing from "./pages/Pricing";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const queryClient = new QueryClient();
 
@@ -91,6 +92,7 @@ const App = () => (
           
           {/* Other Routes */}
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           
           {/* Catch-all route */}
           <Route path="*" element={<NotFound />} />
