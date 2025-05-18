@@ -8,7 +8,7 @@ const teamMembers = [
   {
     name: 'Sarah Johnson',
     role: 'CEO & Founder',
-    image: '/lovable-uploads/cdd76ebf-239b-4d54-8d69-6b920bec1ba6.png', // Updated image path for Sarah
+    image: '/lovable-uploads/cdd76ebf-239b-4d54-8d69-6b920bec1ba6.png',
     bio: 'Former operations lead at two successful startups. Passionate about helping founders scale efficiently.',
     funFact: 'Makes her own kombucha',
     funFactIcon: <Coffee className="w-4 h-4" />,
@@ -17,7 +17,7 @@ const teamMembers = [
   {
     name: 'David Chen',
     role: 'Head of Operations',
-    image: '/placeholder.svg',
+    image: '/lovable-uploads/b49dc31a-e3c1-4deb-810d-518f9f7f937d.png',
     bio: 'Streamlined operations for 15+ tech startups. Expert in creating systems that scale.',
     funFact: 'Competitive cyclist',
     funFactIcon: <Bike className="w-4 h-4" />,
@@ -26,7 +26,7 @@ const teamMembers = [
   {
     name: 'Priya Sharma',
     role: 'Finance Lead',
-    image: '/placeholder.svg',
+    image: '/lovable-uploads/c95bc8af-9b36-41a9-a4e8-62e111ab4106.png',
     bio: 'Former CFO with experience managing finances for rapidly growing startups. MBA from Wharton.',
     funFact: 'Podcast addict',
     funFactIcon: <Headphones className="w-4 h-4" />,
@@ -35,7 +35,7 @@ const teamMembers = [
   {
     name: 'James Wilson',
     role: 'Legal & Compliance',
-    image: '/placeholder.svg',
+    image: '/lovable-uploads/f8b1908a-4e43-48f0-ab52-5a4fc742395c.png',
     bio: 'Corporate attorney with a focus on startup law. Helps companies navigate complex regulatory environments.',
     funFact: 'Weekend hiker',
     funFactIcon: <Mountain className="w-4 h-4" />,
@@ -44,7 +44,7 @@ const teamMembers = [
   {
     name: 'Elena Rodriguez',
     role: 'HR Director',
-    image: '/placeholder.svg',
+    image: '/lovable-uploads/8b23f5d8-91cc-4d28-a905-cc6bc95fcd36.png',
     bio: 'Specialist in building HR systems and culture for fast-growing teams. Previously at Stripe and Airbnb.',
     funFact: 'Reads 50 books yearly',
     funFactIcon: <Book className="w-4 h-4" />,
@@ -93,7 +93,7 @@ const TeamSection = () => {
             >
               <div className="bg-white rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl relative group">
                 <div className="h-64 relative overflow-hidden flex items-center justify-center bg-gradient-to-b from-masarna-orange/10 to-masarna-orange/5 p-6">
-                  {member.name === 'Sarah Johnson' ? (
+                  {member.image !== '/placeholder.svg' ? (
                     <div className="w-40 h-40 relative">
                       <img 
                         src={member.image} 
