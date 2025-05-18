@@ -31,6 +31,16 @@ const HeroSection = () => {
     "Your vision. Our expertise. Perfect synergy."
   ];
 
+  // Partner logos array with descriptions
+  const partnerLogos = [
+    { id: 1, src: "/lovable-uploads/4c19cc81-9f30-4ff8-b639-79916ff68ecd.png", alt: "VC Partner Logo" },
+    { id: 2, src: "/lovable-uploads/4cef5407-2fed-4b3a-984a-ed7f0eb1be5c.png", alt: "Investment Partner Logo" },
+    { id: 3, src: "/lovable-uploads/5f95107d-6e25-46ce-aadd-db64bcedb580.png", alt: "Tech Partner Logo" },
+    { id: 4, src: "/lovable-uploads/86c10d18-0b76-47f7-a474-7fafd09629e3.png", alt: "Financial Partner Logo" },
+    { id: 5, src: "/lovable-uploads/cdd76ebf-239b-4d54-8d69-6b920bec1ba6.png", alt: "Strategy Partner Logo" },
+    { id: 6, src: "/lovable-uploads/b49dc31a-e3c1-4deb-810d-518f9f7f937d.png", alt: "Innovation Partner Logo" }
+  ];
+
   return (
     <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
       {/* Enhanced grid background with dynamic gradient effect */}
@@ -44,7 +54,7 @@ const HeroSection = () => {
             Operational Excellence for <br /> Ambitious Founders
           </h1>
           
-          <h2 className="text-xl md:text-2xl text-[#f26522] font-medium mb-8">
+          <h2 className="text-xl md:text-2xl text-masarna-orange font-medium mb-8">
             <TypewriterText 
               texts={typewriterTexts}
               className="min-h-[1.5em] inline-block"
@@ -61,49 +71,46 @@ const HeroSection = () => {
           
           <div className="flex flex-col sm:flex-row justify-center gap-4 reveal" ref={revealRef}>
             <Button 
-              className="bg-[#f26522] hover:bg-[#f26522]/90 text-white px-8 py-6 rounded-lg text-lg"
+              className="bg-masarna-orange hover:bg-masarna-orange/90 text-white px-8 py-6 rounded-lg text-lg"
               onClick={() => window.location.href = '#contact'}
             >
               Book Your Free Ops Assessment
             </Button>
             <Button 
               variant="outline" 
-              className="border-[#f26522] text-[#f26522] hover:bg-[#f26522]/10 px-8 py-6 rounded-lg text-lg"
+              className="border-masarna-orange text-masarna-orange hover:bg-masarna-orange/10 px-8 py-6 rounded-lg text-lg"
               onClick={() => window.location.href = '#how-it-works'}
             >
               See How It Works
             </Button>
           </div>
           
-          {/* Trusted By Section - Updated with new text */}
+          {/* Trusted By Section - Updated with actual logos */}
           <div className="mt-16 reveal">
             <p className="text-base text-gray-600 mb-6">
               Leading investors emphasize the strategic value of delegating operations to unlock leadership capacity
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-              {/* Placeholder Logos */}
-              <div className="w-24 h-12 bg-gray-100 rounded-md flex items-center justify-center">
-                <div className="text-gray-400 text-xs">Logo 1</div>
-              </div>
-              <div className="w-24 h-12 bg-gray-100 rounded-md flex items-center justify-center">
-                <div className="text-gray-400 text-xs">Logo 2</div>
-              </div>
-              <div className="w-24 h-12 bg-gray-100 rounded-md flex items-center justify-center">
-                <div className="text-gray-400 text-xs">Logo 3</div>
-              </div>
-              <div className="w-24 h-12 bg-gray-100 rounded-md flex items-center justify-center">
-                <div className="text-gray-400 text-xs">Logo 4</div>
-              </div>
-              <div className="w-24 h-12 bg-gray-100 rounded-md flex items-center justify-center hidden md:flex">
-                <div className="text-gray-400 text-xs">Logo 5</div>
-              </div>
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-10 max-w-4xl mx-auto">
+              {partnerLogos.map((logo) => (
+                <div 
+                  key={logo.id} 
+                  className="w-24 h-24 flex items-center justify-center transition-all duration-300 group"
+                >
+                  <img 
+                    src={logo.src} 
+                    alt={logo.alt}
+                    className="max-h-12 max-w-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
       
-      {/* Decorative shape - Updated color to #f26522 (orange) */}
-      <div className="absolute bottom-0 left-0 w-full h-16 bg-[#f26522]" style={{
+      {/* Decorative shape */}
+      <div className="absolute bottom-0 left-0 w-full h-16 bg-masarna-orange" style={{
         clipPath: 'polygon(0 100%, 100% 100%, 100% 0)'
       }}></div>
     </section>
