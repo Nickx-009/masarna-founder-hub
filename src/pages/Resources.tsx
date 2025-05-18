@@ -1,8 +1,8 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import CTASection from '@/components/CTASection';
 
 const Resources = () => {
   const resourceCategories = [
@@ -79,21 +79,13 @@ const Resources = () => {
             </div>
           ))}
         </div>
-
-        <div className="mt-20 text-center bg-masarna-orange/10 p-8 md:p-12 rounded-xl">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Stay updated with our newsletter</h2>
-          <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            Subscribe to receive the latest insights, tools, and resources directly in your inbox.
-          </p>
-          <Link to="/resources/newsletter">
-            <Button 
-              className="bg-masarna-orange hover:bg-masarna-orange/90 text-white px-8 py-6 text-lg rounded-lg"
-            >
-              Subscribe to Newsletter
-            </Button>
-          </Link>
-        </div>
       </div>
+      
+      <CTASection 
+        heading="Stay updated with our newsletter"
+        description="Subscribe to receive the latest insights, tools, and resources directly in your inbox."
+        buttonText="Subscribe to Newsletter"
+      />
     </PageLayout>
   );
 };

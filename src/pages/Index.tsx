@@ -39,7 +39,11 @@ const Index = () => {
         <ServicesSection />
         <TestimonialsSection />
         <AboutSection />
-        <CTASection />
+        <CTASection 
+          heading="Ready to Transform Your Business Operations?"
+          description="Schedule a free 30-minute consultation with our experts and discover how Masarna can streamline your operations and accelerate your growth."
+          buttonText="Book Your Free Consultation"
+        />
       </main>
       <Footer />
       <ScrollToTop />

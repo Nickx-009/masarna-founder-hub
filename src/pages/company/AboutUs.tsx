@@ -8,6 +8,7 @@ import TeamSection from '@/components/about/TeamSection';
 import MissionVision from '@/components/about/MissionVision';
 import CultureGallery from '@/components/about/CultureGallery';
 import CompanyMetrics from '@/components/about/CompanyMetrics';
+import CTASection from '@/components/CTASection';
 import { initScrollAnimations } from '@/utils/scrollAnimations';
 
 const AboutUs = () => {
@@ -29,6 +30,11 @@ const AboutUs = () => {
       <TeamSection />
       <CultureGallery />
       <CompanyMetrics />
+      <CTASection 
+        heading="Want to be part of our story?"
+        description="Join our team or partner with us to create operational excellence for ambitious founders."
+        buttonText="Get in Touch"
+      />
     </PageLayout>
   );
 };

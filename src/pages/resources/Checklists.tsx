@@ -1,8 +1,8 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import CTASection from '@/components/CTASection';
 
 const Checklists = () => {
   const checklistCategories = [
@@ -67,21 +67,14 @@ const Checklists = () => {
               </div>
             ))}
           </div>
-          
-          <div className="bg-masarna-teal/10 p-8 md:p-12 rounded-xl text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">Need a tailored checklist?</h2>
-            <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-              Our operational experts can create custom checklists specifically designed for your unique business challenges.
-            </p>
-            <Button 
-              className="bg-masarna-teal hover:bg-masarna-teal/90 text-white"
-              onClick={() => window.location.href = '#contact'}
-            >
-              Request Custom Checklist
-            </Button>
-          </div>
         </div>
       </div>
+      
+      <CTASection 
+        heading="Need a tailored checklist?"
+        description="Our operational experts can create custom checklists specifically designed for your unique business challenges."
+        buttonText="Request Custom Checklist"
+      />
     </PageLayout>
   );
 };

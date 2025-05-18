@@ -1,7 +1,7 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from "@/components/ui/button";
+import CTASection from '@/components/CTASection';
 
 const Career = () => {
   const openPositions = [
@@ -90,18 +90,14 @@ const Career = () => {
               <Button variant="outline">Submit Your Resume</Button>
             </div>
           )}
-
-          <div className="mt-16 bg-gray-50 rounded-lg p-8">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Don't See a Position That Fits?</h2>
-            <p className="text-gray-700 mb-6">
-              We're always on the lookout for talented individuals. Send us your resume and let us know how you can contribute to our mission.
-            </p>
-            <Button variant="outline" className="border-masarna-teal text-masarna-teal hover:bg-masarna-teal/10">
-              Send Open Application
-            </Button>
-          </div>
         </div>
       </div>
+
+      <CTASection 
+        heading="Don't See a Position That Fits?"
+        description="We're always on the lookout for talented individuals. Send us your resume and let us know how you can contribute to our mission."
+        buttonText="Send Open Application"
+      />
     </PageLayout>
   );
 };
