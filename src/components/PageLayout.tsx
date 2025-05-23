@@ -47,7 +47,7 @@ const PageLayout = ({
   }, [title]);
 
   return (
-    <div className="min-h-screen">
+    <div className="flex min-h-screen flex-col">
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={metaDescription} />
@@ -70,7 +70,7 @@ const PageLayout = ({
       </Helmet>
       
       <Navigation />
-      <main className="pt-24 min-h-screen">
+      <main className="pt-24 flex-grow">
         {children}
       </main>
       <Footer />
