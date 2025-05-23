@@ -35,7 +35,7 @@ const CTASection = ({
   return (
     <section 
       id="contact" 
-      className="mt-20 flex justify-center px-4"
+      className="mt-20 mb-20 flex justify-center px-4"
     >
       <div 
         className={`max-w-4xl w-full text-center bg-gradient-to-br from-masarna-orange/15 to-masarna-orange/5 p-8 md:p-12 rounded-2xl transition-all duration-500 shadow-lg border border-masarna-orange/10 ${
