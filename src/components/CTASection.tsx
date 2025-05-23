@@ -33,11 +33,13 @@ const CTASection = ({
   return (
     <section 
       id="contact" 
-      className={`mt-20 text-center bg-masarna-orange/10 p-8 md:p-12 rounded-xl transition-all duration-1000 ${
-        isVisible ? 'opacity-100' : 'opacity-90'
-      }`}
+      className="mt-20 flex justify-center px-4"
     >
-      <div className="container mx-auto px-4 md:px-6">
+      <div 
+        className={`max-w-4xl w-full text-center bg-masarna-orange/10 p-8 md:p-12 rounded-2xl transition-all duration-1000 ${
+          isVisible ? 'opacity-100' : 'opacity-90'
+        }`}
+      >
         <h2 className={`text-2xl md:text-3xl font-bold mb-4 transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0' : 'translate-y-10'
         }`}>{heading}</h2>
