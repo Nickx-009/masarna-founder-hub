@@ -1,55 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PageLayout from '@/components/PageLayout';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
-import { Settings, BarChart, FileCheck, Briefcase, CheckCircle, Clipboard, Cog } from 'lucide-react';
 import CTASection from '@/components/CTASection';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { initScrollAnimations } from '@/utils/scrollAnimations';
-import ProcessSteps from '@/components/ProcessSteps';
-import MetricsDisplay from '@/components/MetricsDisplay';
-import { ClipboardList } from 'lucide-react';
 
 const Operations = () => {
-  // Set up scroll animations
-  useEffect(() => {
-    initScrollAnimations({ staggerDelay: true, staggerAmount: 100 });
-  }, []);
-
-  // Operations service process steps
-  const processSteps = [
-    {
-      number: "01",
-      title: "Assessment",
-      description: "We analyze your current operations and identify inefficiencies"
-    },
-    {
-      number: "02",
-      title: "Process Design",
-      description: "We design optimized operational processes tailored to your business"
-    },
-    {
-      number: "03",
-      title: "Implementation",
-      description: "We roll out new systems and processes with minimal disruption"
-    },
-    {
-      number: "04",
-      title: "Continuous Improvement",
-      description: "We monitor performance and refine processes for optimal results"
-    }
-  ];
-
-  // Success metrics
-  const metrics = [
-    { value: "35%", label: "Average reduction in operational costs" },
-    { value: "50%", label: "Improvement in process efficiency" },
-    { value: "60%", label: "Reduction in operational errors" },
-    { value: "25%", label: "Increase in customer satisfaction" }
-  ];
-
   return (
-    <PageLayout title="Operations Services" description="Operations management services for startups">
+    <PageLayout title="Operations Services" description="Streamline your business operations with Masarna">
       {/* Hero Section */}
       <section className="relative pt-20 pb-16 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
         {/* Background grid pattern */}
@@ -351,7 +306,11 @@ const Operations = () => {
       </section>
       
       {/* Use the shared CTA Section component */}
-      <CTASection />
+      <CTASection 
+        heading="Streamline your business operations"
+        description="Eliminate inefficiencies and build scalable processes with our operations expertise."
+        buttonText="Get an Operations Audit"
+      />
     </PageLayout>
   );
 };

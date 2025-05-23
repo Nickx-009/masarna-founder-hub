@@ -349,8 +349,12 @@ const Growth = () => {
         </div>
       </section>
       
-      {/* Use the shared CTA Section component */}
-      <CTASection />
+      {/* Updated CTA Section with unique messaging */}
+      <CTASection 
+        heading="Accelerate your business growth"
+        description="Discover how our growth specialists can help you scale sustainably with proven systems and strategies."
+        buttonText="Book a Growth Strategy Session"
+      />
     </PageLayout>
   );
 };

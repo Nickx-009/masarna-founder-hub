@@ -337,7 +337,11 @@ const HumanResources = () => {
       </section>
       
       {/* Use the shared CTA Section component */}
-      <CTASection />
+      <CTASection 
+        heading="Build a thriving workplace culture"
+        description="Let our HR specialists help you attract, develop, and retain top talent with customized human resources solutions."
+        buttonText="Enhance Your HR Strategy"
+      />
     </PageLayout>
   );
 };

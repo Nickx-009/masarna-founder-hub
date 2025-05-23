@@ -357,8 +357,12 @@ const Compliance = () => {
         </div>
       </section>
       
-      {/* Use the shared CTA Section component */}
-      <CTASection />
+      {/* Updated CTA Section with unique messaging */}
+      <CTASection 
+        heading="Stay ahead of your compliance obligations"
+        description="Avoid risks and costly penalties with our specialized compliance expertise tailored to your industry and business stage."
+        buttonText="Get a Compliance Review"
+      />
     </PageLayout>
   );
 };
