@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
@@ -91,7 +90,7 @@ const Strategy = () => {
           clipPath: 'polygon(0 100%, 100% 100%, 100% 0)'
         }}></div>
       </section>
-
+      
       {/* Introduction Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -382,27 +381,12 @@ const Strategy = () => {
         </div>
       </section>
       
-      {/* Final CTA Section */}
-      <section className="bg-masarna-orange/10 py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center reveal">
-            <h2 className="text-2xl font-bold mb-4">Ready to develop your strategic roadmap?</h2>
-            <p className="text-lg text-gray-700 mb-8">
-              Schedule a free consultation to discuss your specific strategic needs and how Masarna can help.
-            </p>
-            <Button 
-              className="bg-masarna-orange hover:bg-masarna-orange/90 text-white text-lg px-8 py-6 group"
-              onClick={() => window.location.href = '#contact'}
-            >
-              Schedule Your Free Strategy Session
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </div>
-        </div>
-      </section>
-      
-      {/* Use the shared CTA Section component */}
-      <CTASection />
+      {/* Use the shared CTA Section component with custom props */}
+      <CTASection 
+        heading="Ready to develop your strategic roadmap?"
+        description="Schedule a free consultation to discuss your specific strategic needs and how Masarna can help."
+        buttonText="Schedule Your Free Strategy Session"
+      />
     </PageLayout>
   );
 };
