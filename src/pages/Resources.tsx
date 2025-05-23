@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
@@ -82,9 +83,9 @@ const Resources = () => {
       </div>
       
       <CTASection 
-        heading="Stay updated with our newsletter"
-        description="Subscribe to receive the latest insights, tools, and resources directly in your inbox."
-        buttonText="Subscribe to Newsletter"
+        heading="Looking for specific operational guidance?"
+        description="Our team can provide custom resources tailored to your business challenges and growth stage."
+        buttonText="Request Custom Resources"
       />
     </PageLayout>
   );

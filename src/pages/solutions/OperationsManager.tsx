@@ -241,7 +241,11 @@ const OperationsManager = () => {
       </section>
       
       {/* CTA Section */}
-      <CTASection />
+      <CTASection 
+        heading="Ready to optimize your operations?"
+        description="Our operations managers will streamline your processes, implement efficient systems, and help you scale smoothly."
+        buttonText="Get Operational Support Today" 
+      />
     </PageLayout>
   );
 };

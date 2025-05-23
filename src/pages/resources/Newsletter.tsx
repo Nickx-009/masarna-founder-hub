@@ -1,9 +1,9 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Input } from "@/components/ui/input";
+import CTASection from '@/components/CTASection';
 
 const Newsletter = () => {
   const latestIssues = [
@@ -111,6 +111,12 @@ const Newsletter = () => {
           </div>
         </div>
       </div>
+      
+      <CTASection 
+        heading="Need personalized operational guidance?"
+        description="Subscribe to our newsletter for insights, or book a call with our team for tailored advice specific to your business challenges."
+        buttonText="Book a Consultation Call"
+      />
     </PageLayout>
   );
 };

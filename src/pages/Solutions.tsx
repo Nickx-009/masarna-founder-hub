@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
@@ -68,9 +69,9 @@ const Solutions = () => {
       </div>
       
       <CTASection 
-        heading="Need leadership support?"
-        description="Let us match you with the perfect fractional leader for your business needs and growth stage."
-        buttonText="Schedule a Consultation"
+        heading="Ready for strategic leadership support?"
+        description="Our fractional executives bring years of experience to your team without the full-time cost. Find the perfect leadership solution for your growth stage."
+        buttonText="Book Your Leadership Consultation"
       />
     </PageLayout>
   );

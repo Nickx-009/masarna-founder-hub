@@ -1,8 +1,8 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import CTASection from '@/components/CTASection';
 
 const Blog = () => {
   // Sample blog posts for display
@@ -118,21 +118,14 @@ const Blog = () => {
               </div>
             ))}
           </div>
-          
-          {/* Newsletter CTA */}
-          <div className="bg-masarna-teal/10 p-8 rounded-xl text-center">
-            <h3 className="text-xl font-bold mb-4">Subscribe to our newsletter</h3>
-            <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
-              Get the latest insights and articles delivered straight to your inbox. No spam, just valuable content.
-            </p>
-            <Link to="/resources/newsletter">
-              <Button className="bg-masarna-teal hover:bg-masarna-teal/90 text-white">
-                Subscribe Now
-              </Button>
-            </Link>
-          </div>
         </div>
       </div>
+      
+      <CTASection 
+        heading="Want expert operational insights?"
+        description="Schedule a call with our operational experts to get personalized advice based on the challenges your business is facing."
+        buttonText="Book a Strategy Session"
+      />
     </PageLayout>
   );
 };

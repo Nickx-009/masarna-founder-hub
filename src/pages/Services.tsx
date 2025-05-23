@@ -1,8 +1,8 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import CTASection from '@/components/CTASection';
 
 const Services = () => {
   const serviceCategories = [
@@ -65,21 +65,13 @@ const Services = () => {
             </div>
           ))}
         </div>
-
-        <div className="mt-20 text-center bg-masarna-orange/10 p-8 md:p-12 rounded-xl">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to elevate your operations?</h2>
-          <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            Get a free assessment of your current operations and discover how 
-            we can help you focus on growth.
-          </p>
-          <Button 
-            className="bg-masarna-orange hover:bg-masarna-orange/90 text-white px-8 py-6 text-lg rounded-lg"
-            onClick={() => window.location.href = '#contact'}
-          >
-            Book Your Free Assessment
-          </Button>
-        </div>
       </div>
+      
+      <CTASection 
+        heading="Find the right service for your business needs"
+        description="Our expert team can help you identify which services will have the biggest impact on your business operations."
+        buttonText="Schedule a Service Consultation"
+      />
     </PageLayout>
   );
 };
