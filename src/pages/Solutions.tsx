@@ -69,9 +69,9 @@ const Solutions = () => {
       </div>
       
       <CTASection 
-        heading="Ready for strategic leadership support?"
-        description="Our fractional executives bring years of experience to your team without the full-time cost. Find the perfect leadership solution for your growth stage."
-        buttonText="Book Your Leadership Consultation"
+        heading="Access executive expertise on demand"
+        description="Get the leadership talent your business needs, precisely when you need it, without the commitment of full-time hires."
+        buttonText="Explore Leadership Options"
       />
     </PageLayout>
   );

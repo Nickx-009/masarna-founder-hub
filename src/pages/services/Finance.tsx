@@ -349,7 +349,11 @@ const Finance = () => {
       </section>
       
       {/* Use the shared CTA Section component */}
-      <CTASection />
+      <CTASection 
+        heading="Ready to strengthen your financial foundation?"
+        description="Our financial experts can help you optimize cash flow, ensure compliance, and build financial strategies that support your growth objectives."
+        buttonText="Schedule a Financial Assessment"
+      />
     </PageLayout>
   );
 };

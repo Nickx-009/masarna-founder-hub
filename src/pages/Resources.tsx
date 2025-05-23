@@ -83,9 +83,9 @@ const Resources = () => {
       </div>
       
       <CTASection 
-        heading="Looking for specific operational guidance?"
-        description="Our team can provide custom resources tailored to your business challenges and growth stage."
-        buttonText="Request Custom Resources"
+        heading="Need specialized operational knowledge?"
+        description="Whether you're facing a unique challenge or exploring a new opportunity, our team can create custom resources tailored to your specific situation."
+        buttonText="Request Custom Content"
       />
     </PageLayout>
   );

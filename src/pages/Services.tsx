@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
@@ -68,9 +69,9 @@ const Services = () => {
       </div>
       
       <CTASection 
-        heading="Find the right service for your business needs"
-        description="Our expert team can help you identify which services will have the biggest impact on your business operations."
-        buttonText="Schedule a Service Consultation"
+        heading="Find your operational advantage"
+        description="Let our experts analyze your current operational challenges and recommend tailored services to help you focus on growth and innovation."
+        buttonText="Request a Service Consultation"
       />
     </PageLayout>
   );
