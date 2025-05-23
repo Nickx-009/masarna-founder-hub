@@ -67,6 +67,10 @@ const PageLayout = ({
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={openGraphImage} />
+
+        {/* Add LinkedIn metadata */}
+        <meta property="og:site_name" content="Masarna" />
+        <meta property="linkedin:owner" content="masarna1" />
       </Helmet>
       
       <Navigation />

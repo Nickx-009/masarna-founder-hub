@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Linkedin, Mail, Coffee, Bike, Headphones, Mountain, Book, Plane } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -12,7 +11,7 @@ const teamMembers = [
     bio: 'Former operations lead at two successful startups. Passionate about helping founders scale efficiently.',
     funFact: 'Makes her own kombucha',
     funFactIcon: <Coffee className="w-4 h-4" />,
-    linkedin: 'https://linkedin.com/'
+    linkedin: 'https://linkedin.com/company/masarna1'
   },
   {
     name: 'David Chen',
@@ -21,7 +20,7 @@ const teamMembers = [
     bio: 'Streamlined operations for 15+ tech startups. Expert in creating systems that scale.',
     funFact: 'Competitive cyclist',
     funFactIcon: <Bike className="w-4 h-4" />,
-    linkedin: 'https://linkedin.com/'
+    linkedin: 'https://linkedin.com/company/masarna1'
   },
   {
     name: 'Priya Sharma',
@@ -30,7 +29,7 @@ const teamMembers = [
     bio: 'Former CFO with experience managing finances for rapidly growing startups. MBA from Wharton.',
     funFact: 'Podcast addict',
     funFactIcon: <Headphones className="w-4 h-4" />,
-    linkedin: 'https://linkedin.com/'
+    linkedin: 'https://linkedin.com/company/masarna1'
   },
   {
     name: 'James Wilson',
@@ -39,7 +38,7 @@ const teamMembers = [
     bio: 'Corporate attorney with a focus on startup law. Helps companies navigate complex regulatory environments.',
     funFact: 'Weekend hiker',
     funFactIcon: <Mountain className="w-4 h-4" />,
-    linkedin: 'https://linkedin.com/'
+    linkedin: 'https://linkedin.com/company/masarna1'
   },
   {
     name: 'Elena Rodriguez',
@@ -48,7 +47,7 @@ const teamMembers = [
     bio: 'Specialist in building HR systems and culture for fast-growing teams. Previously at Stripe and Airbnb.',
     funFact: 'Reads 50 books yearly',
     funFactIcon: <Book className="w-4 h-4" />,
-    linkedin: 'https://linkedin.com/'
+    linkedin: 'https://linkedin.com/company/masarna1'
   },
   {
     name: 'Marcus Taylor',
@@ -57,7 +56,7 @@ const teamMembers = [
     bio: 'Helped scale multiple SaaS companies from seed to Series B. Focused on sustainable growth models.',
     funFact: 'Visited 42 countries',
     funFactIcon: <Plane className="w-4 h-4" />,
-    linkedin: 'https://linkedin.com/'
+    linkedin: 'https://linkedin.com/company/masarna1'
   },
 ];
 

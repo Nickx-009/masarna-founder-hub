@@ -45,7 +45,7 @@ const Footer = () => {
             
             {/* Social Media Links */}
             <div className="flex space-x-4 pt-2">
-              <a href="https://linkedin.com/company/masarna" target="_blank" rel="noopener noreferrer" 
+              <a href="https://linkedin.com/company/masarna1" target="_blank" rel="noopener noreferrer" 
                 className="bg-gray-800 p-2 rounded-full hover:bg-masarna-orange transition-colors" 
                 aria-label="Masarna on LinkedIn">
                 <Linkedin size={18} />
@@ -151,7 +151,7 @@ const Footer = () => {
           "sameAs": [
             "https://twitter.com/masarna",
             "https://facebook.com/masarna",
-            "https://linkedin.com/company/masarna",
+            "https://linkedin.com/company/masarna1",
             "https://instagram.com/masarna"
           ],
           "contactPoint": {
