@@ -27,4 +27,4 @@ User-agent: *
 Crawl-delay: 10
 
 # Sitemap
-Sitemap: https://masarna.com/sitemap.xml
+Sitemap: https://masarna.co/sitemap.xml

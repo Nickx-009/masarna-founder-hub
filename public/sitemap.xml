@@ -7,7 +7,7 @@
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <!-- Main Pages -->
   <url>
-    <loc>https://masarna.com/</loc>
+    <loc>https://masarna.co/</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -15,49 +15,49 @@
   
   <!-- Services Pages -->
   <url>
-    <loc>https://masarna.com/services</loc>
+    <loc>https://masarna.co/services</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://masarna.com/services/compliance</loc>
+    <loc>https://masarna.co/services/compliance</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://masarna.com/services/finance</loc>
+    <loc>https://masarna.co/services/finance</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://masarna.com/services/growth</loc>
+    <loc>https://masarna.co/services/growth</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://masarna.com/services/human-resources</loc>
+    <loc>https://masarna.co/services/human-resources</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://masarna.com/services/legal</loc>
+    <loc>https://masarna.co/services/legal</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://masarna.com/services/operations</loc>
+    <loc>https://masarna.co/services/operations</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://masarna.com/services/strategy</loc>
+    <loc>https://masarna.co/services/strategy</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -65,43 +65,43 @@
   
   <!-- Solutions Pages -->
   <url>
-    <loc>https://masarna.com/solutions</loc>
+    <loc>https://masarna.co/solutions</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://masarna.com/solutions/chief-of-staff</loc>
+    <loc>https://masarna.co/solutions/chief-of-staff</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://masarna.com/solutions/fractional-cfo</loc>
+    <loc>https://masarna.co/solutions/fractional-cfo</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://masarna.com/solutions/fractional-recruiter</loc>
+    <loc>https://masarna.co/solutions/fractional-recruiter</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://masarna.com/solutions/head-of-hr</loc>
+    <loc>https://masarna.co/solutions/head-of-hr</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://masarna.com/solutions/operations-manager</loc>
+    <loc>https://masarna.co/solutions/operations-manager</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://masarna.com/solutions/project-manager</loc>
+    <loc>https://masarna.co/solutions/project-manager</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -109,61 +109,61 @@
   
   <!-- Resources Pages -->
   <url>
-    <loc>https://masarna.com/resources</loc>
+    <loc>https://masarna.co/resources</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://masarna.com/resources/blog</loc>
+    <loc>https://masarna.co/resources/blog</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://masarna.com/resources/calculators</loc>
+    <loc>https://masarna.co/resources/calculators</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://masarna.com/resources/case-studies</loc>
+    <loc>https://masarna.co/resources/case-studies</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://masarna.com/resources/checklists</loc>
+    <loc>https://masarna.co/resources/checklists</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://masarna.com/resources/guides</loc>
+    <loc>https://masarna.co/resources/guides</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://masarna.com/resources/newsletter</loc>
+    <loc>https://masarna.co/resources/newsletter</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://masarna.com/resources/podcast</loc>
+    <loc>https://masarna.co/resources/podcast</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://masarna.com/resources/templates</loc>
+    <loc>https://masarna.co/resources/templates</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://masarna.com/resources/webinars</loc>
+    <loc>https://masarna.co/resources/webinars</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -171,13 +171,13 @@
   
   <!-- Company Pages -->
   <url>
-    <loc>https://masarna.com/company/about-us</loc>
+    <loc>https://masarna.co/company/about-us</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://masarna.com/company/career</loc>
+    <loc>https://masarna.co/company/career</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -185,13 +185,13 @@
   
   <!-- Legal Pages -->
   <url>
-    <loc>https://masarna.com/privacy-policy</loc>
+    <loc>https://masarna.co/privacy-policy</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://masarna.com/terms-of-use</loc>
+    <loc>https://masarna.co/terms-of-use</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
@@ -199,7 +199,7 @@
   
   <!-- Pricing -->
   <url>
-    <loc>https://masarna.com/pricing</loc>
+    <loc>https://masarna.co/pricing</loc>
     <lastmod>2025-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

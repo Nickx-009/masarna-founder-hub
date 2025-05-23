@@ -33,10 +33,10 @@ const PageLayout = ({
   const metaKeywords = keywords || 'operations, startup operations, HR, compliance, finance, strategy';
   
   // Default canonical URL based on current path
-  const canonical = canonicalUrl || `https://masarna.com${window.location.pathname}`;
+  const canonical = canonicalUrl || `https://masarna.co${window.location.pathname}`;
   
   // Default OG image
-  const openGraphImage = ogImage || 'https://masarna.com/lovable-uploads/4c19cc81-9f30-4ff8-b639-79916ff68ecd.png';
+  const openGraphImage = ogImage || 'https://masarna.co/lovable-uploads/4c19cc81-9f30-4ff8-b639-79916ff68ecd.png';
 
   useEffect(() => {
     // Initialize scroll animations
