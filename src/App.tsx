@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -45,6 +44,9 @@ import Career from "./pages/company/Career";
 import Pricing from "./pages/Pricing";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
+
+// Admin Pages
+import Leads from "./pages/admin/Leads";
 
 const queryClient = new QueryClient();
 
@@ -96,6 +98,9 @@ const App = () => (
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-use" element={<TermsOfUse />} />
+          
+          {/* Admin Routes */}
+          <Route path="/admin/leads" element={<Leads />} />
           
           {/* Catch-all route */}
           <Route path="*" element={<NotFound />} />
