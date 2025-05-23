@@ -21,7 +21,7 @@ const Leads = () => {
 
   // Handle search
   const filteredLeads = leads.filter(lead => {
-    const searchable = `${lead.firstName} ${lead.lastName} ${lead.email} ${lead.company} ${lead.phone || ''} ${lead.interest || ''}`.toLowerCase();
+    const searchable = `${lead.name} ${lead.email} ${lead.company} ${lead.phone || ''} ${lead.interest || ''}`.toLowerCase();
     return searchable.includes(searchTerm.toLowerCase());
   });
 
@@ -87,7 +87,7 @@ const Leads = () => {
                 <th 
                   scope="col" 
                   className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer"
-                  onClick={() => handleSort('firstName')}
+                  onClick={() => handleSort('name')}
                 >
                   <div className="flex items-center">
                     Name
@@ -151,7 +151,7 @@ const Leads = () => {
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="text-sm font-medium text-gray-900">
-                        {lead.firstName} {lead.lastName}
+                        {lead.name}
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
