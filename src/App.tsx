@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
@@ -51,63 +52,65 @@ import Leads from "./pages/admin/Leads";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          
-          {/* Services Routes */}
-          <Route path="/services" element={<Services />} />
-          <Route path="/services/human-resources" element={<HumanResources />} />
-          <Route path="/services/finance" element={<Finance />} />
-          <Route path="/services/compliance" element={<Compliance />} />
-          <Route path="/services/legal" element={<Navigate to="/services/compliance" replace />} />
-          <Route path="/services/strategy" element={<Strategy />} />
-          <Route path="/services/growth" element={<Growth />} />
-          <Route path="/services/operations" element={<Operations />} />
-          
-          {/* Solutions Routes */}
-          <Route path="/solutions" element={<Solutions />} />
-          <Route path="/solutions/chief-of-staff" element={<ChiefOfStaff />} />
-          <Route path="/solutions/fractional-cfo" element={<FractionalCFO />} />
-          <Route path="/solutions/head-of-hr" element={<HeadOfHR />} />
-          <Route path="/solutions/fractional-recruiter" element={<FractionalRecruiter />} />
-          <Route path="/solutions/operations-manager" element={<OperationsManager />} />
-          <Route path="/solutions/project-manager" element={<ProjectManager />} />
-          
-          {/* Resources Routes */}
-          <Route path="/resources" element={<Resources />} />
-          <Route path="/resources/blog" element={<Blog />} />
-          <Route path="/resources/guides" element={<Guides />} />
-          <Route path="/resources/case-studies" element={<CaseStudies />} />
-          <Route path="/resources/templates" element={<Templates />} />
-          <Route path="/resources/calculators" element={<Calculators />} />
-          <Route path="/resources/checklists" element={<Checklists />} />
-          <Route path="/resources/webinars" element={<Webinars />} />
-          <Route path="/resources/podcast" element={<Podcast />} />
-          <Route path="/resources/newsletter" element={<Newsletter />} />
-          
-          {/* Company Routes */}
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/career" element={<Career />} />
-          
-          {/* Other Routes */}
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-of-use" element={<TermsOfUse />} />
-          
-          {/* Admin Routes */}
-          <Route path="/admin/leads" element={<Leads />} />
-          
-          {/* Catch-all route */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <HelmetProvider>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            
+            {/* Services Routes */}
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/human-resources" element={<HumanResources />} />
+            <Route path="/services/finance" element={<Finance />} />
+            <Route path="/services/compliance" element={<Compliance />} />
+            <Route path="/services/legal" element={<Navigate to="/services/compliance" replace />} />
+            <Route path="/services/strategy" element={<Strategy />} />
+            <Route path="/services/growth" element={<Growth />} />
+            <Route path="/services/operations" element={<Operations />} />
+            
+            {/* Solutions Routes */}
+            <Route path="/solutions" element={<Solutions />} />
+            <Route path="/solutions/chief-of-staff" element={<ChiefOfStaff />} />
+            <Route path="/solutions/fractional-cfo" element={<FractionalCFO />} />
+            <Route path="/solutions/head-of-hr" element={<HeadOfHR />} />
+            <Route path="/solutions/fractional-recruiter" element={<FractionalRecruiter />} />
+            <Route path="/solutions/operations-manager" element={<OperationsManager />} />
+            <Route path="/solutions/project-manager" element={<ProjectManager />} />
+            
+            {/* Resources Routes */}
+            <Route path="/resources" element={<Resources />} />
+            <Route path="/resources/blog" element={<Blog />} />
+            <Route path="/resources/guides" element={<Guides />} />
+            <Route path="/resources/case-studies" element={<CaseStudies />} />
+            <Route path="/resources/templates" element={<Templates />} />
+            <Route path="/resources/calculators" element={<Calculators />} />
+            <Route path="/resources/checklists" element={<Checklists />} />
+            <Route path="/resources/webinars" element={<Webinars />} />
+            <Route path="/resources/podcast" element={<Podcast />} />
+            <Route path="/resources/newsletter" element={<Newsletter />} />
+            
+            {/* Company Routes */}
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/career" element={<Career />} />
+            
+            {/* Other Routes */}
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-use" element={<TermsOfUse />} />
+            
+            {/* Admin Routes */}
+            <Route path="/admin/leads" element={<Leads />} />
+            
+            {/* Catch-all route */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </HelmetProvider>
 );
 
 export default App;

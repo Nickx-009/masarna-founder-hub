@@ -1,18 +1,30 @@
 
+# Masarna Website Robots.txt
+# Last updated: 2025-05-23
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+# Allow Google to access everything
 User-agent: Googlebot
 Allow: /
 
+# Allow Bing to access everything
 User-agent: Bingbot
 Allow: /
 
+# Social media bots
 User-agent: Twitterbot
 Allow: /
 
 User-agent: facebookexternalhit
 Allow: /
 
+# Crawl delays to be polite to server resources
 User-agent: *
-Allow: /
+Crawl-delay: 10
 
 # Sitemap
 Sitemap: https://masarna.com/sitemap.xml
