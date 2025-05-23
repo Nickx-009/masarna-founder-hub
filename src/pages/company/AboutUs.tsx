@@ -4,7 +4,6 @@ import PageLayout from '@/components/PageLayout';
 import AboutHero from '@/components/about/AboutHero';
 import OurStoryTimeline from '@/components/about/OurStoryTimeline';
 import ValuesSection from '@/components/about/ValuesSection';
-import TeamSection from '@/components/about/TeamSection';
 import MissionVision from '@/components/about/MissionVision';
 import CultureGallery from '@/components/about/CultureGallery';
 import CompanyMetrics from '@/components/about/CompanyMetrics';
@@ -27,7 +26,6 @@ const AboutUs = () => {
       <OurStoryTimeline />
       <ValuesSection />
       <MissionVision />
-      <TeamSection />
       <CultureGallery />
       <CompanyMetrics />
       <CTASection 
