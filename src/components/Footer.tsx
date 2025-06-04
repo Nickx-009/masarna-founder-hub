@@ -3,12 +3,97 @@ import { ArrowUp, Facebook, Instagram, Linkedin, Mail, Twitter } from 'lucide-re
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
+import { useState } from 'react';
+import { useToast } from '@/hooks/use-toast';
 
 const Footer = () => {
-  const handleSubscribe = (e: React.FormEvent) => {
+  const [email, setEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Newsletter subscription handling would go here
-    console.log('Newsletter subscription submitted');
+    
+    if (!email) {
+      toast({
+        title: "Email required",
+        description: "Please enter your email address",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast({
+        title: "Invalid email",
+        description: "Please enter a valid email address",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsLoading(true);
+    console.log('Subscribing email to ConvertKit:', email);
+
+    try {
+      // ConvertKit API integration
+      // You'll need to replace these with your actual ConvertKit credentials
+      const CONVERTKIT_API_KEY = 'your_convertkit_api_key'; // Replace with your API key
+      const CONVERTKIT_FORM_ID = 'your_form_id'; // Replace with your form ID
+      
+      const response = await fetch(`https://api.convertkit.com/v3/forms/${CONVERTKIT_FORM_ID}/subscribe`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          api_key: CONVERTKIT_API_KEY,
+          email: email,
+          tags: ['website-newsletter'], // Optional: add tags to categorize subscribers
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log('ConvertKit subscription successful:', data);
+        
+        toast({
+          title: "Successfully subscribed!",
+          description: "Thank you for subscribing to our newsletter. Check your email for confirmation.",
+        });
+        
+        // Clear the email input
+        setEmail('');
+      } else {
+        const errorData = await response.json();
+        console.error('ConvertKit API error:', errorData);
+        
+        // Handle specific ConvertKit errors
+        if (errorData.message && errorData.message.includes('already subscribed')) {
+          toast({
+            title: "Already subscribed",
+            description: "This email is already subscribed to our newsletter.",
+          });
+        } else {
+          toast({
+            title: "Subscription failed",
+            description: "Something went wrong. Please try again later.",
+            variant: "destructive",
+          });
+        }
+      }
+    } catch (error) {
+      console.error('Error subscribing to newsletter:', error);
+      toast({
+        title: "Network error",
+        description: "Please check your connection and try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const scrollToTop = () => {
@@ -104,11 +189,18 @@ const Footer = () => {
                 <Input 
                   type="email" 
                   placeholder="Your email" 
-                  className="bg-gray-800 border-gray-700 text-white" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-400" 
                   required 
+                  disabled={isLoading}
                 />
-                <Button type="submit" className="bg-masarna-orange hover:bg-masarna-orange/90">
-                  Subscribe
+                <Button 
+                  type="submit" 
+                  className="bg-masarna-orange hover:bg-masarna-orange/90"
+                  disabled={isLoading}
+                >
+                  {isLoading ? 'Subscribing...' : 'Subscribe'}
                 </Button>
               </div>
             </form>
