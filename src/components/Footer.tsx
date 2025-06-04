@@ -1,4 +1,3 @@
-
 import { ArrowUp, Facebook, Instagram, Linkedin, Mail, Twitter } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
@@ -38,10 +37,9 @@ const Footer = () => {
     console.log('Subscribing email to ConvertKit:', email);
 
     try {
-      // ConvertKit API integration
-      // You'll need to replace these with your actual ConvertKit credentials
-      const CONVERTKIT_API_KEY = 'your_convertkit_api_key'; // Replace with your API key
-      const CONVERTKIT_FORM_ID = 'your_form_id'; // Replace with your form ID
+      // ConvertKit API integration with your actual credentials
+      const CONVERTKIT_API_KEY = 'QqFc87P5yHW_EzfoXoGRZw';
+      const CONVERTKIT_FORM_ID = '14c9baede0';
       
       const response = await fetch(`https://api.convertkit.com/v3/forms/${CONVERTKIT_FORM_ID}/subscribe`, {
         method: 'POST',
