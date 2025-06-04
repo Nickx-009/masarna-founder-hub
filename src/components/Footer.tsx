@@ -4,6 +4,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
+import { convertKitService } from '@/services/convertkit';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -22,65 +23,27 @@ const Footer = () => {
       return;
     }
 
-    // Basic email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      toast({
-        title: "Invalid email",
-        description: "Please enter a valid email address",
-        variant: "destructive",
-      });
-      return;
-    }
-
     setIsLoading(true);
     console.log('Subscribing email to ConvertKit:', email);
 
     try {
-      // ConvertKit API integration with your actual credentials
-      const CONVERTKIT_API_KEY = 'QqFc87P5yHW_EzfoXoGRZw';
-      const CONVERTKIT_FORM_ID = '14c9baede0';
-      
-      const response = await fetch(`https://api.convertkit.com/v3/forms/${CONVERTKIT_FORM_ID}/subscribe`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          api_key: CONVERTKIT_API_KEY,
-          email: email,
-          tags: ['website-newsletter'], // Optional: add tags to categorize subscribers
-        }),
+      const result = await convertKitService.subscribe({
+        email,
+        tags: ['website-newsletter']
       });
 
-      if (response.ok) {
-        const data = await response.json();
-        console.log('ConvertKit subscription successful:', data);
-        
+      if (result.success) {
         toast({
           title: "Successfully subscribed!",
-          description: "Thank you for subscribing to our newsletter. Check your email for confirmation.",
+          description: result.message || "Thank you for subscribing to our newsletter. Check your email for confirmation.",
         });
-        
-        // Clear the email input
         setEmail('');
       } else {
-        const errorData = await response.json();
-        console.error('ConvertKit API error:', errorData);
-        
-        // Handle specific ConvertKit errors
-        if (errorData.message && errorData.message.includes('already subscribed')) {
-          toast({
-            title: "Already subscribed",
-            description: "This email is already subscribed to our newsletter.",
-          });
-        } else {
-          toast({
-            title: "Subscription failed",
-            description: "Something went wrong. Please try again later.",
-            variant: "destructive",
-          });
-        }
+        toast({
+          title: result.message?.includes('already subscribed') ? "Already subscribed" : "Subscription failed",
+          description: result.message || "Something went wrong. Please try again later.",
+          variant: result.message?.includes('already subscribed') ? "default" : "destructive",
+        });
       }
     } catch (error) {
       console.error('Error subscribing to newsletter:', error);
@@ -192,6 +155,7 @@ const Footer = () => {
                   className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-400" 
                   required 
                   disabled={isLoading}
+                  maxLength={254}
                 />
                 <Button 
                   type="submit" 

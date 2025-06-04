@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { useToast } from '@/hooks/use-toast';
 import LeadCaptureForm, { LeadFormData } from './LeadCaptureForm';
+import { saveSecureLead, trackSecureCTAClick } from '@/utils/secureLeadUtils';
 
 export interface LeadCaptureDialogProps {
   open: boolean;
@@ -26,31 +27,38 @@ const LeadCaptureDialog = ({
     setIsSubmitting(true);
     
     try {
+      // Track CTA click securely
+      trackSecureCTAClick(ctaText, source, ctaContext);
+      
       // Create lead object with metadata
-      const lead = {
+      const leadData = {
         ...data,
-        timestamp: new Date().toISOString(),
-        source, // Which page the lead came from
-        ctaText, // Which button was clicked
-        ctaContext // Additional context
+        source,
+        ctaText,
+        ctaContext
       };
       
-      // Store in localStorage for now
-      const existingLeads = JSON.parse(localStorage.getItem('masarna_leads') || '[]');
-      existingLeads.push(lead);
-      localStorage.setItem('masarna_leads', JSON.stringify(existingLeads));
+      // Save lead securely
+      const success = saveSecureLead(leadData);
       
-      // Log analytics (would integrate with a real analytics service)
-      console.log('Lead captured:', lead);
-      
-      // Show success message
-      toast({
-        title: "Thank you for your interest!",
-        description: "One of our consultants will contact you shortly.",
-      });
-      
-      // Close the dialog
-      onOpenChange(false);
+      if (success) {
+        console.log('Lead captured securely');
+        
+        // Show success message
+        toast({
+          title: "Thank you for your interest!",
+          description: "One of our consultants will contact you shortly.",
+        });
+        
+        // Close the dialog
+        onOpenChange(false);
+      } else {
+        toast({
+          title: "Unable to submit",
+          description: "Please check your information and try again.",
+          variant: "destructive",
+        });
+      }
     } catch (error) {
       console.error('Error submitting lead:', error);
       toast({
@@ -65,7 +73,6 @@ const LeadCaptureDialog = ({
   
   // Map source to default interest area if possible
   const getDefaultInterest = () => {
-    // Strip out "/services/" or "/solutions/" to get the slug
     let interest = "";
     
     if (source.includes("/services/")) {
@@ -74,7 +81,6 @@ const LeadCaptureDialog = ({
       interest = source.split("/solutions/")[1];
     }
     
-    // If we have one of our specific interests, return it
     if ([
       "operations", 
       "human-resources", 
@@ -89,7 +95,6 @@ const LeadCaptureDialog = ({
     return ctaContext;
   };
   
-  // Get title based on CTA or source
   const getDialogTitle = () => {
     if (ctaText.toLowerCase().includes("assessment")) {
       return "Book Your Free Assessment";
