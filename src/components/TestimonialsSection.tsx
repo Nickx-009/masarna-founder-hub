@@ -80,7 +80,7 @@ const TestimonialsSection = () => {
         <p className="text-gray-700 italic mb-6 text-base leading-relaxed">"{quote}"</p>
         <div className="flex items-center">
           <Avatar className="h-10 w-10 border-2 border-masarna-orange">
-            <AvatarImage src={image} alt={name} />
+            <AvatarImage src={image} alt={`Testimonial from ${name}`} />
             <AvatarFallback>{name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
           </Avatar>
           <div className="ml-3">

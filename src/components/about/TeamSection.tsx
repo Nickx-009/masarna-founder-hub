@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Linkedin, Mail, Coffee, Bike, Headphones, Mountain, Book, Plane } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import Image from 'next/image';
 
 // Sample team data - replace with actual team members
 const teamMembers = [
@@ -10,7 +11,7 @@ const teamMembers = [
     image: '/lovable-uploads/cdd76ebf-239b-4d54-8d69-6b920bec1ba6.png',
     bio: 'Former operations lead at two successful startups. Passionate about helping founders scale efficiently.',
     funFact: 'Makes her own kombucha',
-    funFactIcon: <Coffee className="w-4 h-4" />,
+    funFactIcon: <Coffee className="w-4 h-4" aria-hidden="true" />,
     linkedin: 'https://linkedin.com/company/masarna1'
   },
   {
@@ -19,7 +20,7 @@ const teamMembers = [
     image: '/lovable-uploads/b49dc31a-e3c1-4deb-810d-518f9f7f937d.png',
     bio: 'Streamlined operations for 15+ tech startups. Expert in creating systems that scale.',
     funFact: 'Competitive cyclist',
-    funFactIcon: <Bike className="w-4 h-4" />,
+    funFactIcon: <Bike className="w-4 h-4" aria-hidden="true" />,
     linkedin: 'https://linkedin.com/company/masarna1'
   },
   {
@@ -28,7 +29,7 @@ const teamMembers = [
     image: '/lovable-uploads/c95bc8af-9b36-41a9-a4e8-62e111ab4106.png',
     bio: 'Former CFO with experience managing finances for rapidly growing startups. MBA from Wharton.',
     funFact: 'Podcast addict',
-    funFactIcon: <Headphones className="w-4 h-4" />,
+    funFactIcon: <Headphones className="w-4 h-4" aria-hidden="true" />,
     linkedin: 'https://linkedin.com/company/masarna1'
   },
   {
@@ -37,7 +38,7 @@ const teamMembers = [
     image: '/lovable-uploads/f8b1908a-4e43-48f0-ab52-5a4fc742395c.png',
     bio: 'Corporate attorney with a focus on startup law. Helps companies navigate complex regulatory environments.',
     funFact: 'Weekend hiker',
-    funFactIcon: <Mountain className="w-4 h-4" />,
+    funFactIcon: <Mountain className="w-4 h-4" aria-hidden="true" />,
     linkedin: 'https://linkedin.com/company/masarna1'
   },
   {
@@ -46,7 +47,7 @@ const teamMembers = [
     image: '/lovable-uploads/8b23f5d8-91cc-4d28-a905-cc6bc95fcd36.png',
     bio: 'Specialist in building HR systems and culture for fast-growing teams. Previously at Stripe and Airbnb.',
     funFact: 'Reads 50 books yearly',
-    funFactIcon: <Book className="w-4 h-4" />,
+    funFactIcon: <Book className="w-4 h-4" aria-hidden="true" />,
     linkedin: 'https://linkedin.com/company/masarna1'
   },
   {
@@ -55,7 +56,7 @@ const teamMembers = [
     image: '/placeholder.svg',
     bio: 'Helped scale multiple SaaS companies from seed to Series B. Focused on sustainable growth models.',
     funFact: 'Visited 42 countries',
-    funFactIcon: <Plane className="w-4 h-4" />,
+    funFactIcon: <Plane className="w-4 h-4" aria-hidden="true" />,
     linkedin: 'https://linkedin.com/company/masarna1'
   },
 ];
@@ -94,15 +95,17 @@ const TeamSection = () => {
                 <div className="h-64 relative overflow-hidden flex items-center justify-center bg-gradient-to-b from-masarna-orange/10 to-masarna-orange/5 p-6">
                   {member.image !== '/placeholder.svg' ? (
                     <div className="w-40 h-40 relative">
-                      <img 
+                      <Image 
                         src={member.image} 
-                        alt={member.name} 
-                        className="w-full h-full object-cover object-center rounded-full border-4 border-white shadow-lg"
+                        alt={`${member.name}, ${member.role} at Masarna`}
+                        width={160}
+                        height={160}
+                        className="object-cover object-center rounded-full border-4 border-white shadow-lg"
                       />
                     </div>
                   ) : (
                     <Avatar className="w-40 h-40 border-4 border-white shadow-lg">
-                      <AvatarImage src={member.image} alt={member.name} />
+                      <AvatarImage src={member.image} alt={`${member.name}, ${member.role} at Masarna`} />
                       <AvatarFallback className="text-4xl font-bold bg-masarna-orange text-white">
                         {getInitials(member.name)}
                       </AvatarFallback>
@@ -131,12 +134,14 @@ const TeamSection = () => {
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="p-2 bg-gray-100 hover:bg-masarna-orange/10 rounded-full transition-colors"
+                      aria-label={`${member.name}'s LinkedIn profile`}
                     >
                       <Linkedin className="w-5 h-5 text-gray-600 hover:text-masarna-orange" />
                     </a>
                     <a 
                       href={`mailto:${member.name.toLowerCase().replace(' ', '.')}@masarna.com`}
                       className="p-2 bg-gray-100 hover:bg-masarna-orange/10 rounded-full transition-colors"
+                      aria-label={`Email ${member.name}`}
                     >
                       <Mail className="w-5 h-5 text-gray-600 hover:text-masarna-orange" />
                     </a>

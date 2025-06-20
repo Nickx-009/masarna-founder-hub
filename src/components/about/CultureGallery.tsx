@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   Carousel, 
@@ -8,6 +7,7 @@ import {
   CarouselPrevious 
 } from "@/components/ui/carousel";
 import { Camera, Laptop, Globe } from 'lucide-react';
+import Image from 'next/image';
 
 // Updated gallery images to reflect remote work culture
 const galleryImages = [
@@ -42,7 +42,7 @@ const CultureGallery = () => {
             <div className="sticky top-24">
               <div className="flex items-center mb-4">
                 <div className="p-3 bg-masarna-orange/10 rounded-full">
-                  <Globe className="w-6 h-6 text-masarna-orange" />
+                  <Globe className="w-6 h-6 text-masarna-orange" aria-hidden="true" />
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold ml-4 text-gray-900">Our Culture</h2>
               </div>
@@ -85,7 +85,7 @@ const CultureGallery = () => {
 
               <div className="mt-8 p-4 bg-masarna-orange/5 border border-masarna-orange/20 rounded-lg">
                 <div className="flex items-center mb-2">
-                  <Laptop className="w-5 h-5 text-masarna-orange mr-2" />
+                  <Laptop className="w-5 h-5 text-masarna-orange mr-2" aria-hidden="true" />
                   <h3 className="font-semibold text-gray-800">Remote-First Benefits</h3>
                 </div>
                 <p className="text-sm text-gray-600">
@@ -105,10 +105,12 @@ const CultureGallery = () => {
                     <div className="p-1">
                       <div className="overflow-hidden rounded-xl shadow-md bg-white">
                         <div className="aspect-video relative overflow-hidden group">
-                          <img 
+                          <Image 
                             src={image.url} 
                             alt={image.caption} 
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            fill
+                            className="object-cover transition-transform duration-500 group-hover:scale-110"
+                            sizes="(max-width: 768px) 100vw, 50vw"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                             <p className="text-white p-4">{image.caption}</p>
@@ -125,11 +127,13 @@ const CultureGallery = () => {
             
             <div className="mt-8 grid grid-cols-3 gap-3">
               {galleryImages.slice(0, 3).map((image, index) => (
-                <div key={index} className="aspect-square overflow-hidden rounded-lg shadow-sm">
-                  <img 
+                <div key={index} className="aspect-square overflow-hidden rounded-lg shadow-sm relative">
+                  <Image 
                     src={image.url} 
                     alt={image.caption} 
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                    fill
+                    className="object-cover hover:scale-110 transition-transform duration-500"
+                    sizes="(max-width: 768px) 33vw, 16vw"
                   />
                 </div>
               ))}
