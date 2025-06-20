@@ -1,8 +1,8 @@
-
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Card } from '@/components/ui/card';
+import Image from 'next/image';
 
 // Expanded testimonials array with 6 entries
 const testimonials = [

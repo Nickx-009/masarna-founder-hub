@@ -1,8 +1,7 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, Users, BarChart3, Shield, Target, TrendingUp, Settings, Briefcase, DollarSign, UserPlus, Sliders, ClipboardList, FileText, BookOpen, BarChart, FileCheck, Calculator, CheckSquare, Video, Mic, Mail, Building, Award } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -18,6 +17,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import Image from 'next/image';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,10 +43,12 @@ const Navigation = () => {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link to="/" className="font-bold font-poppins">
-          <img
+        <Link href="/" className="font-bold font-poppins">
+          <Image
             src="/lovable-uploads/5f95107d-6e25-46ce-aadd-db64bcedb580.png"
             alt="Masarna Logo"
+            width={220}
+            height={60}
             className="h-[60px] w-auto"
             style={{ maxWidth: '220px' }}
           />
@@ -65,7 +67,7 @@ const Navigation = () => {
                       <h3 className="font-medium text-lg mb-2 text-[#f26522]">Core Services</h3>
                       <ul className="space-y-4">
                         <li>
-                          <Link to="/services/human-resources" className="flex items-start text-gray-700 hover:text-[#f26522] group">
+                          <Link href="/services/human-resources" className="flex items-start text-gray-700 hover:text-[#f26522] group">
                             <Users className="h-5 w-5 mr-3 mt-0.5 text-[#f26522] group-hover:text-[#f26522]" />
                             <div>
                               <div className="font-medium">Human Resources</div>
@@ -74,7 +76,7 @@ const Navigation = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link to="/services/finance" className="flex items-start text-gray-700 hover:text-[#f26522] group">
+                          <Link href="/services/finance" className="flex items-start text-gray-700 hover:text-[#f26522] group">
                             <BarChart3 className="h-5 w-5 mr-3 mt-0.5 text-[#f26522] group-hover:text-[#f26522]" />
                             <div>
                               <div className="font-medium">Finance & Operations</div>
@@ -83,7 +85,7 @@ const Navigation = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link to="/services/compliance" className="flex items-start text-gray-700 hover:text-[#f26522] group">
+                          <Link href="/services/compliance" className="flex items-start text-gray-700 hover:text-[#f26522] group">
                             <Shield className="h-5 w-5 mr-3 mt-0.5 text-[#f26522] group-hover:text-[#f26522]" />
                             <div>
                               <div className="font-medium">Legal & Compliance</div>
@@ -97,7 +99,7 @@ const Navigation = () => {
                       <h3 className="font-medium text-lg mb-2 text-[#f26522]">Specialized Services</h3>
                       <ul className="space-y-4">
                         <li>
-                          <Link to="/services/strategy" className="flex items-start text-gray-700 hover:text-[#f26522] group">
+                          <Link href="/services/strategy" className="flex items-start text-gray-700 hover:text-[#f26522] group">
                             <Target className="h-5 w-5 mr-3 mt-0.5 text-[#f26522] group-hover:text-[#f26522]" />
                             <div>
                               <div className="font-medium">Strategy & Planning</div>
@@ -106,7 +108,7 @@ const Navigation = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link to="/services/growth" className="flex items-start text-gray-700 hover:text-[#f26522] group">
+                          <Link href="/services/growth" className="flex items-start text-gray-700 hover:text-[#f26522] group">
                             <TrendingUp className="h-5 w-5 mr-3 mt-0.5 text-[#f26522] group-hover:text-[#f26522]" />
                             <div>
                               <div className="font-medium">Growth & Scaling</div>
@@ -115,7 +117,7 @@ const Navigation = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link to="/services/operations" className="flex items-start text-gray-700 hover:text-[#f26522] group">
+                          <Link href="/services/operations" className="flex items-start text-gray-700 hover:text-[#f26522] group">
                             <Settings className="h-5 w-5 mr-3 mt-0.5 text-[#f26522] group-hover:text-[#f26522]" />
                             <div>
                               <div className="font-medium">Operations Management</div>
@@ -126,7 +128,7 @@ const Navigation = () => {
                       </ul>
                     </div>
                     <div className="col-span-2 mt-4 pt-4 border-t border-gray-100">
-                      <Link to="/services" className="text-[#f26522] hover:underline font-medium">
+                      <Link href="/services" className="text-[#f26522] hover:underline font-medium">
                         View all services →
                       </Link>
                     </div>
@@ -143,7 +145,7 @@ const Navigation = () => {
                       <h3 className="font-medium text-lg mb-2 text-[#f26522]">Fractional Leadership</h3>
                       <ul className="space-y-4">
                         <li>
-                          <Link to="/solutions/chief-of-staff" className="flex items-start text-gray-700 hover:text-[#f26522] group">
+                          <Link href="/solutions/chief-of-staff" className="flex items-start text-gray-700 hover:text-[#f26522] group">
                             <Briefcase className="h-5 w-5 mr-3 mt-0.5 text-[#f26522] group-hover:text-[#f26522]" />
                             <div>
                               <div className="font-medium">Chief of Staff</div>
@@ -152,7 +154,7 @@ const Navigation = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link to="/solutions/fractional-cfo" className="flex items-start text-gray-700 hover:text-[#f26522] group">
+                          <Link href="/solutions/fractional-cfo" className="flex items-start text-gray-700 hover:text-[#f26522] group">
                             <DollarSign className="h-5 w-5 mr-3 mt-0.5 text-[#f26522] group-hover:text-[#f26522]" />
                             <div>
                               <div className="font-medium">CFO</div>
@@ -161,7 +163,7 @@ const Navigation = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link to="/solutions/head-of-hr" className="flex items-start text-gray-700 hover:text-[#f26522] group">
+                          <Link href="/solutions/head-of-hr" className="flex items-start text-gray-700 hover:text-[#f26522] group">
                             <Users className="h-5 w-5 mr-3 mt-0.5 text-[#f26522] group-hover:text-[#f26522]" />
                             <div>
                               <div className="font-medium">Head of HR</div>
@@ -175,7 +177,7 @@ const Navigation = () => {
                       <h3 className="font-medium text-lg mb-2 text-[#f26522]">Specialized Roles</h3>
                       <ul className="space-y-4">
                         <li>
-                          <Link to="/solutions/fractional-recruiter" className="flex items-start text-gray-700 hover:text-[#f26522] group">
+                          <Link href="/solutions/fractional-recruiter" className="flex items-start text-gray-700 hover:text-[#f26522] group">
                             <UserPlus className="h-5 w-5 mr-3 mt-0.5 text-[#f26522] group-hover:text-[#f26522]" />
                             <div>
                               <div className="font-medium">Fractional Recruiter</div>
@@ -184,7 +186,7 @@ const Navigation = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link to="/solutions/operations-manager" className="flex items-start text-gray-700 hover:text-[#f26522] group">
+                          <Link href="/solutions/operations-manager" className="flex items-start text-gray-700 hover:text-[#f26522] group">
                             <Sliders className="h-5 w-5 mr-3 mt-0.5 text-[#f26522] group-hover:text-[#f26522]" />
                             <div>
                               <div className="font-medium">Operations Manager</div>
@@ -193,7 +195,7 @@ const Navigation = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link to="/solutions/project-manager" className="flex items-start text-gray-700 hover:text-[#f26522] group">
+                          <Link href="/solutions/project-manager" className="flex items-start text-gray-700 hover:text-[#f26522] group">
                             <ClipboardList className="h-5 w-5 mr-3 mt-0.5 text-[#f26522] group-hover:text-[#f26522]" />
                             <div>
                               <div className="font-medium">Project Manager</div>
@@ -204,7 +206,7 @@ const Navigation = () => {
                       </ul>
                     </div>
                     <div className="col-span-2 mt-4 pt-4 border-t border-gray-100">
-                      <Link to="/solutions" className="text-[#f26522] hover:underline font-medium">
+                      <Link href="/solutions" className="text-[#f26522] hover:underline font-medium">
                         All leadership solutions →
                       </Link>
                     </div>
@@ -221,7 +223,7 @@ const Navigation = () => {
                       <h3 className="font-medium text-lg mb-2 text-[#f26522]">Knowledge Center</h3>
                       <ul className="space-y-4">
                         <li>
-                          <Link to="/resources/blog" className="flex items-start text-gray-700 hover:text-[#f26522] group">
+                          <Link href="/resources/blog" className="flex items-start text-gray-700 hover:text-[#f26522] group">
                             <FileText className="h-5 w-5 mr-3 mt-0.5 text-[#f26522] group-hover:text-[#f26522]" />
                             <div>
                               <div className="font-medium">Blog</div>
@@ -230,7 +232,7 @@ const Navigation = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link to="/resources/guides" className="flex items-start text-gray-700 hover:text-[#f26522] group">
+                          <Link href="/resources/guides" className="flex items-start text-gray-700 hover:text-[#f26522] group">
                             <BookOpen className="h-5 w-5 mr-3 mt-0.5 text-[#f26522] group-hover:text-[#f26522]" />
                             <div>
                               <div className="font-medium">Startup Guides</div>
@@ -239,7 +241,7 @@ const Navigation = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link to="/resources/case-studies" className="flex items-start text-gray-700 hover:text-[#f26522] group">
+                          <Link href="/resources/case-studies" className="flex items-start text-gray-700 hover:text-[#f26522] group">
                             <BarChart className="h-5 w-5 mr-3 mt-0.5 text-[#f26522] group-hover:text-[#f26522]" />
                             <div>
                               <div className="font-medium">Case Studies</div>
@@ -253,7 +255,7 @@ const Navigation = () => {
                       <h3 className="font-medium text-lg mb-2 text-[#f26522]">Tools</h3>
                       <ul className="space-y-4">
                         <li>
-                          <Link to="/resources/templates" className="flex items-start text-gray-700 hover:text-[#f26522] group">
+                          <Link href="/resources/templates" className="flex items-start text-gray-700 hover:text-[#f26522] group">
                             <FileCheck className="h-5 w-5 mr-3 mt-0.5 text-[#f26522] group-hover:text-[#f26522]" />
                             <div>
                               <div className="font-medium">Templates</div>
@@ -262,7 +264,7 @@ const Navigation = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link to="/resources/calculators" className="flex items-start text-gray-700 hover:text-[#f26522] group">
+                          <Link href="/resources/calculators" className="flex items-start text-gray-700 hover:text-[#f26522] group">
                             <Calculator className="h-5 w-5 mr-3 mt-0.5 text-[#f26522] group-hover:text-[#f26522]" />
                             <div>
                               <div className="font-medium">Calculators</div>
@@ -271,7 +273,7 @@ const Navigation = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link to="/resources/checklists" className="flex items-start text-gray-700 hover:text-[#f26522] group">
+                          <Link href="/resources/checklists" className="flex items-start text-gray-700 hover:text-[#f26522] group">
                             <CheckSquare className="h-5 w-5 mr-3 mt-0.5 text-[#f26522] group-hover:text-[#f26522]" />
                             <div>
                               <div className="font-medium">Checklists</div>
@@ -285,7 +287,7 @@ const Navigation = () => {
                       <h3 className="font-medium text-lg mb-2 text-[#f26522]">Learn</h3>
                       <ul className="space-y-4">
                         <li>
-                          <Link to="/resources/webinars" className="flex items-start text-gray-700 hover:text-[#f26522] group">
+                          <Link href="/resources/webinars" className="flex items-start text-gray-700 hover:text-[#f26522] group">
                             <Video className="h-5 w-5 mr-3 mt-0.5 text-[#f26522] group-hover:text-[#f26522]" />
                             <div>
                               <div className="font-medium">Webinars</div>
@@ -294,7 +296,7 @@ const Navigation = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link to="/resources/podcast" className="flex items-start text-gray-700 hover:text-[#f26522] group">
+                          <Link href="/resources/podcast" className="flex items-start text-gray-700 hover:text-[#f26522] group">
                             <Mic className="h-5 w-5 mr-3 mt-0.5 text-[#f26522] group-hover:text-[#f26522]" />
                             <div>
                               <div className="font-medium">Podcast</div>
@@ -303,7 +305,7 @@ const Navigation = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link to="/resources/newsletter" className="flex items-start text-gray-700 hover:text-[#f26522] group">
+                          <Link href="/resources/newsletter" className="flex items-start text-gray-700 hover:text-[#f26522] group">
                             <Mail className="h-5 w-5 mr-3 mt-0.5 text-[#f26522] group-hover:text-[#f26522]" />
                             <div>
                               <div className="font-medium">Newsletter</div>
@@ -317,7 +319,7 @@ const Navigation = () => {
                       <h3 className="font-medium text-lg mb-2 text-[#f26522]">Company</h3>
                       <ul className="space-y-4">
                         <li>
-                          <Link to="/about-us" className="flex items-start text-gray-700 hover:text-[#f26522] group">
+                          <Link href="/about-us" className="flex items-start text-gray-700 hover:text-[#f26522] group">
                             <Building className="h-5 w-5 mr-3 mt-0.5 text-[#f26522] group-hover:text-[#f26522]" />
                             <div>
                               <div className="font-medium">About Us</div>
@@ -326,7 +328,7 @@ const Navigation = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link to="/career" className="flex items-start text-gray-700 hover:text-[#f26522] group">
+                          <Link href="/career" className="flex items-start text-gray-700 hover:text-[#f26522] group">
                             <Award className="h-5 w-5 mr-3 mt-0.5 text-[#f26522] group-hover:text-[#f26522]" />
                             <div>
                               <div className="font-medium">Career</div>
@@ -337,7 +339,7 @@ const Navigation = () => {
                       </ul>
                     </div>
                     <div className="col-span-4 mt-4 pt-4 border-t border-gray-100">
-                      <Link to="/resources" className="text-[#f26522] hover:underline font-medium">
+                      <Link href="/resources" className="text-[#f26522] hover:underline font-medium">
                         All resources →
                       </Link>
                     </div>
@@ -348,7 +350,7 @@ const Navigation = () => {
               {/* Pricing (Direct link) - Updated to match other menu items */}
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link to="/pricing" className="text-gray-700 hover:text-[#f26522] transition-colors inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium">
+                  <Link href="/pricing" className="text-gray-700 hover:text-[#f26522] transition-colors inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium">
                     Pricing
                   </Link>
                 </NavigationMenuLink>
@@ -390,31 +392,31 @@ const Navigation = () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-full">
                   <DropdownMenuItem asChild>
-                    <Link to="/services/human-resources" className="w-full flex items-center">
+                    <Link href="/services/human-resources" className="w-full flex items-center">
                       <Users className="h-4 w-4 mr-2 text-[#f26522]" />
                       <span>Human Resources</span>
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/services/finance" className="w-full flex items-center">
+                    <Link href="/services/finance" className="w-full flex items-center">
                       <BarChart3 className="h-4 w-4 mr-2 text-[#f26522]" />
                       <span>Finance & Operations</span>
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/services/compliance" className="w-full flex items-center">
+                    <Link href="/services/compliance" className="w-full flex items-center">
                       <Shield className="h-4 w-4 mr-2 text-[#f26522]" />
                       <span>Legal & Compliance</span>
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/services/strategy" className="w-full flex items-center">
+                    <Link href="/services/strategy" className="w-full flex items-center">
                       <Target className="h-4 w-4 mr-2 text-[#f26522]" />
                       <span>Strategy & Planning</span>
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/services" className="w-full font-medium text-[#f26522] flex items-center justify-between">
+                    <Link href="/services" className="w-full font-medium text-[#f26522] flex items-center justify-between">
                       <span>View all services</span>
                       <ChevronDown className="h-4 w-4 transform rotate-270" />
                     </Link>
@@ -432,31 +434,31 @@ const Navigation = () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-full">
                   <DropdownMenuItem asChild>
-                    <Link to="/solutions/chief-of-staff" className="w-full flex items-center">
+                    <Link href="/solutions/chief-of-staff" className="w-full flex items-center">
                       <Briefcase className="h-4 w-4 mr-2 text-[#f26522]" />
                       <span>Chief of Staff</span>
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/solutions/fractional-cfo" className="w-full flex items-center">
+                    <Link href="/solutions/fractional-cfo" className="w-full flex items-center">
                       <DollarSign className="h-4 w-4 mr-2 text-[#f26522]" />
                       <span>CFO</span>
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/solutions/head-of-hr" className="w-full flex items-center">
+                    <Link href="/solutions/head-of-hr" className="w-full flex items-center">
                       <Users className="h-4 w-4 mr-2 text-[#f26522]" />
                       <span>Head of HR</span>
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/solutions/fractional-recruiter" className="w-full flex items-center">
+                    <Link href="/solutions/fractional-recruiter" className="w-full flex items-center">
                       <UserPlus className="h-4 w-4 mr-2 text-[#f26522]" />
                       <span>Fractional Recruiter</span>
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/solutions" className="w-full font-medium text-[#f26522] flex items-center justify-between">
+                    <Link href="/solutions" className="w-full font-medium text-[#f26522] flex items-center justify-between">
                       <span>All solutions</span>
                       <ChevronDown className="h-4 w-4 transform rotate-270" />
                     </Link>
@@ -474,37 +476,37 @@ const Navigation = () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-full">
                   <DropdownMenuItem asChild>
-                    <Link to="/resources/blog" className="w-full flex items-center">
+                    <Link href="/resources/blog" className="w-full flex items-center">
                       <FileText className="h-4 w-4 mr-2 text-[#f26522]" />
                       <span>Blog</span>
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/resources/guides" className="w-full flex items-center">
+                    <Link href="/resources/guides" className="w-full flex items-center">
                       <BookOpen className="h-4 w-4 mr-2 text-[#f26522]" />
                       <span>Startup Guides</span>
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/resources/templates" className="w-full flex items-center">
+                    <Link href="/resources/templates" className="w-full flex items-center">
                       <FileCheck className="h-4 w-4 mr-2 text-[#f26522]" />
                       <span>Templates</span>
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/about-us" className="w-full flex items-center">
+                    <Link href="/about-us" className="w-full flex items-center">
                       <Building className="h-4 w-4 mr-2 text-[#f26522]" />
                       <span>About Us</span>
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/career" className="w-full flex items-center">
+                    <Link href="/career" className="w-full flex items-center">
                       <Award className="h-4 w-4 mr-2 text-[#f26522]" />
                       <span>Career</span>
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/resources" className="w-full font-medium text-[#f26522] flex items-center justify-between">
+                    <Link href="/resources" className="w-full font-medium text-[#f26522] flex items-center justify-between">
                       <span>All resources</span>
                       <ChevronDown className="h-4 w-4 transform rotate-270" />
                     </Link>
@@ -515,7 +517,7 @@ const Navigation = () => {
             
             {/* Mobile Pricing (Direct Link) */}
             <Link 
-              to="/pricing" 
+              href="/pricing" 
               className="text-gray-700 hover:text-[#f26522] transition-colors py-2 px-4"
               onClick={() => setMobileMenuOpen(false)}
             >

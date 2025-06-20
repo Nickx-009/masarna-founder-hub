@@ -1,6 +1,6 @@
-
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { ChevronRight, Home } from 'lucide-react';
 
 interface BreadcrumbItem {
@@ -9,8 +9,8 @@ interface BreadcrumbItem {
 }
 
 const Breadcrumb = () => {
-  const location = useLocation();
-  const pathnames = location.pathname.split('/').filter((x) => x);
+  const router = useRouter();
+  const pathnames = router.pathname.split('/').filter((x) => x);
 
   // Don't show breadcrumbs on home page
   if (pathnames.length === 0) return null;
@@ -57,7 +57,7 @@ const Breadcrumb = () => {
                 </span>
               ) : (
                 <Link
-                  to={item.path}
+                  href={item.path}
                   className="hover:text-masarna-orange transition-colors"
                 >
                   {item.label}

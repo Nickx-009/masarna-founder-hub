@@ -1,4 +1,3 @@
-
 // ConvertKit service for secure API integration
 export interface ConvertKitSubscriptionData {
   email: string;
@@ -21,6 +20,8 @@ class ConvertKitService {
 
   // Simple rate limiting
   private isRateLimited(): boolean {
+    if (typeof window === 'undefined') return false;
+    
     const now = Date.now();
     
     if (now - this.lastRequestTime > this.RATE_LIMIT_WINDOW) {
@@ -80,9 +81,9 @@ class ConvertKitService {
 
     try {
       // In a real implementation, this would be a server-side endpoint
-      // For now, we'll use environment variables (would need Supabase integration)
-      const apiKey = import.meta.env.VITE_CONVERTKIT_API_KEY;
-      const formId = import.meta.env.VITE_CONVERTKIT_FORM_ID;
+      // For Next.js, we would use an API route
+      const apiKey = process.env.NEXT_PUBLIC_CONVERTKIT_API_KEY;
+      const formId = process.env.NEXT_PUBLIC_CONVERTKIT_FORM_ID;
       
       if (!apiKey || !formId) {
         console.error('ConvertKit credentials not configured');

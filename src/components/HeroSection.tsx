@@ -1,7 +1,7 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import TypewriterText from './TypewriterText';
+import Image from 'next/image';
 
 const HeroSection = () => {
   const revealRef = useRef<HTMLDivElement>(null);
@@ -96,9 +96,11 @@ const HeroSection = () => {
                   key={logo.id} 
                   className="flex-shrink-0 w-16 h-16 flex items-center justify-center"
                 >
-                  <img 
+                  <Image 
                     src={logo.src} 
                     alt={logo.alt}
+                    width={48}
+                    height={48}
                     className="w-12 h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300"
                     loading="lazy"
                   />

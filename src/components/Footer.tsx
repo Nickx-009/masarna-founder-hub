@@ -1,5 +1,5 @@
 import { ArrowUp, Facebook, Instagram, Linkedin, Mail, Twitter } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { useState } from 'react';
@@ -71,7 +71,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Column 1: Company & Contact */}
           <div className="space-y-6">
-            <Link to="/" className="block mb-4">
+            <Link href="/" className="block mb-4">
               <img
                 src="/lovable-uploads/5f95107d-6e25-46ce-aadd-db64bcedb580.png"
                 alt="Masarna Logo"
@@ -118,12 +118,12 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-5 text-lg border-l-4 border-masarna-orange pl-3">Services</h4>
             <ul className="space-y-3">
-              <li><Link to="/services/human-resources" className="text-gray-300 hover:text-masarna-orange transition-colors">HR & Recruiting</Link></li>
-              <li><Link to="/services/compliance" className="text-gray-300 hover:text-masarna-orange transition-colors">Compliance</Link></li>
-              <li><Link to="/services/finance" className="text-gray-300 hover:text-masarna-orange transition-colors">Finance Operations</Link></li>
-              <li><Link to="/services/operations" className="text-gray-300 hover:text-masarna-orange transition-colors">Operations</Link></li>
-              <li><Link to="/services/strategy" className="text-gray-300 hover:text-masarna-orange transition-colors">Strategy</Link></li>
-              <li><Link to="/services/growth" className="text-gray-300 hover:text-masarna-orange transition-colors">Growth</Link></li>
+              <li><Link href="/services/human-resources" className="text-gray-300 hover:text-masarna-orange transition-colors">HR & Recruiting</Link></li>
+              <li><Link href="/services/compliance" className="text-gray-300 hover:text-masarna-orange transition-colors">Compliance</Link></li>
+              <li><Link href="/services/finance" className="text-gray-300 hover:text-masarna-orange transition-colors">Finance Operations</Link></li>
+              <li><Link href="/services/operations" className="text-gray-300 hover:text-masarna-orange transition-colors">Operations</Link></li>
+              <li><Link href="/services/strategy" className="text-gray-300 hover:text-masarna-orange transition-colors">Strategy</Link></li>
+              <li><Link href="/services/growth" className="text-gray-300 hover:text-masarna-orange transition-colors">Growth</Link></li>
             </ul>
           </div>
           
@@ -131,12 +131,12 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-5 text-lg border-l-4 border-masarna-orange pl-3">Company</h4>
             <ul className="space-y-3">
-              <li><Link to="/about-us" className="text-gray-300 hover:text-masarna-orange transition-colors">About Us</Link></li>
-              <li><Link to="/career" className="text-gray-300 hover:text-masarna-orange transition-colors">Careers</Link></li>
-              <li><Link to="/solutions" className="text-gray-300 hover:text-masarna-orange transition-colors">Solutions</Link></li>
-              <li><Link to="/pricing" className="text-gray-300 hover:text-masarna-orange transition-colors">Pricing</Link></li>
-              <li><Link to="/privacy-policy" className="text-gray-300 hover:text-masarna-orange transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/terms-of-use" className="text-gray-300 hover:text-masarna-orange transition-colors">Terms of Use</Link></li>
+              <li><Link href="/about-us" className="text-gray-300 hover:text-masarna-orange transition-colors">About Us</Link></li>
+              <li><Link href="/career" className="text-gray-300 hover:text-masarna-orange transition-colors">Careers</Link></li>
+              <li><Link href="/solutions" className="text-gray-300 hover:text-masarna-orange transition-colors">Solutions</Link></li>
+              <li><Link href="/pricing" className="text-gray-300 hover:text-masarna-orange transition-colors">Pricing</Link></li>
+              <li><Link href="/privacy-policy" className="text-gray-300 hover:text-masarna-orange transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/terms-of-use" className="text-gray-300 hover:text-masarna-orange transition-colors">Terms of Use</Link></li>
             </ul>
           </div>
           
@@ -169,9 +169,9 @@ const Footer = () => {
             
             <h4 className="font-bold mb-3 text-lg border-l-4 border-masarna-orange pl-3">Resources</h4>
             <ul className="space-y-2">
-              <li><Link to="/resources/blog" className="text-gray-300 hover:text-masarna-orange transition-colors">Blog</Link></li>
-              <li><Link to="/resources/guides" className="text-gray-300 hover:text-masarna-orange transition-colors">Guides</Link></li>
-              <li><Link to="/resources/case-studies" className="text-gray-300 hover:text-masarna-orange transition-colors">Case Studies</Link></li>
+              <li><Link href="/resources/blog" className="text-gray-300 hover:text-masarna-orange transition-colors">Blog</Link></li>
+              <li><Link href="/resources/guides" className="text-gray-300 hover:text-masarna-orange transition-colors">Guides</Link></li>
+              <li><Link href="/resources/case-studies" className="text-gray-300 hover:text-masarna-orange transition-colors">Case Studies</Link></li>
             </ul>
           </div>
         </div>
@@ -193,28 +193,6 @@ const Footer = () => {
           <p className="mt-2 md:mt-0">Operations-as-a-Service for startups</p>
         </div>
       </div>
-
-      {/* Structured Data for SEO */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `
-        {
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "Masarna",
-          "url": "https://masarna.co",
-          "logo": "https://masarna.co/lovable-uploads/4c19cc81-9f30-4ff8-b639-79916ff68ecd.png",
-          "sameAs": [
-            "https://twitter.com/masarna",
-            "https://facebook.com/masarna",
-            "https://linkedin.com/company/masarna1",
-            "https://instagram.com/masarna"
-          ],
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "email": "hello@masarna.co",
-            "contactType": "customer service"
-          }
-        }
-      `}} />
     </footer>
   );
 };

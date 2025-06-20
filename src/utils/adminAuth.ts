@@ -1,4 +1,3 @@
-
 // Simple admin authentication system
 export interface AdminCredentials {
   username: string;
@@ -29,6 +28,8 @@ class AdminAuthService {
 
   // Verify credentials
   authenticate(credentials: AdminCredentials): boolean {
+    if (typeof window === 'undefined') return false;
+    
     const hashedPassword = this.hashPassword(credentials.password);
     const expectedHash = this.hashPassword(this.ADMIN_CREDENTIALS.password);
     
@@ -50,6 +51,8 @@ class AdminAuthService {
 
   // Check if user is authenticated
   isAuthenticated(): boolean {
+    if (typeof window === 'undefined') return false;
+    
     try {
       const sessionData = sessionStorage.getItem(this.SESSION_KEY);
       if (!sessionData) return false;
@@ -73,6 +76,8 @@ class AdminAuthService {
 
   // Get current session
   getCurrentSession(): AdminSession | null {
+    if (typeof window === 'undefined') return null;
+    
     try {
       const sessionData = sessionStorage.getItem(this.SESSION_KEY);
       if (!sessionData) return null;
@@ -86,11 +91,14 @@ class AdminAuthService {
 
   // Logout
   logout(): void {
+    if (typeof window === 'undefined') return;
     sessionStorage.removeItem(this.SESSION_KEY);
   }
 
   // Extend session
   extendSession(): void {
+    if (typeof window === 'undefined') return;
+    
     const session = this.getCurrentSession();
     if (session && session.isAuthenticated) {
       session.expiresAt = new Date(Date.now() + this.SESSION_DURATION).toISOString();

@@ -1,11 +1,10 @@
-
 import React, { useEffect } from 'react';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import ScrollToTop from './ScrollToTop';
 import Breadcrumb from './Breadcrumb';
 import { initScrollAnimations } from '@/utils/scrollAnimations';
-import { Helmet } from 'react-helmet-async';
+import Head from 'next/head';
 
 type PageLayoutProps = {
   children: React.ReactNode;
@@ -36,7 +35,7 @@ const PageLayout = ({
   const metaKeywords = keywords || 'operations, startup operations, HR, compliance, finance, strategy, masarna';
   
   // Default canonical URL based on current path
-  const canonical = canonicalUrl || `https://masarna.co${window.location.pathname}`;
+  const canonical = canonicalUrl || `https://masarna.co${typeof window !== 'undefined' ? window.location.pathname : ''}`;
   
   // Default OG image
   const openGraphImage = ogImage || 'https://masarna.co/lovable-uploads/4c19cc81-9f30-4ff8-b639-79916ff68ecd.png';
@@ -51,7 +50,7 @@ const PageLayout = ({
 
   return (
     <div className="flex min-h-screen flex-col">
-      <Helmet>
+      <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={metaDescription} />
         <meta name="keywords" content={metaKeywords} />
@@ -74,7 +73,7 @@ const PageLayout = ({
         {/* Add LinkedIn metadata */}
         <meta property="og:site_name" content="Masarna" />
         <meta property="linkedin:owner" content="masarna1" />
-      </Helmet>
+      </Head>
       
       <Navigation />
       <main className="pt-24 flex-grow">

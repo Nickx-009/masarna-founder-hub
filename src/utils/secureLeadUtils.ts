@@ -54,6 +54,11 @@ const generateIPHash = (): string => {
   return btoa(Date.now().toString()).substring(0, 8);
 };
 
+// Generate unique lead ID
+const generateLeadId = (): string => {
+  return `lead_${Date.now()}_${Math.random().toString(36).substring(2, 8)}`;
+};
+
 // Save lead securely
 export const saveSecureLead = (lead: Omit<SecureLead, 'id' | 'timestamp' | 'ipHash'>): boolean => {
   try {
@@ -115,11 +120,6 @@ export const getSecureLeads = (): SecureLead[] => {
     console.error('Error retrieving secure leads:', error);
     return [];
   }
-};
-
-// Generate unique lead ID
-const generateLeadId = (): string => {
-  return `lead_${Date.now()}_${Math.random().toString(36).substring(2, 8)}`;
 };
 
 // Export leads to CSV (with sanitization)

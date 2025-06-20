@@ -1,4 +1,3 @@
-
 import { LeadFormData } from '@/components/LeadCaptureForm';
 
 export interface Lead extends LeadFormData {
@@ -9,12 +8,16 @@ export interface Lead extends LeadFormData {
 }
 
 export const saveLeadToLocalStorage = (lead: Lead): void => {
+  if (typeof window === 'undefined') return;
+  
   const existingLeads = getLeadsFromLocalStorage();
   existingLeads.push(lead);
   localStorage.setItem('masarna_leads', JSON.stringify(existingLeads));
 };
 
 export const getLeadsFromLocalStorage = (): Lead[] => {
+  if (typeof window === 'undefined') return [];
+  
   try {
     return JSON.parse(localStorage.getItem('masarna_leads') || '[]');
   } catch (error) {
@@ -56,6 +59,8 @@ export const exportLeadsToCSV = (): string => {
 };
 
 export const downloadLeadsAsCSV = (): void => {
+  if (typeof window === 'undefined') return;
+  
   const csv = exportLeadsToCSV();
   
   if (!csv) {
@@ -78,6 +83,8 @@ export const downloadLeadsAsCSV = (): void => {
 };
 
 export const trackCTAClick = (ctaText: string, source: string, ctaContext: string = 'general'): void => {
+  if (typeof window === 'undefined') return;
+  
   // In a real implementation, this would send data to analytics service
   console.log('CTA Clicked:', { ctaText, source, ctaContext, timestamp: new Date().toISOString() });
   

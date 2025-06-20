@@ -1,10 +1,9 @@
-
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from 'react';
 import { ArrowRight } from "lucide-react";
 import LeadCaptureDialog from "./LeadCaptureDialog";
 import { trackCTAClick } from "@/utils/leadUtils";
-import { useLocation } from 'react-router-dom';
+import { useRouter } from 'next/router';
 
 interface CTASectionProps {
   heading?: string;
@@ -20,7 +19,7 @@ const CTASection = ({
   const [isVisible, setIsVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false);
-  const location = useLocation();
+  const router = useRouter();
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -39,14 +38,14 @@ const CTASection = ({
 
   const handleCTAClick = () => {
     // Track the CTA click
-    trackCTAClick(buttonText, location.pathname, getCTAContext());
+    trackCTAClick(buttonText, router.pathname, getCTAContext());
     
     // Open the dialog
     setDialogOpen(true);
   };
   
   const getCTAContext = (): string => {
-    const path = location.pathname;
+    const path = router.pathname;
     
     // Determine context based on URL path
     if (path.includes('/services/')) {
@@ -106,7 +105,7 @@ const CTASection = ({
       <LeadCaptureDialog
         open={dialogOpen}
         onOpenChange={setDialogOpen}
-        source={location.pathname}
+        source={router.pathname}
         ctaText={buttonText}
         ctaContext={getCTAContext()}
       />

@@ -1,4 +1,3 @@
-
 // Script to handle scroll reveal animations
 interface ScrollAnimationOptions {
   threshold?: number;

@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -91,7 +90,7 @@ const CandidateJourneyTimeline = ({
           
           <div className="space-y-12">
             {steps.map((step, index) => (
-              <div key={index} className="flex gap-4">
+              <div key={index} className="flex items-start gap-4">
                 <div className="relative">
                   <div className="w-9 h-9 rounded-full bg-masarna-orange flex items-center justify-center text-white font-bold text-sm z-10 relative">
                     {step.icon || step.number}
@@ -167,11 +166,11 @@ const CandidateJourneyTimeline = ({
           className="flex gap-4 overflow-x-auto py-4 scrollbar-hide snap-x snap-mandatory"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          <style dangerouslySetInnerHTML={{ __html: `
+          <style jsx>{`
             .scrollbar-hide::-webkit-scrollbar {
               display: none;
             }
-          `}} />
+          `}</style>
 
           {steps.map((step, index) => (
             <div 

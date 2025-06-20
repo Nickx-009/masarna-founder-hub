@@ -1,4 +1,3 @@
-
 // Secure storage utility with encryption for sensitive data
 class SecureStorage {
   private readonly STORAGE_KEY = 'masarna_secure_data';
@@ -7,6 +6,8 @@ class SecureStorage {
   // Simple encryption/decryption using base64 encoding
   // In a real implementation, use proper encryption libraries
   private encrypt(data: string): string {
+    if (typeof window === 'undefined') return data;
+    
     try {
       return btoa(unescape(encodeURIComponent(data)));
     } catch (error) {
@@ -16,6 +17,8 @@ class SecureStorage {
   }
 
   private decrypt(encryptedData: string): string {
+    if (typeof window === 'undefined') return encryptedData;
+    
     try {
       return decodeURIComponent(escape(atob(encryptedData)));
     } catch (error) {
@@ -26,6 +29,8 @@ class SecureStorage {
 
   // Store encrypted data
   setSecureItem(key: string, value: any): void {
+    if (typeof window === 'undefined') return;
+    
     try {
       const serializedValue = JSON.stringify(value);
       const encryptedValue = this.encrypt(serializedValue);
@@ -45,6 +50,8 @@ class SecureStorage {
 
   // Retrieve and decrypt data
   getSecureItem(key: string): any {
+    if (typeof window === 'undefined') return null;
+    
     try {
       const allData = this.getAllSecureData();
       const item = allData[key];
@@ -67,6 +74,8 @@ class SecureStorage {
 
   // Remove specific item
   removeSecureItem(key: string): void {
+    if (typeof window === 'undefined') return;
+    
     try {
       const allData = this.getAllSecureData();
       delete allData[key];
@@ -78,6 +87,8 @@ class SecureStorage {
 
   // Get all secure data
   private getAllSecureData(): Record<string, any> {
+    if (typeof window === 'undefined') return {};
+    
     try {
       const data = localStorage.getItem(this.STORAGE_KEY);
       return data ? JSON.parse(data) : {};
@@ -89,6 +100,8 @@ class SecureStorage {
 
   // Clean up expired data
   cleanupExpiredData(): void {
+    if (typeof window === 'undefined') return;
+    
     try {
       const allData = this.getAllSecureData();
       const now = new Date();
@@ -113,4 +126,6 @@ class SecureStorage {
 export const secureStorage = new SecureStorage();
 
 // Auto cleanup on initialization
-secureStorage.cleanupExpiredData();
+if (typeof window !== 'undefined') {
+  secureStorage.cleanupExpiredData();
+}

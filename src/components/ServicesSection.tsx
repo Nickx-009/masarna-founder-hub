@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import { Users, Shield, BarChart3, Award, Check } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { HoverCard, HoverCardTrigger, HoverCardContent } from "@/components/ui/hover-card";
@@ -97,49 +96,53 @@ const ServicesSection = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service) => (
-            <div 
-              key={service.id}
-              className={`service-card bg-white rounded-lg p-6 md:p-8 transition-all duration-500 border border-gray-100 shadow-sm hover:shadow-md hover:scale-[1.02] flex flex-col h-full ${
-                visibleServices.includes(service.id) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`}
-              data-service-id={service.id}
-            >
-              <div className="w-16 h-16 mb-6 bg-masarna-orange/10 rounded-full flex items-center justify-center mx-auto">
-                <service.icon className="w-8 h-8 text-masarna-orange" />
+          {services.map((service) => {
+            const Icon = service.icon;
+            
+            return (
+              <div 
+                key={service.id}
+                className={`service-card bg-white rounded-lg p-6 md:p-8 transition-all duration-500 border border-gray-100 shadow-sm hover:shadow-md hover:scale-[1.02] flex flex-col h-full ${
+                  visibleServices.includes(service.id) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
+                data-service-id={service.id}
+              >
+                <div className="w-16 h-16 mb-6 bg-masarna-orange/10 rounded-full flex items-center justify-center mx-auto">
+                  <Icon className="w-8 h-8 text-masarna-orange" />
+                </div>
+                
+                <span className="text-masarna-orange text-sm font-medium text-center block">{service.tagline}</span>
+                <h3 className="text-xl font-bold my-3 text-gray-900 text-center">{service.title}</h3>
+                
+                <Separator className="my-4 bg-gray-100" />
+                
+                <ul className="space-y-2.5 mt-2 mb-4 flex-grow">
+                  {service.bulletPoints.map((point, index) => (
+                    <li key={index} className="flex items-start">
+                      <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                        <Check className="w-3 h-3 text-masarna-orange" />
+                      </span>
+                      <span className="text-gray-700 text-sm leading-tight">
+                        {point.text.split(point.highlight).map((part, i, array) => 
+                          i < array.length - 1 ? (
+                            <React.Fragment key={i}>
+                              {part}<span className="font-medium text-gray-800">{point.highlight}</span>
+                            </React.Fragment>
+                          ) : part
+                        )}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <Link href={service.link} className="mt-4 inline-block self-center">
+                  <Button variant="link" className="text-masarna-orange p-0 hover:text-masarna-orange/80 hover:scale-105 transition-transform">
+                    Learn more →
+                  </Button>
+                </Link>
               </div>
-              
-              <span className="text-masarna-orange text-sm font-medium text-center block">{service.tagline}</span>
-              <h3 className="text-xl font-bold my-3 text-gray-900 text-center">{service.title}</h3>
-              
-              <Separator className="my-4 bg-gray-100" />
-              
-              <ul className="space-y-2.5 mt-2 mb-4 flex-grow">
-                {service.bulletPoints.map((point, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="w-5 h-5 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
-                      <Check className="w-3 h-3 text-masarna-orange" />
-                    </span>
-                    <span className="text-gray-700 text-sm leading-tight">
-                      {point.text.split(point.highlight).map((part, i, array) => 
-                        i < array.length - 1 ? (
-                          <React.Fragment key={i}>
-                            {part}<span className="font-medium text-gray-800">{point.highlight}</span>
-                          </React.Fragment>
-                        ) : part
-                      )}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              
-              <Link to={service.link} className="mt-4 inline-block self-center">
-                <Button variant="link" className="text-masarna-orange p-0 hover:text-masarna-orange/80 hover:scale-105 transition-transform">
-                  Learn more →
-                </Button>
-              </Link>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

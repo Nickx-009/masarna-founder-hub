@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 interface ServiceHeroProps {
   title: string;
@@ -46,7 +45,7 @@ const ServiceHero = ({
             >
               Book a Free Consultation
             </Button>
-            <Link to={backLink}>
+            <Link href={backLink}>
               <Button variant="outline" className="border-masarna-orange text-masarna-orange hover:bg-masarna-orange/10 hover:scale-105 transition-all duration-300">
                 {backLinkText}
               </Button>

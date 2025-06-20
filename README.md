@@ -1,73 +1,57 @@
-# Welcome to your Lovable project
+# Masarna - Operations-as-a-Service for Startups
 
-## Project info
+This is the Next.js version of the Masarna website, providing improved SEO and performance compared to the previous React+Vite implementation.
 
-**URL**: https://lovable.dev/projects/4c718740-a458-4a57-b39c-6b26e9f72387
+## Getting Started
 
-## How can I edit this code?
+First, run the development server:
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/4c718740-a458-4a57-b39c-6b26e9f72387) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-**Edit a file directly in GitHub**
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Features
 
-**Use GitHub Codespaces**
+- **SEO Optimized**: Built with Next.js for improved search engine visibility
+- **Performance**: Optimized for Core Web Vitals
+- **Responsive Design**: Works on all device sizes
+- **Accessibility**: Follows WCAG guidelines for accessibility
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Technologies Used
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
+- Next.js
 - TypeScript
-- React
-- shadcn-ui
 - Tailwind CSS
+- shadcn/ui
+- React Hook Form
+- Zod
+- Framer Motion
+- Lucide React Icons
 
-## How can I deploy this project?
+## Deployment
 
-Simply open [Lovable](https://lovable.dev/projects/4c718740-a458-4a57-b39c-6b26e9f72387) and click on Share -> Publish.
+The site can be deployed to Vercel with a single click:
 
-## Can I connect a custom domain to my Lovable project?
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyourusername%2Fmasarna-nextjs)
 
-Yes, you can!
+## Environment Variables
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Create a `.env.local` file in the root directory with the following variables:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+```
+SITE_URL=https://masarna.co
+NEXT_PUBLIC_CONVERTKIT_API_KEY=your_api_key_here
+NEXT_PUBLIC_CONVERTKIT_FORM_ID=your_form_id_here
+```
+
+## License
+
+All rights reserved. This code is proprietary and confidential.
