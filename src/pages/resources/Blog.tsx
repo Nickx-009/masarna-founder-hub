@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
@@ -5,97 +6,114 @@ import { Link } from 'react-router-dom';
 import CTASection from '@/components/CTASection';
 
 const Blog = () => {
-  // Sample blog posts for display
+  // Updated blog posts with recent dates and SEO-focused content
   const blogPosts = [
     {
-      title: 'Building Scalable Operations from Day One',
-      excerpt: 'Learn how to design your operations to scale with your business growth.',
+      title: 'Essential Operational Metrics Every Startup Should Track in 2025',
+      excerpt: 'Discover the critical KPIs that successful startups monitor to ensure sustainable growth and operational excellence.',
       category: 'Operations',
-      date: 'May 10, 2025',
+      date: 'June 15, 2025',
       author: 'Alex Morgan',
-      imageUrl: '/placeholder.svg'
+      imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop',
+      featured: true
     },
     {
-      title: 'The ROI of Fractional Leadership',
-      excerpt: 'How startups can benefit from experienced executives without the full-time cost.',
-      category: 'Leadership',
-      date: 'May 5, 2025',
+      title: 'The Complete Guide to Startup Compliance in 2025',
+      excerpt: 'Navigate the complex landscape of startup compliance with our comprehensive guide covering federal, state, and industry-specific requirements.',
+      category: 'Compliance',
+      date: 'June 10, 2025',
       author: 'Jordan Chen',
-      imageUrl: '/placeholder.svg'
+      imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop'
     },
     {
-      title: 'Streamlining Your HR Processes',
-      excerpt: 'Effective strategies to optimize your human resources operations.',
-      category: 'Human Resources',
-      date: 'April 28, 2025',
+      title: 'Fractional Leadership: Why Startups Are Choosing Expertise Over Full-Time Hires',
+      excerpt: 'Learn why smart founders are leveraging fractional executives to access senior-level expertise without the full-time cost.',
+      category: 'Leadership',
+      date: 'June 5, 2025',
       author: 'Taylor Kim',
-      imageUrl: '/placeholder.svg'
+      imageUrl: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=250&fit=crop'
     },
     {
-      title: 'Financial Planning for Early-Stage Startups',
-      excerpt: 'Key financial considerations for founders in the early stages.',
-      category: 'Finance',
-      date: 'April 20, 2025',
+      title: 'HR Automation Tools That Actually Work for Startups',
+      excerpt: 'Cut through the noise and discover the HR automation tools that provide real value for growing startups.',
+      category: 'Human Resources',
+      date: 'May 30, 2025',
       author: 'Jamie Rodriguez',
-      imageUrl: '/placeholder.svg'
+      imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop'
     },
     {
-      title: 'Building a Remote-First Culture',
-      excerpt: 'How to create a thriving company culture with a distributed team.',
-      category: 'Culture',
-      date: 'April 15, 2025',
+      title: 'Financial Planning Mistakes That Kill Startups (And How to Avoid Them)',
+      excerpt: 'Avoid common financial pitfalls that derail promising startups with our expert financial planning strategies.',
+      category: 'Finance',
+      date: 'May 25, 2025',
       author: 'Casey Johnson',
-      imageUrl: '/placeholder.svg'
+      imageUrl: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop'
     },
     {
-      title: 'The Future of Operations Management',
-      excerpt: 'Trends and predictions for how operational excellence will evolve.',
-      category: 'Trends',
-      date: 'April 8, 2025',
+      title: 'Building Remote-First Operations That Scale',
+      excerpt: 'Create operational systems that support remote teams and scale with your business growth.',
+      category: 'Operations',
+      date: 'May 20, 2025',
       author: 'Riley Smith',
-      imageUrl: '/placeholder.svg'
+      imageUrl: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=250&fit=crop'
     },
   ];
 
+  const featuredPost = blogPosts.find(post => post.featured);
+  const regularPosts = blogPosts.filter(post => !post.featured);
+
   return (
-    <PageLayout title="Blog" description="Insights and expertise from our operational experts">
+    <PageLayout 
+      title="Startup Operations Blog - Expert Insights & Strategies" 
+      description="Get expert insights on startup operations, HR, compliance, finance, and growth strategies from Masarna's team of experienced operators."
+      keywords="startup blog, operations insights, HR strategies, compliance guide, startup finance, business operations, masarna blog"
+    >
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl font-bold mb-6">Blog</h1>
-          <p className="text-lg text-gray-700 mb-12 max-w-4xl">
-            Discover insights, strategies, and best practices from our team of operational 
-            experts to help you build and scale your business more efficiently.
-          </p>
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold mb-6">Startup Operations Insights</h1>
+            <p className="text-lg text-gray-700 mb-12 max-w-4xl mx-auto">
+              Expert insights, strategies, and best practices from our team of operational 
+              experts to help you build and scale your startup more efficiently. Stay ahead 
+              with actionable advice on HR, compliance, finance, and growth operations.
+            </p>
+          </div>
           
           {/* Featured Post */}
-          <div className="bg-white rounded-xl shadow-md overflow-hidden mb-16 border border-gray-100">
-            <div className="md:flex">
-              <div className="md:w-1/3 bg-gray-100 flex items-center justify-center p-12">
-                <img 
-                  src="/placeholder.svg" 
-                  alt="Featured blog post" 
-                  className="w-full h-64 object-cover"
-                />
-              </div>
-              <div className="md:w-2/3 p-8">
-                <div className="text-sm text-masarna-teal mb-2">Featured • May 15, 2025</div>
-                <h2 className="text-2xl font-bold mb-4">Essential Operational Metrics Every Startup Should Track</h2>
-                <p className="text-gray-700 mb-6">
-                  Understanding and monitoring the right operational metrics can be the difference between 
-                  sustainable growth and unexpected challenges. In this comprehensive guide, we break down 
-                  the essential metrics that every startup should be tracking from day one.
-                </p>
-                <Button className="bg-masarna-teal hover:bg-masarna-teal/90 text-white">
-                  Read Article
-                </Button>
+          {featuredPost && (
+            <div className="bg-white rounded-xl shadow-md overflow-hidden mb-16 border border-gray-100">
+              <div className="md:flex">
+                <div className="md:w-1/3">
+                  <img 
+                    src={featuredPost.imageUrl} 
+                    alt={featuredPost.title}
+                    className="w-full h-64 md:h-full object-cover"
+                  />
+                </div>
+                <div className="md:w-2/3 p-8">
+                  <div className="text-sm text-masarna-teal mb-2">Featured • {featuredPost.date}</div>
+                  <h2 className="text-2xl font-bold mb-4">{featuredPost.title}</h2>
+                  <p className="text-gray-700 mb-6">
+                    {featuredPost.excerpt}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-500">By {featuredPost.author}</span>
+                    <Button className="bg-masarna-teal hover:bg-masarna-teal/90 text-white">
+                      Read Article
+                    </Button>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          )}
           
           {/* Blog Post Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {blogPosts.map((post, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100 hover:shadow-md transition-shadow">
+            {regularPosts.map((post, index) => (
+              <article 
+                key={index} 
+                className="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100 hover:shadow-md transition-shadow"
+              >
                 <img 
                   src={post.imageUrl} 
                   alt={post.title} 
@@ -104,10 +122,10 @@ const Blog = () => {
                 <div className="p-6">
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-xs font-medium text-masarna-teal">{post.category}</span>
-                    <span className="text-xs text-gray-500">{post.date}</span>
+                    <time className="text-xs text-gray-500">{post.date}</time>
                   </div>
-                  <h3 className="font-bold text-lg mb-2">{post.title}</h3>
-                  <p className="text-gray-700 text-sm mb-4">{post.excerpt}</p>
+                  <h3 className="font-bold text-lg mb-2 line-clamp-2">{post.title}</h3>
+                  <p className="text-gray-700 text-sm mb-4 line-clamp-3">{post.excerpt}</p>
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-gray-500">By {post.author}</span>
                     <Button variant="ghost" className="text-masarna-teal p-0 hover:bg-transparent hover:text-masarna-teal/80 hover:underline">
@@ -115,15 +133,34 @@ const Blog = () => {
                     </Button>
                   </div>
                 </div>
-              </div>
+              </article>
             ))}
+          </div>
+
+          {/* Newsletter Signup Section */}
+          <div className="bg-gradient-to-r from-masarna-orange/10 to-masarna-teal/10 rounded-lg p-8 text-center mb-16">
+            <h3 className="text-2xl font-bold mb-4">Stay Updated with Startup Operations Insights</h3>
+            <p className="text-gray-700 mb-6">
+              Get weekly insights on startup operations, compliance updates, and growth strategies 
+              delivered directly to your inbox.
+            </p>
+            <div className="flex flex-col sm:flex-row max-w-md mx-auto gap-3">
+              <input 
+                type="email" 
+                placeholder="Enter your email" 
+                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-masarna-orange focus:border-transparent"
+              />
+              <Button className="bg-masarna-orange hover:bg-masarna-orange/90 text-white">
+                Subscribe
+              </Button>
+            </div>
           </div>
         </div>
       </div>
       
       <CTASection 
-        heading="Want expert operational insights?"
-        description="Schedule a call with our operational experts to get personalized advice based on the challenges your business is facing."
+        heading="Need personalized operational guidance?"
+        description="Schedule a call with our operational experts to get customized advice for your startup's specific challenges and growth stage."
         buttonText="Book a Strategy Session"
       />
     </PageLayout>

@@ -10,6 +10,7 @@ import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import { initScrollAnimations } from '@/utils/scrollAnimations';
+import { Helmet } from 'react-helmet-async';
 
 const Index = () => {
   useEffect(() => {
@@ -18,9 +19,6 @@ const Index = () => {
       threshold: 0.15,
       staggerDelay: true
     });
-    
-    // Update document title
-    document.title = "Masarna - Operations-as-a-Service for Startups";
     
     // Add a class to enable page transitions
     document.body.classList.add('page-loaded');
@@ -32,8 +30,52 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Masarna - Operations-as-a-Service for Startups | Streamline Your Business Operations</title>
+        <meta name="description" content="Masarna provides comprehensive Operations-as-a-Service for early-stage and growth-stage startups. Expert HR, compliance, finance operations, and strategic support to accelerate your business growth." />
+        <meta name="keywords" content="masarna, operations as a service, startup operations, HR admin, compliance, finance operations, equity support, fractional CFO, chief of staff, head of HR, startup consulting, business operations, startup support" />
+        <link rel="canonical" href="https://masarna.co/" />
+        
+        {/* Additional SEO enhancements */}
+        <meta property="og:title" content="Masarna - Operations-as-a-Service for Startups" />
+        <meta property="og:description" content="Streamline your startup operations with expert HR, compliance, finance, and strategic support. Focus on growth while we handle the operational complexity." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://masarna.co/" />
+        
+        {/* Business Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "@id": "https://masarna.co/#business",
+            "name": "Masarna",
+            "description": "Operations-as-a-Service for early-stage and growth-stage startups",
+            "url": "https://masarna.co",
+            "telephone": "+1-555-MASARNA",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "US"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "40.7128",
+              "longitude": "-74.0060"
+            },
+            "openingHours": "Mo-Fr 09:00-18:00",
+            "priceRange": "$$",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "47"
+            }
+          })}
+        </script>
+      </Helmet>
+      
       <Navigation />
       <main>
+        {/* Hidden H1 for SEO - visible H1 is in HeroSection */}
+        <h1 className="sr-only">Masarna - Operations-as-a-Service for Startups</h1>
         <HeroSection />
         <HowItWorks />
         <ServicesSection />

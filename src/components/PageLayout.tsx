@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import ScrollToTop from './ScrollToTop';
+import Breadcrumb from './Breadcrumb';
 import { initScrollAnimations } from '@/utils/scrollAnimations';
 import { Helmet } from 'react-helmet-async';
 
@@ -13,6 +14,7 @@ type PageLayoutProps = {
   keywords?: string;
   canonicalUrl?: string;
   ogImage?: string;
+  showBreadcrumbs?: boolean;
 };
 
 const PageLayout = ({ 
@@ -21,7 +23,8 @@ const PageLayout = ({
   description, 
   keywords,
   canonicalUrl,
-  ogImage
+  ogImage,
+  showBreadcrumbs = true
 }: PageLayoutProps) => {
   // Generate full page title with brand
   const pageTitle = `${title} | Masarna`;
@@ -30,7 +33,7 @@ const PageLayout = ({
   const metaDescription = description || 'Masarna provides Operations-as-a-Service for startups, handling HR, compliance, finance, and strategic operations.';
   
   // Default keywords if not provided
-  const metaKeywords = keywords || 'operations, startup operations, HR, compliance, finance, strategy';
+  const metaKeywords = keywords || 'operations, startup operations, HR, compliance, finance, strategy, masarna';
   
   // Default canonical URL based on current path
   const canonical = canonicalUrl || `https://masarna.co${window.location.pathname}`;
@@ -75,6 +78,7 @@ const PageLayout = ({
       
       <Navigation />
       <main className="pt-24 flex-grow">
+        {showBreadcrumbs && <Breadcrumb />}
         {children}
       </main>
       <Footer />
