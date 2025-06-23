@@ -1,9 +1,27 @@
 import React from 'react';
+import { GetStaticProps } from 'next';
 import PageLayout from '@/components/PageLayout';
 import { Button } from "@/components/ui/button";
 import CTASection from '@/components/CTASection';
 
-const Career = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      title: "Careers",
+      description: "Join our team of experienced operators helping startups reach their full potential",
+      keywords: "masarna careers, startup operations jobs, remote operations jobs, fractional leadership careers, startup consulting jobs"
+    },
+    revalidate: 86400 // Revalidate once per day
+  };
+};
+
+interface CareerProps {
+  title: string;
+  description: string;
+  keywords: string;
+}
+
+const Career = ({ title, description, keywords }: CareerProps) => {
   const openPositions = [
     {
       id: 1,
@@ -29,7 +47,11 @@ const Career = () => {
   ];
 
   return (
-    <PageLayout title="Careers">
+    <PageLayout 
+      title={title} 
+      description={description}
+      keywords={keywords}
+    >
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Join Our Team</h1>
