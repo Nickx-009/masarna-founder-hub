@@ -1,10 +1,28 @@
 import React from 'react';
+import { GetStaticProps } from 'next';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import CTASection from '@/components/CTASection';
 
-const Solutions = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      title: "Solutions",
+      description: "Fractional leadership and specialized expertise for ambitious founders",
+      keywords: "fractional leadership, chief of staff, fractional CFO, head of HR, fractional recruiter, operations manager, project manager, startup leadership"
+    },
+    revalidate: 86400 // Revalidate once per day
+  };
+};
+
+interface SolutionsProps {
+  title: string;
+  description: string;
+  keywords: string;
+}
+
+const Solutions = ({ title, description, keywords }: SolutionsProps) => {
   const solutionCategories = [
     {
       title: 'Chief of Staff',
@@ -39,7 +57,11 @@ const Solutions = () => {
   ];
 
   return (
-    <PageLayout title="Solutions" description="Leadership solutions for ambitious founders">
+    <PageLayout 
+      title={title} 
+      description={description}
+      keywords={keywords}
+    >
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Leadership Solutions</h1>

@@ -1,10 +1,28 @@
 import React from 'react';
+import { GetStaticProps } from 'next';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import CTASection from '@/components/CTASection';
 
-const Services = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      title: "Services",
+      description: "Comprehensive Operations-as-a-Service solutions for startups and growing businesses",
+      keywords: "operations as a service, startup services, HR services, finance services, compliance services, strategy services, growth services, operations management"
+    },
+    revalidate: 86400 // Revalidate once per day
+  };
+};
+
+interface ServicesProps {
+  title: string;
+  description: string;
+  keywords: string;
+}
+
+const Services = ({ title, description, keywords }: ServicesProps) => {
   const serviceCategories = [
     {
       title: 'Human Resources',
@@ -39,7 +57,11 @@ const Services = () => {
   ];
 
   return (
-    <PageLayout title="Services" description="Operational excellence services for ambitious founders">
+    <PageLayout 
+      title={title} 
+      description={description}
+      keywords={keywords}
+    >
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>

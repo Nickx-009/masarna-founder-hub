@@ -1,8 +1,26 @@
 import React from 'react';
+import { GetStaticProps } from 'next';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 
-const Pricing = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      title: "Pricing",
+      description: "Simple, transparent pricing for operational excellence services",
+      keywords: "operations as a service pricing, startup pricing, fractional services cost, operational support pricing, transparent pricing, startup services cost"
+    },
+    revalidate: 86400 // Revalidate once per day
+  };
+};
+
+interface PricingProps {
+  title: string;
+  description: string;
+  keywords: string;
+}
+
+const Pricing = ({ title, description, keywords }: PricingProps) => {
   const pricingPlans = [
     {
       name: 'Startup',
@@ -55,7 +73,11 @@ const Pricing = () => {
   ];
 
   return (
-    <PageLayout title="Pricing" description="Simple, transparent pricing for operational excellence">
+    <PageLayout 
+      title={title} 
+      description={description}
+      keywords={keywords}
+    >
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Simple, Transparent Pricing</h1>

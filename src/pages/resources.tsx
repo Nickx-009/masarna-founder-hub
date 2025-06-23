@@ -1,10 +1,28 @@
 import React from 'react';
+import { GetStaticProps } from 'next';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import CTASection from '@/components/CTASection';
 
-const Resources = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      title: "Resources",
+      description: "Knowledge resources and tools for ambitious founders and startup operators",
+      keywords: "startup resources, operational tools, business templates, startup guides, case studies, calculators, checklists, webinars, podcast, newsletter"
+    },
+    revalidate: 86400 // Revalidate once per day
+  };
+};
+
+interface ResourcesProps {
+  title: string;
+  description: string;
+  keywords: string;
+}
+
+const Resources = ({ title, description, keywords }: ResourcesProps) => {
   const resourceCategories = [
     {
       title: 'Blog',
@@ -54,7 +72,11 @@ const Resources = () => {
   ];
 
   return (
-    <PageLayout title="Resources" description="Knowledge resources for ambitious founders">
+    <PageLayout 
+      title={title} 
+      description={description}
+      keywords={keywords}
+    >
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Knowledge Resources</h1>

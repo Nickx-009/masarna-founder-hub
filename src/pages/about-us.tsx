@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { GetStaticProps } from 'next';
+import Head from 'next/head';
 import PageLayout from '@/components/PageLayout';
 import AboutHero from '@/components/about/AboutHero';
 import OurStoryTimeline from '@/components/about/OurStoryTimeline';
@@ -9,7 +11,24 @@ import CompanyMetrics from '@/components/about/CompanyMetrics';
 import CTASection from '@/components/CTASection';
 import { initScrollAnimations } from '@/utils/scrollAnimations';
 
-const AboutUs = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      title: "About Us",
+      description: "Learn about Masarna's mission, values, and the team behind our Operations-as-a-Service platform for startups.",
+      keywords: "masarna about us, startup operations team, operations experts, remote operations team, startup support team, operations as a service company"
+    },
+    revalidate: 86400 // Revalidate once per day
+  };
+};
+
+interface AboutUsProps {
+  title: string;
+  description: string;
+  keywords: string;
+}
+
+const AboutUs = ({ title, description, keywords }: AboutUsProps) => {
   useEffect(() => {
     // Initialize scroll animations with staggered delay
     initScrollAnimations({ 
@@ -20,7 +39,11 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <PageLayout title="About Us">
+    <PageLayout 
+      title={title} 
+      description={description}
+      keywords={keywords}
+    >
       <AboutHero />
       <OurStoryTimeline />
       <ValuesSection />
