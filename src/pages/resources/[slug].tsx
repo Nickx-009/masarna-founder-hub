@@ -9,7 +9,7 @@ const resourcePages = [
   {
     slug: 'blog',
     title: 'Startup Operations Insights',
-    Component: dynamic(() => import('@/pages/resources/Blog')),
+    Component: dynamic(() => import('@/pages/resources/blog')),
     metaTitle: 'Startup Operations Blog - Expert Insights & Strategies',
     metaDescription: 'Get expert insights on startup operations, HR, compliance, finance, and growth strategies from Masarna\'s team of experienced operators.',
     metaKeywords: 'startup blog, operations insights, HR strategies, compliance guide, startup finance, business operations, masarna blog'
@@ -17,7 +17,7 @@ const resourcePages = [
   {
     slug: 'guides',
     title: 'Startup Guides',
-    Component: dynamic(() => import('@/pages/resources/Guides')),
+    Component: dynamic(() => import('@/pages/resources/guides')),
     metaTitle: 'Startup Guides & Operational Resources',
     metaDescription: 'Access comprehensive, actionable guides to help you navigate the operational challenges of building and scaling a startup.',
     metaKeywords: 'startup guides, operational resources, HR processes, financial forecasting, legal compliance, tech stack, startup operations'
@@ -25,7 +25,7 @@ const resourcePages = [
   {
     slug: 'case-studies',
     title: 'Case Studies',
-    Component: dynamic(() => import('@/pages/resources/CaseStudies')),
+    Component: dynamic(() => import('@/pages/resources/case-studies')),
     metaTitle: 'Startup Success Stories & Case Studies',
     metaDescription: 'Explore real-world examples of how startups achieved operational excellence with Masarna\'s support.',
     metaKeywords: 'startup case studies, operational excellence, business growth, HR optimization, financial transformation, compliance management'
@@ -33,7 +33,7 @@ const resourcePages = [
   {
     slug: 'templates',
     title: 'Templates',
-    Component: dynamic(() => import('@/pages/resources/Templates')),
+    Component: dynamic(() => import('@/pages/resources/templates')),
     metaTitle: 'Startup Templates & Operational Resources',
     metaDescription: 'Save time and ensure best practices with our curated collection of ready-to-use templates for HR, finance, operations, and legal needs.',
     metaKeywords: 'startup templates, operational resources, HR templates, financial models, SOP templates, legal documents'
@@ -41,7 +41,7 @@ const resourcePages = [
   {
     slug: 'calculators',
     title: 'Calculators',
-    Component: dynamic(() => import('@/pages/resources/Calculators')),
+    Component: dynamic(() => import('@/pages/resources/calculators')),
     metaTitle: 'Startup Financial & Operational Calculators',
     metaDescription: 'Make data-driven decisions with our specialized calculators designed for startups. Estimate runway, equity dilution, hiring costs, and more.',
     metaKeywords: 'startup calculators, financial tools, runway calculator, equity dilution, hiring cost, SaaS unit economics'
@@ -49,7 +49,7 @@ const resourcePages = [
   {
     slug: 'checklists',
     title: 'Checklists',
-    Component: dynamic(() => import('@/pages/resources/Checklists')),
+    Component: dynamic(() => import('@/pages/resources/checklists')),
     metaTitle: 'Startup Operational Checklists & Frameworks',
     metaDescription: 'Ensure you cover all important aspects of your startup operations with our comprehensive, expert-curated checklists.',
     metaKeywords: 'startup checklists, operational frameworks, business launch checklist, growth checklist, compliance checklist'
@@ -57,7 +57,7 @@ const resourcePages = [
   {
     slug: 'webinars',
     title: 'Webinars',
-    Component: dynamic(() => import('@/pages/resources/Webinars')),
+    Component: dynamic(() => import('@/pages/resources/webinars')),
     metaTitle: 'Startup Operations Webinars & Educational Sessions',
     metaDescription: 'Learn from industry experts and operational leaders through our educational webinar series focused on startups and scaling businesses.',
     metaKeywords: 'startup webinars, operational excellence, HR webinars, financial modeling, legal essentials, remote operations'
@@ -65,7 +65,7 @@ const resourcePages = [
   {
     slug: 'podcast',
     title: 'Podcast',
-    Component: dynamic(() => import('@/pages/resources/Podcast')),
+    Component: dynamic(() => import('@/pages/resources/podcast')),
     metaTitle: 'Operations Decoded Podcast - Startup Leadership Insights',
     metaDescription: 'Listen to our podcast featuring conversations with founders, operators, and experts about the operational strategies behind successful startups.',
     metaKeywords: 'startup podcast, operations podcast, founder interviews, operational strategies, remote teams, HR revolution'
@@ -73,7 +73,7 @@ const resourcePages = [
   {
     slug: 'newsletter',
     title: 'Newsletter',
-    Component: dynamic(() => import('@/pages/resources/Newsletter')),
+    Component: dynamic(() => import('@/pages/resources/newsletter')),
     metaTitle: 'Startup Operations Newsletter - Monthly Insights',
     metaDescription: 'Subscribe to our monthly newsletter for practical operational advice, templates, and insights delivered straight to your inbox.',
     metaKeywords: 'startup newsletter, operations insights, monthly updates, startup advice, operational excellence, business growth'

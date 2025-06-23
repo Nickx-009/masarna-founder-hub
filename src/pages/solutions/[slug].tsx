@@ -11,7 +11,7 @@ const solutionPages = [
     slug: 'chief-of-staff',
     title: 'Chief of Staff',
     description: 'Strategic leadership support for founders and executives.',
-    Component: dynamic(() => import('@/pages/solutions/ChiefOfStaff')),
+    Component: dynamic(() => import('@/pages/solutions/chief-of-staff')),
     metaTitle: 'Fractional Chief of Staff Services | Masarna',
     metaDescription: 'Access strategic leadership support with our fractional Chief of Staff services. Streamline operations and focus on growth while we handle the details.',
     metaKeywords: 'fractional chief of staff, strategic leadership, executive support, startup operations, leadership efficiency, strategic initiatives'

@@ -132,7 +132,7 @@ const FractionalRecruiter = () => {
   ];
   
   return (
-    <PageLayout title="Fractional Recruiter" description="Talent acquisition expertise for your startup">
+    <>
       {/* Innovative Hero Section with Talent Funnel */}
       <section className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 pt-16 pb-20">
         <div className="container mx-auto px-4">
@@ -709,7 +709,7 @@ const FractionalRecruiter = () => {
       
       {/* CTA Section */}
       <CTASection />
-    </PageLayout>
+    </>
   );
 };
 
