@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { CheckCircle, ArrowRight, Star, Users, Briefcase } from 'lucide-react';
+import { CheckCircle, ArrowRight, Users, Award, TrendingUp, Star } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Card } from '@/components/ui/card';
 
-const ChiefOfStaff = () => {
+const HeadOfHR = () => {
   // Animation on scroll
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -27,19 +27,19 @@ const ChiefOfStaff = () => {
   // Value proposition data with problems and solutions
   const valuePairs = [
     {
-      problem: "Spending too much time on operational details",
-      solution: "Focus on strategic vision while your CoS manages day-to-day operations",
-      icon: <Star className="h-6 w-6 text-masarna-orange" />
-    },
-    {
-      problem: "Struggling to coordinate cross-functional projects",
-      solution: "CoS serves as central coordinator, ensuring all teams stay aligned",
+      problem: "High employee turnover and recruiting costs",
+      solution: "Develop effective retention strategies and streamlined hiring processes",
       icon: <Users className="h-6 w-6 text-masarna-orange" />
     },
     {
-      problem: "Missing critical opportunities due to overwhelm",
-      solution: "CoS filters priorities and creates space for strategic decision-making",
-      icon: <Briefcase className="h-6 w-6 text-masarna-orange" />
+      problem: "Compliance risks and outdated HR policies",
+      solution: "Implement up-to-date policies and comprehensive compliance management",
+      icon: <Award className="h-6 w-6 text-masarna-orange" />
+    },
+    {
+      problem: "Poor employee engagement and satisfaction",
+      solution: "Create engaging workplace cultures that attract and retain top talent",
+      icon: <TrendingUp className="h-6 w-6 text-masarna-orange" />
     }
   ];
 
@@ -52,13 +52,14 @@ const ChiefOfStaff = () => {
           {/* Left Content */}
           <div className="w-full md:w-1/2 space-y-6">
             <div className="inline-block bg-masarna-orange/10 px-4 py-2 rounded-full mb-4">
-              <p className="text-masarna-orange font-medium text-sm">Executive Support</p>
+              <p className="text-masarna-orange font-medium text-sm">HR Leadership</p>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-              Your <span className="text-masarna-orange">Strategic Partner</span> for Operational Excellence
+              Expert <span className="text-masarna-orange">HR Leadership</span> for Growing Teams
             </h1>
             <p className="text-lg text-gray-700 max-w-lg">
-              Reclaim your time and accelerate growth with a seasoned Chief of Staff who becomes your strategic right hand.
+              Build and maintain a thriving company culture with our experienced HR leadership, 
+              without the cost of a full-time executive.
             </p>
             <div className="pt-4 flex flex-col sm:flex-row gap-4">
               <Button 
@@ -67,9 +68,9 @@ const ChiefOfStaff = () => {
               >
                 Schedule Consultation <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              <Link href="#how-it-works">
+              <Link href="/solutions">
                 <Button variant="outline" className="border-masarna-orange text-masarna-teal hover:bg-masarna-orange/10 px-6 py-6 rounded-lg">
-                  Learn How It Works
+                  Explore All Solutions
                 </Button>
               </Link>
             </div>
@@ -81,30 +82,34 @@ const ChiefOfStaff = () => {
               <div className="absolute -inset-1 bg-gradient-to-r from-masarna-orange to-masarna-orange/60 rounded-lg blur opacity-25"></div>
               <div className="relative bg-white rounded-lg overflow-hidden shadow-xl">
                 <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-8">
-                  <div className="flex gap-4 mb-6">
-                    <div className="h-3 w-3 rounded-full bg-red-500"></div>
-                    <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
-                    <div className="h-3 w-3 rounded-full bg-green-500"></div>
-                  </div>
                   <div className="space-y-6">
-                    <div className="h-6 bg-gray-200 rounded w-3/4"></div>
-                    <div className="space-y-2">
-                      <div className="h-4 bg-gray-200 rounded w-full"></div>
-                      <div className="h-4 bg-gray-200 rounded w-5/6"></div>
-                      <div className="h-4 bg-gray-200 rounded w-4/6"></div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="h-8 w-8 bg-masarna-orange/20 rounded-full flex items-center justify-center">
-                        <CheckCircle className="h-4 w-4 text-masarna-orange" />
-                      </div>
-                      <div className="h-4 bg-gray-200 rounded w-1/2"></div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="h-8 w-8 bg-masarna-orange/20 rounded-full flex items-center justify-center">
-                        <CheckCircle className="h-4 w-4 text-masarna-orange" />
-                      </div>
-                      <div className="h-4 bg-gray-200 rounded w-2/3"></div>
-                    </div>
+                    <h2 className="text-xl font-semibold mb-3 text-masarna-orange">How Our Head of HR Services Help:</h2>
+                    <ul className="space-y-4">
+                      <li className="flex items-start">
+                        <span className="w-6 h-6 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                          <CheckCircle className="h-4 w-4 text-masarna-orange" />
+                        </span>
+                        <span className="text-gray-700">HR strategy development and implementation</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="w-6 h-6 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                          <CheckCircle className="h-4 w-4 text-masarna-orange" />
+                        </span>
+                        <span className="text-gray-700">Talent acquisition and retention planning</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="w-6 h-6 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                          <CheckCircle className="h-4 w-4 text-masarna-orange" />
+                        </span>
+                        <span className="text-gray-700">Culture development and employee engagement</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="w-6 h-6 bg-masarna-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-0.5">
+                          <CheckCircle className="h-4 w-4 text-masarna-orange" />
+                        </span>
+                        <span className="text-gray-700">Performance management systems</span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -114,14 +119,14 @@ const ChiefOfStaff = () => {
       </section>
 
       {/* Role Overview - ZigZag Layout */}
-      <section id="how-it-works" className="py-20 bg-white">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 reveal">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              How a <span className="text-masarna-orange">Fractional Chief of Staff</span> Works
+              What Our <span className="text-masarna-orange">Head of HR</span> Service Delivers
             </h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-              The strategic support of an executive without the full-time cost
+              Strategic HR leadership without the full-time executive cost
             </p>
           </div>
           
@@ -130,29 +135,30 @@ const ChiefOfStaff = () => {
             {/* Item 1 */}
             <div className="flex flex-col md:flex-row items-center gap-12 reveal">
               <div className="w-full md:w-1/2 order-2 md:order-1">
-                <span className="text-xs font-semibold inline-block py-1 px-3 rounded-full bg-masarna-orange/10 text-masarna-orange mb-4">01. Strategic Planning</span>
-                <h3 className="text-2xl font-bold mb-4">Drive Strategic Initiatives & Priorities</h3>
+                <span className="text-xs font-semibold inline-block py-1 px-3 rounded-full bg-masarna-orange/10 text-masarna-orange mb-4">01. Strategic HR Leadership</span>
+                <h3 className="text-2xl font-bold mb-4">Strategic HR Planning</h3>
                 <p className="text-gray-700 mb-6">
-                  Your Chief of Staff works directly with you to identify strategic priorities, translate vision into actionable plans, and ensure focus on high-value activities that accelerate growth.
+                  Our experienced HR leaders bring strategic vision to your people operations, 
+                  aligning HR initiatives with your business goals and growth trajectory.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <div className="mt-1 bg-masarna-orange/10 p-1 rounded-full mr-3">
                       <CheckCircle className="h-4 w-4 text-masarna-orange" />
                     </div>
-                    <span>Strategic initiative development and execution</span>
+                    <span>Develop HR roadmaps aligned with company objectives</span>
                   </li>
                   <li className="flex items-start">
                     <div className="mt-1 bg-masarna-orange/10 p-1 rounded-full mr-3">
                       <CheckCircle className="h-4 w-4 text-masarna-orange" />
                     </div>
-                    <span>Decision-making framework implementation</span>
+                    <span>Design competitive compensation and benefits programs</span>
                   </li>
                   <li className="flex items-start">
                     <div className="mt-1 bg-masarna-orange/10 p-1 rounded-full mr-3">
                       <CheckCircle className="h-4 w-4 text-masarna-orange" />
                     </div>
-                    <span>Leadership strategy alignment</span>
+                    <span>Create succession planning and leadership development</span>
                   </li>
                 </ul>
               </div>
@@ -161,7 +167,7 @@ const ChiefOfStaff = () => {
                   <div className="relative">
                     <div className="absolute -inset-1 bg-gradient-to-r from-masarna-orange/20 to-masarna-orange/10 rounded-lg blur-md"></div>
                     <div className="relative bg-white p-6 rounded-lg shadow">
-                      <h4 className="font-bold text-lg mb-3">Strategic Roadmap</h4>
+                      <h4 className="font-bold text-lg mb-3">HR Strategy Development</h4>
                       <div className="space-y-4">
                         <div className="flex items-center">
                           <div className="h-10 w-10 rounded-full bg-masarna-orange/10 flex items-center justify-center text-sm font-bold text-masarna-orange mr-3">Q1</div>
@@ -193,34 +199,23 @@ const ChiefOfStaff = () => {
                   <div className="relative">
                     <div className="absolute -inset-1 bg-gradient-to-r from-masarna-orange/20 to-masarna-orange/10 rounded-lg blur-md"></div>
                     <div className="relative bg-white p-6 rounded-lg shadow">
-                      <h4 className="font-bold text-lg mb-3">Communication Flow</h4>
-                      <div className="flex items-center justify-center my-4">
-                        <div className="h-16 w-16 rounded-full bg-masarna-orange/20 flex items-center justify-center border-2 border-masarna-orange">
-                          <span className="font-bold">CEO</span>
+                      <h4 className="font-bold text-lg mb-3">Culture Development</h4>
+                      <div className="p-4 bg-gradient-to-br from-gray-50 to-masarna-orange/5 rounded-lg">
+                        <div className="flex items-center justify-between mb-4">
+                          <span className="font-medium text-gray-700">Employee Engagement</span>
+                          <div className="text-sm text-masarna-orange font-medium">+40%</div>
                         </div>
-                        <div className="w-12 h-1 bg-masarna-orange"></div>
-                        <div className="h-14 w-14 rounded-full bg-masarna-orange/10 flex items-center justify-center border border-masarna-orange">
-                          <span className="font-bold text-sm">CoS</span>
+                        <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                          <div className="h-full bg-masarna-orange rounded-full" style={{ width: "70%" }}></div>
                         </div>
                       </div>
-                      <div className="flex justify-around mt-4">
-                        <div className="flex flex-col items-center">
-                          <div className="w-1 h-8 bg-masarna-orange/50"></div>
-                          <div className="h-12 w-12 rounded-full bg-gray-100 flex items-center justify-center text-xs">
-                            Team A
-                          </div>
+                      <div className="p-4 mt-4 bg-gradient-to-br from-gray-50 to-masarna-orange/5 rounded-lg">
+                        <div className="flex items-center justify-between mb-4">
+                          <span className="font-medium text-gray-700">Retention Rate</span>
+                          <div className="text-sm text-masarna-orange font-medium">+25%</div>
                         </div>
-                        <div className="flex flex-col items-center">
-                          <div className="w-1 h-8 bg-masarna-orange/50"></div>
-                          <div className="h-12 w-12 rounded-full bg-gray-100 flex items-center justify-center text-xs">
-                            Team B
-                          </div>
-                        </div>
-                        <div className="flex flex-col items-center">
-                          <div className="w-1 h-8 bg-masarna-orange/50"></div>
-                          <div className="h-12 w-12 rounded-full bg-gray-100 flex items-center justify-center text-xs">
-                            Team C
-                          </div>
+                        <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                          <div className="h-full bg-masarna-orange rounded-full" style={{ width: "85%" }}></div>
                         </div>
                       </div>
                     </div>
@@ -228,29 +223,30 @@ const ChiefOfStaff = () => {
                 </div>
               </div>
               <div className="w-full md:w-1/2">
-                <span className="text-xs font-semibold inline-block py-1 px-3 rounded-full bg-masarna-orange/10 text-masarna-orange mb-4">02. Communication Hub</span>
-                <h3 className="text-2xl font-bold mb-4">Streamlined Team Coordination</h3>
+                <span className="text-xs font-semibold inline-block py-1 px-3 rounded-full bg-masarna-orange/10 text-masarna-orange mb-4">02. Culture Development</span>
+                <h3 className="text-2xl font-bold mb-4">Culture Development & Employee Engagement</h3>
                 <p className="text-gray-700 mb-6">
-                  Your Chief of Staff serves as a central communication hub, coordinating across teams, managing key stakeholders, and ensuring information flows effectively throughout your organization.
+                  Create a workplace culture that attracts and retains top talent while fostering 
+                  engagement, productivity and alignment with company values.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <div className="mt-1 bg-masarna-orange/10 p-1 rounded-full mr-3">
                       <CheckCircle className="h-4 w-4 text-masarna-orange" />
                     </div>
-                    <span>Cross-functional team coordination</span>
+                    <span>Design employee experience programs</span>
                   </li>
                   <li className="flex items-start">
                     <div className="mt-1 bg-masarna-orange/10 p-1 rounded-full mr-3">
                       <CheckCircle className="h-4 w-4 text-masarna-orange" />
                     </div>
-                    <span>Stakeholder relationship management</span>
+                    <span>Implement engagement surveys and action plans</span>
                   </li>
                   <li className="flex items-start">
                     <div className="mt-1 bg-masarna-orange/10 p-1 rounded-full mr-3">
                       <CheckCircle className="h-4 w-4 text-masarna-orange" />
                     </div>
-                    <span>Information synthesis and dissemination</span>
+                    <span>Develop onboarding and retention strategies</span>
                   </li>
                 </ul>
               </div>
@@ -259,23 +255,24 @@ const ChiefOfStaff = () => {
             {/* Item 3 */}
             <div className="flex flex-col md:flex-row items-center gap-12 reveal">
               <div className="w-full md:w-1/2 order-2 md:order-1">
-                <span className="text-xs font-semibold inline-block py-1 px-3 rounded-full bg-masarna-orange/10 text-masarna-orange mb-4">03. Operational Excellence</span>
+                <span className="text-xs font-semibold inline-block py-1 px-3 rounded-full bg-masarna-orange/10 text-masarna-orange mb-4">03. Process Optimization</span>
                 <h3 className="text-2xl font-bold mb-4">Systems and Process Optimization</h3>
                 <p className="text-gray-700 mb-6">
-                  Your Chief of Staff implements efficient operational systems and processes that scale with your growth, eliminate bottlenecks, and create a foundation for sustainable expansion.
+                  Our Head of HR implements efficient HR systems and processes that scale with your growth, 
+                  eliminate bottlenecks, and create a foundation for sustainable expansion.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <div className="mt-1 bg-masarna-orange/10 p-1 rounded-full mr-3">
                       <CheckCircle className="h-4 w-4 text-masarna-orange" />
                     </div>
-                    <span>Business process optimization</span>
+                    <span>HR process optimization</span>
                   </li>
                   <li className="flex items-start">
                     <div className="mt-1 bg-masarna-orange/10 p-1 rounded-full mr-3">
                       <CheckCircle className="h-4 w-4 text-masarna-orange" />
                     </div>
-                    <span>Operational systems implementation</span>
+                    <span>Performance management systems</span>
                   </li>
                   <li className="flex items-start">
                     <div className="mt-1 bg-masarna-orange/10 p-1 rounded-full mr-3">
@@ -327,10 +324,10 @@ const ChiefOfStaff = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 reveal">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Transform Your Leadership Effectiveness
+              Transform Your HR Operations
             </h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-              From founder overwhelm to strategic clarity and operational excellence
+              From HR challenges to strategic people management
             </p>
           </div>
           
@@ -380,19 +377,21 @@ const ChiefOfStaff = () => {
             <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center relative z-10">
               <div className="w-full md:w-1/3">
                 <Avatar className="h-28 w-28 border-4 border-white shadow-xl mx-auto md:mx-0">
-                  <AvatarImage src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&h=256&q=80" alt="Naomi Vega" />
-                  <AvatarFallback className="bg-masarna-orange/20">NV</AvatarFallback>
+                  <AvatarImage src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&h=256&q=80" alt="Sarah Johnson" />
+                  <AvatarFallback className="bg-masarna-orange/20">SJ</AvatarFallback>
                 </Avatar>
                 <div className="mt-4 text-center md:text-left">
-                  <h4 className="font-bold text-lg">Naomi Vega</h4>
-                  <p className="text-gray-600">Founder, EcoSmart Solutions</p>
+                  <h4 className="font-bold text-lg">Sarah Johnson</h4>
+                  <p className="text-gray-600">CEO, TechGrowth Inc.</p>
                 </div>
               </div>
               
               <div className="w-full md:w-2/3">
                 <div className="text-3xl text-masarna-orange font-serif mb-4">❝</div>
                 <blockquote className="text-lg md:text-xl font-medium text-gray-700 mb-6 italic">
-                  Before working with Masarna's Chief of Staff, I was drowning in operational details. Now I have the mental space to focus on vision and strategy. Our execution velocity has doubled, and I've reclaimed 15+ hours every week.
+                  The Head of HR service from Masarna completely transformed our people operations. 
+                  Within six months, we saw employee satisfaction increase by 40% and reduced 
+                  turnover by nearly 25%. Their strategic approach to HR has been a game-changer for our growth.
                 </blockquote>
                 <div className="flex items-center">
                   <div className="flex text-masarna-orange">
@@ -402,7 +401,7 @@ const ChiefOfStaff = () => {
                     <Star className="h-5 w-5 fill-current" />
                     <Star className="h-5 w-5 fill-current" />
                   </div>
-                  <span className="ml-2 text-gray-600 text-sm">Series B Funding Secured</span>
+                  <span className="ml-2 text-gray-600 text-sm">Series A Funding Secured</span>
                 </div>
               </div>
             </div>
@@ -420,17 +419,17 @@ const ChiefOfStaff = () => {
             
             <div className="relative z-10 text-center py-12 px-4 reveal">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
-                Ready to multiply your <span className="text-masarna-orange">executive effectiveness</span>?
+                Ready to transform your <span className="text-masarna-orange">HR operations</span>?
               </h2>
               <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
-                Schedule a consultation to explore how a fractional Chief of Staff can transform your operational capacity and strategic focus.
+                Schedule a consultation to explore how a Head of HR can elevate your people operations and company culture.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button 
                   className="bg-masarna-orange hover:bg-masarna-orange/90 text-white px-8 py-6 text-lg rounded-lg"
                   onClick={() => window.location.href = '#contact'}
                 >
-                  Schedule Executive Consultation
+                  Schedule HR Consultation
                 </Button>
                 <Link href="/solutions">
                   <Button variant="outline" className="border-white text-white hover:bg-white/10 px-6 py-6 rounded-lg">
@@ -446,4 +445,4 @@ const ChiefOfStaff = () => {
   );
 };
 
-export default ChiefOfStaff;
+export default HeadOfHR;

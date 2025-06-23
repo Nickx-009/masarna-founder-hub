@@ -69,7 +69,7 @@ const FractionalCFO = () => {
                 Schedule Consultation <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Link href="/solutions">
-                <Button variant="outline" className="border-masarna-orange text-masarna-orange hover:bg-masarna-orange/10 px-6 py-6 rounded-lg">
+                <Button variant="outline" className="border-masarna-orange text-masarna-teal hover:bg-masarna-orange/10 px-6 py-6 rounded-lg">
                   Explore All Solutions
                 </Button>
               </Link>
