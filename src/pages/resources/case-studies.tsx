@@ -1,11 +1,29 @@
 import React from 'react';
+import { GetStaticProps } from 'next';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import CTASection from '@/components/CTASection';
 import Head from 'next/head';
 
-const CaseStudies = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      title: "Startup Success Stories & Case Studies",
+      description: "Explore real-world examples of how startups achieved operational excellence with Masarna's support. Learn from their success and apply these strategies to your business.",
+      keywords: "startup case studies, operational excellence, business growth, HR optimization, financial transformation, compliance management, startup success stories"
+    },
+    revalidate: 86400 // Revalidate once per day
+  };
+};
+
+interface CaseStudiesProps {
+  title: string;
+  description: string;
+  keywords: string;
+}
+
+const CaseStudies = ({ title, description, keywords }: CaseStudiesProps) => {
   const caseStudies = [
     {
       title: "How TechStart Scaled Their HR Operations",
@@ -33,19 +51,14 @@ const CaseStudies = () => {
     },
   ];
 
-  // SEO metadata
-  const pageTitle = "Startup Success Stories & Case Studies";
-  const pageDescription = "Explore real-world examples of how startups achieved operational excellence with Masarna's support. Learn from their success and apply these strategies to your business.";
-  const pageKeywords = "startup case studies, operational excellence, business growth, HR optimization, financial transformation, compliance management, startup success stories";
-
   return (
     <>
       <Head>
-        <title>{pageTitle} | Masarna</title>
-        <meta name="description" content={pageDescription} />
-        <meta name="keywords" content={pageKeywords} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
+        <title>{title} | Masarna</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://masarna.co/resources/case-studies" />
         <meta property="og:image" content="https://masarna.co/lovable-uploads/4c19cc81-9f30-4ff8-b639-79916ff68ecd.png" />
@@ -53,9 +66,9 @@ const CaseStudies = () => {
       </Head>
       
       <PageLayout 
-        title={pageTitle} 
-        description={pageDescription}
-        keywords={pageKeywords}
+        title={title} 
+        description={description}
+        keywords={keywords}
       >
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-5xl mx-auto">
@@ -73,7 +86,7 @@ const CaseStudies = () => {
                   </div>
                   <h3 className="text-xl font-semibold mb-2 text-gray-800">{study.title}</h3>
                   <p className="text-gray-600 mb-4">{study.description}</p>
-                  <Button variant="outline" className="text-masarna-teal border-masarna-teal hover:bg-masarna-teal/10">
+                  <Button variant="outline" className="text-masarna-teal border-masarna-teal">
                     Read Case Study
                   </Button>
                 </div>

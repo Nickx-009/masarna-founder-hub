@@ -1,4 +1,5 @@
 import React from 'react';
+import { GetStaticProps } from 'next';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -6,7 +7,24 @@ import { Input } from "@/components/ui/input";
 import CTASection from '@/components/CTASection';
 import Head from 'next/head';
 
-const Newsletter = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      title: "Startup Operations Newsletter - Monthly Insights",
+      description: "Subscribe to our monthly newsletter for practical operational advice, templates, and insights delivered straight to your inbox.",
+      keywords: "startup newsletter, operations insights, monthly updates, startup advice, operational excellence, business growth, startup resources"
+    },
+    revalidate: 86400 // Revalidate once per day
+  };
+};
+
+interface NewsletterProps {
+  title: string;
+  description: string;
+  keywords: string;
+}
+
+const Newsletter = ({ title, description, keywords }: NewsletterProps) => {
   const latestIssues = [
     {
       title: "Building Operational Excellence from Day One",
@@ -28,19 +46,14 @@ const Newsletter = () => {
     },
   ];
 
-  // SEO metadata
-  const pageTitle = "Startup Operations Newsletter - Monthly Insights";
-  const pageDescription = "Subscribe to our monthly newsletter for practical operational advice, templates, and insights delivered straight to your inbox.";
-  const pageKeywords = "startup newsletter, operations insights, monthly updates, startup advice, operational excellence, business growth, startup resources";
-
   return (
     <>
       <Head>
-        <title>{pageTitle} | Masarna</title>
-        <meta name="description" content={pageDescription} />
-        <meta name="keywords" content={pageKeywords} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
+        <title>{title} | Masarna</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://masarna.co/resources/newsletter" />
         <meta property="og:image" content="https://masarna.co/lovable-uploads/4c19cc81-9f30-4ff8-b639-79916ff68ecd.png" />
@@ -48,9 +61,9 @@ const Newsletter = () => {
       </Head>
       
       <PageLayout 
-        title={pageTitle} 
-        description={pageDescription}
-        keywords={pageKeywords}
+        title={title} 
+        description={description}
+        keywords={keywords}
       >
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-5xl mx-auto">
@@ -112,7 +125,7 @@ const Newsletter = () => {
                         ))}
                       </ul>
                     </div>
-                    <Button variant="outline" className="text-masarna-teal border-masarna-teal hover:bg-masarna-teal/10">
+                    <Button variant="outline" className="text-masarna-teal border-masarna-teal">
                       Read Issue
                     </Button>
                   </div>

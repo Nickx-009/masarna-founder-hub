@@ -46,7 +46,7 @@ const ServiceHero = ({
               Book a Free Consultation
             </Button>
             <Link href={backLink}>
-              <Button variant="outline" className="border-masarna-orange text-masarna-orange hover:bg-masarna-orange/10 hover:scale-105 transition-all duration-300">
+              <Button variant="outline" className="border-masarna-orange text-masarna-orange">
                 {backLinkText}
               </Button>
             </Link>

@@ -1,11 +1,29 @@
 import React from 'react';
+import { GetStaticProps } from 'next';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import CTASection from '@/components/CTASection';
 import Head from 'next/head';
 
-const Webinars = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      title: "Startup Operations Webinars & Educational Sessions",
+      description: "Learn from industry experts and operational leaders through our educational webinar series focused on startups and scaling businesses.",
+      keywords: "startup webinars, operational excellence, HR webinars, financial modeling, legal essentials, remote operations, startup education, business operations"
+    },
+    revalidate: 86400 // Revalidate once per day
+  };
+};
+
+interface WebinarsProps {
+  title: string;
+  description: string;
+  keywords: string;
+}
+
+const Webinars = ({ title, description, keywords }: WebinarsProps) => {
   const upcomingWebinars = [
     {
       title: "Building a Scalable HR Function from Day One",
@@ -54,19 +72,14 @@ const Webinars = () => {
     },
   ];
 
-  // SEO metadata
-  const pageTitle = "Startup Operations Webinars & Educational Sessions";
-  const pageDescription = "Learn from industry experts and operational leaders through our educational webinar series focused on startups and scaling businesses.";
-  const pageKeywords = "startup webinars, operational excellence, HR webinars, financial modeling, legal essentials, remote operations, startup education, business operations";
-
   return (
     <>
       <Head>
-        <title>{pageTitle} | Masarna</title>
-        <meta name="description" content={pageDescription} />
-        <meta name="keywords" content={pageKeywords} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
+        <title>{title} | Masarna</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://masarna.co/resources/webinars" />
         <meta property="og:image" content="https://masarna.co/lovable-uploads/4c19cc81-9f30-4ff8-b639-79916ff68ecd.png" />
@@ -74,9 +87,9 @@ const Webinars = () => {
       </Head>
       
       <PageLayout 
-        title={pageTitle} 
-        description={pageDescription}
-        keywords={pageKeywords}
+        title={title} 
+        description={description}
+        keywords={keywords}
       >
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-5xl mx-auto">
@@ -118,7 +131,7 @@ const Webinars = () => {
                     <h3 className="text-lg font-medium mb-2 text-gray-800">{webinar.title}</h3>
                     <p className="text-sm text-gray-500 mb-1">{webinar.date} • {webinar.speaker}</p>
                     <p className="text-sm text-gray-600 mb-4">{webinar.description}</p>
-                    <Button variant="outline" size="sm" className="text-masarna-teal border-masarna-teal hover:bg-masarna-teal/10">
+                    <Button variant="outline" size="sm" className="text-masarna-teal border-masarna-teal">
                       {webinar.recording ? "Watch Recording" : "View Details"}
                     </Button>
                   </div>

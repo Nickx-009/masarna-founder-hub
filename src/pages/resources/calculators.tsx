@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { GetStaticProps } from 'next';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import { BarChart, DollarSign, Percent, Shield, Settings, Users } from 'lucide-react';
@@ -10,7 +11,24 @@ import { OperationsEfficiencyCalculator } from '@/components/calculators/Operati
 import { ComplianceRiskCalculator } from '@/components/calculators/ComplianceRiskCalculator';
 import Head from 'next/head';
 
-const Calculators = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      title: "Startup Financial & Operational Calculators",
+      description: "Make data-driven decisions with our specialized calculators designed for startups. Estimate runway, equity dilution, hiring costs, and more.",
+      keywords: "startup calculators, financial tools, runway calculator, equity dilution, hiring cost, SaaS unit economics, operations efficiency, compliance risk assessment"
+    },
+    revalidate: 86400 // Revalidate once per day
+  };
+};
+
+interface CalculatorsProps {
+  title: string;
+  description: string;
+  keywords: string;
+}
+
+const Calculators = ({ title, description, keywords }: CalculatorsProps) => {
   // State for each calculator dialog
   const [openRunway, setOpenRunway] = useState(false);
   const [openEquity, setOpenEquity] = useState(false);
@@ -82,19 +100,14 @@ const Calculators = () => {
     },
   ];
 
-  // SEO metadata
-  const pageTitle = "Startup Financial & Operational Calculators";
-  const pageDescription = "Make data-driven decisions with our specialized calculators designed for startups. Estimate runway, equity dilution, hiring costs, and more.";
-  const pageKeywords = "startup calculators, financial tools, runway calculator, equity dilution, hiring cost, SaaS unit economics, operations efficiency, compliance risk assessment";
-
   return (
     <>
       <Head>
-        <title>{pageTitle} | Masarna</title>
-        <meta name="description" content={pageDescription} />
-        <meta name="keywords" content={pageKeywords} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
+        <title>{title} | Masarna</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://masarna.co/resources/calculators" />
         <meta property="og:image" content="https://masarna.co/lovable-uploads/4c19cc81-9f30-4ff8-b639-79916ff68ecd.png" />
@@ -102,9 +115,9 @@ const Calculators = () => {
       </Head>
       
       <PageLayout 
-        title={pageTitle} 
-        description={pageDescription}
-        keywords={pageKeywords}
+        title={title} 
+        description={description}
+        keywords={keywords}
       >
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-5xl mx-auto">
@@ -133,7 +146,7 @@ const Calculators = () => {
                     <p className="text-gray-600 mb-4 ml-10">{calculator.description}</p>
                     <Button 
                       variant="outline" 
-                      className="ml-10 text-masarna-orange border-masarna-orange hover:bg-masarna-orange/10"
+                      className="ml-10 text-masarna-orange border-masarna-orange"
                       onClick={() => calculator.setOpenState(true)}
                     >
                       Use Calculator

@@ -1,11 +1,29 @@
 import React from 'react';
+import { GetStaticProps } from 'next';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import CTASection from '@/components/CTASection';
 import Head from 'next/head';
 
-const Checklists = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      title: "Startup Operational Checklists & Frameworks",
+      description: "Ensure you cover all important aspects of your startup operations with our comprehensive, expert-curated checklists for launch, growth, operations, and compliance.",
+      keywords: "startup checklists, operational frameworks, business launch checklist, growth checklist, compliance checklist, process documentation, vendor selection, tech stack audit"
+    },
+    revalidate: 86400 // Revalidate once per day
+  };
+};
+
+interface ChecklistsProps {
+  title: string;
+  description: string;
+  keywords: string;
+}
+
+const Checklists = ({ title, description, keywords }: ChecklistsProps) => {
   const checklistCategories = [
     {
       category: "Startup Launch",
@@ -41,19 +59,14 @@ const Checklists = () => {
     },
   ];
 
-  // SEO metadata
-  const pageTitle = "Startup Operational Checklists & Frameworks";
-  const pageDescription = "Ensure you cover all important aspects of your startup operations with our comprehensive, expert-curated checklists for launch, growth, operations, and compliance.";
-  const pageKeywords = "startup checklists, operational frameworks, business launch checklist, growth checklist, compliance checklist, process documentation, vendor selection, tech stack audit";
-
   return (
     <>
       <Head>
-        <title>{pageTitle} | Masarna</title>
-        <meta name="description" content={pageDescription} />
-        <meta name="keywords" content={pageKeywords} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
+        <title>{title} | Masarna</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://masarna.co/resources/checklists" />
         <meta property="og:image" content="https://masarna.co/lovable-uploads/4c19cc81-9f30-4ff8-b639-79916ff68ecd.png" />
@@ -61,9 +74,9 @@ const Checklists = () => {
       </Head>
       
       <PageLayout 
-        title={pageTitle} 
-        description={pageDescription}
-        keywords={pageKeywords}
+        title={title} 
+        description={description}
+        keywords={keywords}
       >
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-5xl mx-auto">
@@ -81,7 +94,7 @@ const Checklists = () => {
                       <div key={cIndex} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                         <h3 className="text-lg font-medium mb-2 text-gray-800">{checklist.title}</h3>
                         <p className="text-sm text-gray-500 mb-4">{checklist.items}</p>
-                        <Button variant="outline" size="sm" className="text-masarna-teal border-masarna-teal hover:bg-masarna-teal/10">
+                        <Button variant="outline" size="sm" className="text-masarna-teal border-masarna-teal">
                           View Checklist
                         </Button>
                       </div>

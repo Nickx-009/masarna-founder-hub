@@ -1,12 +1,30 @@
 import React from 'react';
+import { GetStaticProps } from 'next';
+import Head from 'next/head';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import CTASection from '@/components/CTASection';
 import Image from 'next/image';
-import Head from 'next/head';
 
-const Blog = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      title: "Startup Operations Blog - Expert Insights & Strategies",
+      description: "Get expert insights on startup operations, HR, compliance, finance, and growth strategies from Masarna's team of experienced operators.",
+      keywords: "startup blog, operations insights, HR strategies, compliance guide, startup finance, business operations, masarna blog"
+    },
+    revalidate: 86400 // Revalidate once per day
+  };
+};
+
+interface BlogProps {
+  title: string;
+  description: string;
+  keywords: string;
+}
+
+const Blog = ({ title, description, keywords }: BlogProps) => {
   // Updated blog posts with recent dates and SEO-focused content
   const blogPosts = [
     {
@@ -63,19 +81,14 @@ const Blog = () => {
   const featuredPost = blogPosts.find(post => post.featured);
   const regularPosts = blogPosts.filter(post => !post.featured);
 
-  // SEO metadata
-  const pageTitle = "Startup Operations Blog - Expert Insights & Strategies";
-  const pageDescription = "Get expert insights on startup operations, HR, compliance, finance, and growth strategies from Masarna's team of experienced operators.";
-  const pageKeywords = "startup blog, operations insights, HR strategies, compliance guide, startup finance, business operations, masarna blog";
-
   return (
     <>
       <Head>
-        <title>{pageTitle} | Masarna</title>
-        <meta name="description" content={pageDescription} />
-        <meta name="keywords" content={pageKeywords} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
+        <title>{title} | Masarna</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://masarna.co/resources/blog" />
         <meta property="og:image" content={featuredPost?.imageUrl || "https://masarna.co/lovable-uploads/4c19cc81-9f30-4ff8-b639-79916ff68ecd.png"} />
@@ -83,9 +96,9 @@ const Blog = () => {
       </Head>
       
       <PageLayout 
-        title={pageTitle} 
-        description={pageDescription}
-        keywords={pageKeywords}
+        title={title} 
+        description={description}
+        keywords={keywords}
       >
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-6xl mx-auto">
@@ -153,7 +166,7 @@ const Blog = () => {
                     <p className="text-gray-700 text-sm mb-4 line-clamp-3">{post.excerpt}</p>
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-gray-500">By {post.author}</span>
-                      <Button variant="ghost" className="text-masarna-teal p-0 hover:bg-transparent hover:text-masarna-teal/80 hover:underline">
+                      <Button variant="ghost" className="text-masarna-teal p-0 hover:bg-transparent hover:text-masarna-teal hover:underline">
                         Read More →
                       </Button>
                     </div>

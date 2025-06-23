@@ -1,11 +1,29 @@
 import React from 'react';
+import { GetStaticProps } from 'next';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import CTASection from '@/components/CTASection';
 import Head from 'next/head';
 
-const Guides = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      title: "Startup Guides & Operational Resources",
+      description: "Access comprehensive, actionable guides to help you navigate the operational challenges of building and scaling a startup. From HR to finance to legal compliance.",
+      keywords: "startup guides, operational resources, HR processes, financial forecasting, legal compliance, tech stack, startup operations, business scaling"
+    },
+    revalidate: 86400 // Revalidate once per day
+  };
+};
+
+interface GuidesProps {
+  title: string;
+  description: string;
+  keywords: string;
+}
+
+const Guides = ({ title, description, keywords }: GuidesProps) => {
   const guides = [
     {
       title: "Startup HR Essentials",
@@ -33,19 +51,14 @@ const Guides = () => {
     },
   ];
 
-  // SEO metadata
-  const pageTitle = "Startup Guides & Operational Resources";
-  const pageDescription = "Access comprehensive, actionable guides to help you navigate the operational challenges of building and scaling a startup. From HR to finance to legal compliance.";
-  const pageKeywords = "startup guides, operational resources, HR processes, financial forecasting, legal compliance, tech stack, startup operations, business scaling";
-
   return (
     <>
       <Head>
-        <title>{pageTitle} | Masarna</title>
-        <meta name="description" content={pageDescription} />
-        <meta name="keywords" content={pageKeywords} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
+        <title>{title} | Masarna</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://masarna.co/resources/guides" />
         <meta property="og:image" content="https://masarna.co/lovable-uploads/4c19cc81-9f30-4ff8-b639-79916ff68ecd.png" />
@@ -53,9 +66,9 @@ const Guides = () => {
       </Head>
       
       <PageLayout 
-        title={pageTitle} 
-        description={pageDescription}
-        keywords={pageKeywords}
+        title={title} 
+        description={description}
+        keywords={keywords}
       >
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-5xl mx-auto">
@@ -73,7 +86,7 @@ const Guides = () => {
                   </div>
                   <h3 className="text-xl font-semibold mb-2 text-gray-800">{guide.title}</h3>
                   <p className="text-gray-600 mb-4">{guide.description}</p>
-                  <Button variant="outline" className="text-masarna-teal border-masarna-teal hover:bg-masarna-teal/10">
+                  <Button variant="outline" className="text-masarna-teal border-masarna-teal">
                     Read Guide
                   </Button>
                 </div>
