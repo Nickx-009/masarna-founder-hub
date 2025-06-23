@@ -64,9 +64,11 @@ export default {
 				},
 				masarna: {
 					teal: '#0C7489',
-					orange: '#f26522', // Reverted back to original Masarna orange
-					neutral: '#F2F2F2', // Added neutral accent color
+					orange: '#f26522', // Masarna orange
+					gray: '#f5f5f5',
 					'dark-gray': '#333333',
+					'light-gray': '#f9f9f9',
+					neutral: '#F2F2F2'
 				}
 			},
 			borderRadius: {
@@ -119,9 +121,9 @@ export default {
 				'fade-out': 'fade-out 0.3s ease-out',
 			},
 			fontFamily: {
-				'roboto': ['Roboto', 'sans-serif'], // Fixed: Added roboto font family
-				'poppins': ['Roboto', 'sans-serif'], // Updated to Roboto
-				'inter': ['Roboto', 'sans-serif'], // Updated to Roboto
+				'roboto': ['Roboto', 'sans-serif'],
+				'poppins': ['Roboto', 'sans-serif'],
+				'inter': ['Roboto', 'sans-serif'],
 			},
 		}
 	},
