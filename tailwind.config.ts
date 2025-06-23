@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -65,10 +64,9 @@ export default {
 				},
 				masarna: {
 					teal: '#0C7489',
-					orange: '#f26522', // Our default color as per custom instructions
-					gray: '#f5f5f5',
+					orange: '#1f514c', // Updated to match the new primary color
+					neutral: '#F2F2F2', // Added neutral accent color
 					'dark-gray': '#333333',
-					'light-gray': '#f9f9f9',
 				}
 			},
 			borderRadius: {
@@ -121,8 +119,8 @@ export default {
 				'fade-out': 'fade-out 0.3s ease-out',
 			},
 			fontFamily: {
-				'poppins': ['Poppins', 'sans-serif'],
-				'inter': ['Inter', 'sans-serif'],
+				'poppins': ['Roboto', 'sans-serif'], // Updated to Roboto
+				'inter': ['Roboto', 'sans-serif'], // Updated to Roboto
 			},
 		}
 	},
