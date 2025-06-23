@@ -1,7 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
-import ServiceHero from '@/components/ServiceHero';
 import CTASection from '@/components/CTASection';
 import { initScrollAnimations } from '@/utils/scrollAnimations';
 import dynamic from 'next/dynamic';
@@ -15,7 +14,7 @@ const servicePages = [
     description: 'Our comprehensive HR solutions are designed to streamline your operations, ensure compliance, and foster a thriving workplace culture.',
     backLink: '/services',
     backLinkText: 'Explore All Services',
-    Component: dynamic(() => import('@/pages/services/HumanResources')),
+    Component: dynamic(() => import('@/pages/services/human-resources')),
     metaTitle: 'HR Services for Startups | Masarna',
     metaDescription: 'Comprehensive HR solutions for startups including employee lifecycle management, payroll processing, and benefits administration.',
     metaKeywords: 'startup HR, human resources, employee management, payroll processing, benefits administration, HR compliance, startup culture'
@@ -27,7 +26,7 @@ const servicePages = [
     description: 'Our comprehensive finance services are designed to simplify your financial operations, ensure compliance, and support your business\'s growth trajectory.',
     backLink: '/services',
     backLinkText: 'Explore All Services',
-    Component: dynamic(() => import('@/pages/services/Finance')),
+    Component: dynamic(() => import('@/pages/services/finance')),
     metaTitle: 'Financial Services for Startups | Masarna',
     metaDescription: 'Expert financial management services for startups including financial operations, revenue management, compliance, and strategic planning.',
     metaKeywords: 'startup finance, financial operations, revenue management, financial compliance, strategic financial planning, startup CFO'
@@ -39,7 +38,7 @@ const servicePages = [
     description: 'Our comprehensive compliance services are designed to manage the intricacies of legal requirements, allowing you to focus on your core business activities.',
     backLink: '/services',
     backLinkText: 'Explore All Services',
-    Component: dynamic(() => import('@/pages/services/Compliance')),
+    Component: dynamic(() => import('@/pages/services/compliance')),
     metaTitle: 'Compliance Services for Startups | Masarna',
     metaDescription: 'Comprehensive compliance management services for startups including regulatory adherence, risk mitigation, and documentation.',
     metaKeywords: 'startup compliance, regulatory compliance, risk mitigation, compliance documentation, legal compliance, startup legal'
@@ -51,7 +50,7 @@ const servicePages = [
     description: 'Our strategic planning and roadmap development services help startups define their vision, set clear objectives, and develop actionable plans to achieve their goals.',
     backLink: '/services',
     backLinkText: 'Explore All Services',
-    Component: dynamic(() => import('@/pages/services/Strategy')),
+    Component: dynamic(() => import('@/pages/services/strategy')),
     metaTitle: 'Strategic Planning Services for Startups | Masarna',
     metaDescription: 'Expert strategic planning services for startups including vision development, goal setting, product roadmaps, and market positioning.',
     metaKeywords: 'startup strategy, strategic planning, vision development, OKRs, product roadmap, market positioning, business strategy'
@@ -63,7 +62,7 @@ const servicePages = [
     description: 'Our growth and scaling services help ambitious startups accelerate their growth through strategic planning, market expansion, and optimized customer acquisition.',
     backLink: '/services',
     backLinkText: 'Explore All Services',
-    Component: dynamic(() => import('@/pages/services/Growth')),
+    Component: dynamic(() => import('@/pages/services/growth')),
     metaTitle: 'Growth & Scaling Services for Startups | Masarna',
     metaDescription: 'Comprehensive growth services for startups including growth strategy development, customer acquisition optimization, and market expansion planning.',
     metaKeywords: 'startup growth, business scaling, customer acquisition, market expansion, growth metrics, startup KPIs, growth strategy'
@@ -75,7 +74,7 @@ const servicePages = [
     description: 'Our operations management services help startups build scalable, efficient processes that support growth while reducing operational friction and costs.',
     backLink: '/services',
     backLinkText: 'Explore All Services',
-    Component: dynamic(() => import('@/pages/services/Operations')),
+    Component: dynamic(() => import('@/pages/services/operations')),
     metaTitle: 'Operations Management Services for Startups | Masarna',
     metaDescription: 'Expert operations management services for startups including process optimization, systems integration, SOP development, and operational metrics.',
     metaKeywords: 'startup operations, business process optimization, systems integration, SOP development, operational metrics, efficiency improvement'
@@ -152,14 +151,6 @@ const ServicePage = ({
       description={metaDescription}
       keywords={metaKeywords}
     >
-      <ServiceHero
-        title={title}
-        subtitle={subtitle}
-        description={description}
-        backLink={backLink}
-        backLinkText={backLinkText}
-      />
-      
       {ServiceComponent && <ServiceComponent />}
       
       <CTASection 
