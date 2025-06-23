@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { CheckCircle, ArrowRight, Users, Award, TrendingUp, Star } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Card } from '@/components/ui/card';
@@ -69,7 +69,7 @@ const HeadOfHR = () => {
               >
                 Schedule Consultation <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              <Link to="/solutions">
+              <Link href="/solutions">
                 <Button variant="outline" className="border-masarna-orange text-masarna-orange px-6 py-6 rounded-lg">
                   Explore All Solutions
                 </Button>
@@ -432,7 +432,7 @@ const HeadOfHR = () => {
                 >
                   Schedule HR Consultation
                 </Button>
-                <Link to="/solutions">
+                <Link href="/solutions">
                   <Button variant="outline" className="border-white text-white hover:bg-white/10 px-6 py-6 rounded-lg">
                     Explore More Solutions
                   </Button>

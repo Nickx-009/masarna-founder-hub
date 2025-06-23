@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { ArrowDown, ArrowRight, Fuel, Hexagon, Calendar, Clock, Briefcase, Handshake, User, UserCheck, CircleDot, FileCheck, Target, Users, Search } from 'lucide-react';
 import CTASection from '@/components/CTASection';
 import { Card, CardContent } from '@/components/ui/card';
@@ -149,7 +149,7 @@ const FractionalRecruiter = () => {
               >
                 Schedule Consultation
               </Button>
-              <Link to="/solutions">
+              <Link href="/solutions">
                 <Button variant="outline" className="border-masarna-orange text-masarna-orange">
                   Explore All Solutions
                 </Button>
