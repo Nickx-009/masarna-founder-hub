@@ -37,11 +37,11 @@
   }
 
   body {
-    @apply bg-background text-foreground font-roboto scroll-smooth;
+    @apply bg-background text-foreground font-inter scroll-smooth;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-roboto font-bold;
+    @apply font-poppins font-bold;
   }
 }
 

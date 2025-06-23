@@ -121,9 +121,8 @@ export default {
 				'fade-out': 'fade-out 0.3s ease-out',
 			},
 			fontFamily: {
-				'roboto': ['Roboto', 'sans-serif'],
-				'poppins': ['Roboto', 'sans-serif'],
-				'inter': ['Roboto', 'sans-serif'],
+				'poppins': ['Poppins', 'sans-serif'],
+				'inter': ['Inter', 'sans-serif'],
 			},
 		}
 	},
