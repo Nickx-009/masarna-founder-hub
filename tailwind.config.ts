@@ -64,7 +64,7 @@ export default {
 				},
 				masarna: {
 					teal: '#0C7489',
-					orange: '#1f514c', // Updated to match the new primary color
+					orange: '#f26522', // Reverted back to original Masarna orange
 					neutral: '#F2F2F2', // Added neutral accent color
 					'dark-gray': '#333333',
 				}
