@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { CheckCircle, ArrowRight, DollarSign, BarChart, FileText, Calculator, Star } from 'lucide-react';
@@ -44,7 +45,7 @@ const FractionalCFO = () => {
   ];
 
   return (
-    <>
+    <PageLayout title="Fractional CFO Services" description="Expert financial leadership without the full-time cost">
       {/* Hero Section - Split Design */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-masarna-orange/5 to-masarna-orange/10 z-0"></div>
@@ -69,7 +70,7 @@ const FractionalCFO = () => {
                 Schedule Consultation <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Link href="/solutions">
-                <Button variant="outline" className="border-masarna-orange text-masarna-teal hover:bg-masarna-orange/10 px-6 py-6 rounded-lg">
+                <Button variant="outline" className="border-masarna-orange text-masarna-teal hover:bg-masarna-orange/10 px-6 py-6 rounded-lg bg-transparent">
                   Explore All Solutions
                 </Button>
               </Link>
@@ -432,7 +433,7 @@ const FractionalCFO = () => {
                   Schedule Financial Consultation
                 </Button>
                 <Link href="/solutions">
-                  <Button variant="outline" className="border-white text-white hover:bg-white/10 px-6 py-6 rounded-lg">
+                  <Button variant="outline" className="border-white text-white hover:bg-white/10 px-6 py-6 rounded-lg bg-transparent">
                     Explore More Solutions
                   </Button>
                 </Link>
@@ -441,7 +442,7 @@ const FractionalCFO = () => {
           </div>
         </div>
       </section>
-    </>
+    </PageLayout>
   );
 };
 

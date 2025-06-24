@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, Users, Briefcase } from 'lucide-react';
@@ -44,7 +45,7 @@ const ChiefOfStaff = () => {
   ];
 
   return (
-    <>
+    <PageLayout title="Chief of Staff Services" description="Strategic leadership support for founders and executives">
       {/* Hero Section - Split Design */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-masarna-orange/5 to-masarna-orange/10 z-0"></div>
@@ -68,7 +69,7 @@ const ChiefOfStaff = () => {
                 Schedule Consultation <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Link href="#how-it-works">
-                <Button variant="outline" className="border-masarna-orange text-masarna-teal hover:bg-masarna-orange/10 px-6 py-6 rounded-lg">
+                <Button variant="outline" className="border-masarna-orange text-masarna-teal hover:bg-masarna-orange/10 px-6 py-6 rounded-lg bg-transparent">
                   Learn How It Works
                 </Button>
               </Link>
@@ -433,7 +434,7 @@ const ChiefOfStaff = () => {
                   Schedule Executive Consultation
                 </Button>
                 <Link href="/solutions">
-                  <Button variant="outline" className="border-white text-white hover:bg-white/10 px-6 py-6 rounded-lg">
+                  <Button variant="outline" className="border-white text-white hover:bg-white/10 px-6 py-6 rounded-lg bg-transparent">
                     Explore More Solutions
                   </Button>
                 </Link>
@@ -442,7 +443,7 @@ const ChiefOfStaff = () => {
           </div>
         </div>
       </section>
-    </>
+    </PageLayout>
   );
 };
 
