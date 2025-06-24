@@ -1,4 +1,5 @@
 import React from 'react';
+import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { CheckCircle, ArrowRight } from 'lucide-react';
@@ -7,7 +8,7 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const ProjectManager = () => {
   return (
-    <>
+    <PageLayout title="Project Manager" description="Focused project leadership for your startup">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-white to-gray-50 pt-16 pb-20">
         <div className="container mx-auto px-4">
@@ -26,7 +27,7 @@ const ProjectManager = () => {
                   Schedule Consultation
                 </Button>
                 <Link href="/solutions">
-                  <Button variant="outline" className="border-masarna-orange text-masarna-teal hover:bg-masarna-orange/10">
+                  <Button variant="outline" className="border-masarna-orange text-masarna-teal hover:bg-masarna-orange/10 bg-transparent">
                     Explore All Solutions
                   </Button>
                 </Link>
@@ -239,8 +240,12 @@ const ProjectManager = () => {
       </section>
       
       {/* CTA Section */}
-      <CTASection />
-    </>
+      <CTASection 
+        heading="Ready to deliver your critical projects on time?"
+        description="Our project managers will ensure your initiatives are completed successfully, on schedule, and within budget."
+        buttonText="Get Project Management Support" 
+      />
+    </PageLayout>
   );
 };
 
