@@ -28,8 +28,7 @@
     "noImplicitAny": false,
     "noUnusedParameters": false,
     "strictNullChecks": false,
-    "target": "ES2017",
-    "noEmit": true
+    "target": "ES2017"
   },
   "include": [
     "next-env.d.ts",
