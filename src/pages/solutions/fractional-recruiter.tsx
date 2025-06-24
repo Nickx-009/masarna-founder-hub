@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowDown, ArrowRight, Fuel, Hexagon, Calendar, Clock, Briefcase, Handshake, User, UserCheck, CircleDot, FileCheck, Target, Users, Search } from 'lucide-react';
+import CTASection from '@/components/CTASection';
 import { Card, CardContent } from '@/components/ui/card';
 import ProcessSteps from '@/components/ProcessSteps';
 import CandidateJourneyTimeline from '@/components/CandidateJourneyTimeline';
@@ -130,7 +132,7 @@ const FractionalRecruiter = () => {
   ];
   
   return (
-    <>
+    <PageLayout title="Fractional Recruiter Services" description="Talent acquisition expertise to build your dream team">
       {/* Innovative Hero Section with Talent Funnel */}
       <section className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 pt-16 pb-20">
         <div className="container mx-auto px-4">
@@ -148,7 +150,7 @@ const FractionalRecruiter = () => {
                 Schedule Consultation
               </Button>
               <Link href="/solutions">
-                <Button variant="outline" className="border-masarna-orange text-masarna-orange">
+                <Button variant="outline" className="border-masarna-orange text-masarna-orange bg-transparent">
                   Explore All Solutions
                 </Button>
               </Link>
@@ -704,7 +706,14 @@ const FractionalRecruiter = () => {
           </div>
         </div>
       </section>
-    </>
+      
+      {/* CTA Section */}
+      <CTASection 
+        heading="Ready to transform your talent acquisition?"
+        description="Our fractional recruiters will help you build a world-class team efficiently and cost-effectively."
+        buttonText="Schedule a Recruitment Consultation"
+      />
+    </PageLayout>
   );
 };
 
